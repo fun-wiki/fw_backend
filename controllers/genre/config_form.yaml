@@ -1,0 +1,10 @@
+name: Genre
+form: $/fw/backend/models/genre/fields.yaml
+modelClass: fw\Backend\Models\Genre
+defaultRedirect: fw/backend/genre
+create:
+    redirect: 'fw/backend/genre/update/:id'
+    redirectClose: fw/backend/genre
+update:
+    redirect: fw/backend/genre
+    redirectClose: fw/backend/genre

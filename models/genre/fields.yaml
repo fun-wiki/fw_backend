@@ -1,0 +1,17 @@
+fields:
+    title:
+        label: Название
+        span: left
+        type: text
+    icon:
+        label: Ярлык
+        span: right
+        mode: image
+        imageWidth: '40'
+        imageHeight: '40'
+        type: mediafinder
+    description:
+        label: Описание
+        size: large
+        span: full
+        type: richeditor

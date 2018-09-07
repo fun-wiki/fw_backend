@@ -1,0 +1,32 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table fw_backend_universes'
+    - builder_table_create_fw_backend_universes.php
+1.0.3:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes.php
+1.0.4:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_2.php
+1.0.5:
+    - 'Created table fw_backend_'
+    - builder_table_create_fw_backend_.php
+1.0.6:
+    - 'Updated table fw_backend_'
+    - builder_table_update_fw_backend_genres.php
+1.0.7:
+    - 'Created table fw_backend_universes_genres'
+    - builder_table_create_fw_backend_universes_genres.php
+1.0.8:
+    - 'Updated table fw_backend_universes_genres'
+    - builder_table_update_fw_backend_universes_genres.php
+1.0.9:
+    - 'Updated table fw_backend_universes_genres'
+    - builder_table_update_fw_backend_universes_genres_2.php
+1.0.10:
+    - 'Updated table fw_backend_universes_genres'
+    - builder_table_update_fw_backend_universes_genres_3.php
+1.0.11:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_3.php

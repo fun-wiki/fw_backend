@@ -1,0 +1,4 @@
+title: Genre
+modelClass: fw\Backend\Models\Genre
+toolbar:
+    buttons: reorder_toolbar

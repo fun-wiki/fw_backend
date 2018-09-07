@@ -1,0 +1,25 @@
+plugin:
+    name: 'fw.backend::lang.plugin.name'
+    description: 'fw.backend::lang.plugin.description'
+    author: fun-wiki
+    icon: oc-icon-database
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Fun-Wiki
+        url: fw/backend/universe
+        icon: icon-adn
+        sideMenu:
+            side-menu-item:
+                label: Universes
+                url: fw/backend/universe
+                icon: icon-sitemap
+    main-menu-item2:
+        label: 'Fun-Wiki (справочники)'
+        url: fw/backend/genre
+        icon: icon-database
+        sideMenu:
+            side-menu-item:
+                label: Жанры
+                url: fw/backend/genre
+                icon: icon-sitemap

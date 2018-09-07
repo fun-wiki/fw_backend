@@ -1,0 +1,57 @@
+fields:
+    name:
+        label: 'Universe name'
+        span: full
+        required: 1
+        type: text
+        comment: 'Universe name'
+    name_translate:
+        label: 'Universe name (translated)'
+        span: full
+        type: text
+    slug:
+        label: Slug
+        span: full
+        defaultFrom: name
+        preset:
+            field: name
+            type: slug
+        type: text
+    Images:
+        label: Images
+        span: full
+        type: section
+    logo:
+        label: Логотип
+        mode: image
+        span: auto
+        type: mediafinder
+    cover:
+        label: Обложка
+        mode: image
+        span: auto
+        type: mediafinder
+    Info:
+        label: Info
+        span: full
+        type: section
+    created_year:
+        label: 'Год создания'
+        span: left
+        type: text
+    genres:
+        label: Relation
+        span: left
+        nameFrom: title
+        descriptionFrom: description
+        type: taglist
+        mode: relation
+    Description:
+        label: Описание
+        span: full
+        type: section
+    description:
+        label: Описание
+        span: full
+        size: large
+        type: richeditor

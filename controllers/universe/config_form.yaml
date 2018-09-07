@@ -1,0 +1,10 @@
+name: Universe
+form: $/fw/backend/models/universe/fields.yaml
+modelClass: fw\Backend\Models\Universe
+defaultRedirect: fw/backend/universe
+create:
+    redirect: 'fw/backend/universe/update/:id'
+    redirectClose: fw/backend/universe
+update:
+    redirect: fw/backend/universe
+    redirectClose: fw/backend/universe
