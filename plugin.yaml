@@ -11,8 +11,12 @@ navigation:
         icon: icon-adn
         sideMenu:
             side-menu-item:
-                label: Universes
+                label: Вселенные
                 url: fw/backend/universe
+                icon: icon-sitemap
+            side-menu-item2:
+                label: Люди
+                url: fw/backend/person
                 icon: icon-sitemap
     main-menu-item2:
         label: 'Fun-Wiki (справочники)'

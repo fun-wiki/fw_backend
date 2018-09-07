@@ -1,0 +1,5 @@
+fields:
+    title:
+        label: 'Имя записи'
+        span: full
+        type: text

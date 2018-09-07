@@ -1,0 +1,38 @@
+fields:
+    title:
+        label: Запись
+        span: full
+        type: text
+    slug:
+        label: Slug
+        span: full
+        defaultFrom: title
+        preset:
+            field: title
+            type: slug
+        type: text
+    name:
+        label: 'Полное имя'
+        span: left
+        type: text
+    name_translate:
+        label: 'Полное имя (перевод)'
+        span: right
+        type: text
+    birthdate:
+        label: 'Дата рождения'
+        mode: datetime
+        span: left
+        type: datepicker
+    deathdata:
+        label: 'Дата смерти'
+        span: auto
+        mode: datetime
+        type: datepicker
+    pseudos:
+        label: Relation
+        span: full
+        nameFrom: title
+        descriptionFrom: description
+        type: taglist
+        mode: relation

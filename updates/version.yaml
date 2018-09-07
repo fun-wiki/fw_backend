@@ -30,3 +30,18 @@
 1.0.11:
     - 'Updated table fw_backend_universes'
     - builder_table_update_fw_backend_universes_3.php
+1.0.12:
+    - 'Created table fw_backend_person'
+    - builder_table_create_fw_backend_person.php
+1.0.13:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person.php
+1.0.14:
+    - 'Created table fw_backend_pseudos'
+    - builder_table_create_fw_backend_pseudos.php
+1.0.15:
+    - 'Created table fw_backend_persons_pseudos'
+    - builder_table_create_fw_backend_persons_pseudos.php
+1.0.16:
+    - 'Updated table fw_backend_pseudos'
+    - builder_table_update_fw_backend_pseudos.php

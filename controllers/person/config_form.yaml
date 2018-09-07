@@ -1,0 +1,10 @@
+name: Person
+form: $/fw/backend/models/person/fields.yaml
+modelClass: fw\Backend\Models\Person
+defaultRedirect: fw/backend/person
+create:
+    redirect: 'fw/backend/person/update/:id'
+    redirectClose: fw/backend/person
+update:
+    redirect: fw/backend/person
+    redirectClose: fw/backend/person
