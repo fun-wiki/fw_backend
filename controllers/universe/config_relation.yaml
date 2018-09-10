@@ -6,7 +6,7 @@ genres:
     label: Genres
     view:
         list: $/fw/backend/models/genre/columns.yaml
-        toolbarButtons: create|update|delete
+        toolbarButtons: create|add|remove
     manage:
         form: $/fw/backend/models/genre/fields.yaml
         recordsPerPage: 10

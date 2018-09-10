@@ -39,13 +39,10 @@ fields:
         label: 'Год создания'
         span: left
         type: text
-    genres:
-        label: Relation
+    partial1:
         span: left
-        nameFrom: title
-        descriptionFrom: description
-        type: taglist
-        mode: relation
+        path: field_genre
+        type: partial
     Description:
         label: Описание
         span: full

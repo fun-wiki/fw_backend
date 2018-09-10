@@ -1,6 +1,6 @@
 plugin:
     name: 'fw.backend::lang.plugin.name'
-    description: 'fw.backend::lang.plugin.description'
+    description: 'fun-wiki backend'
     author: fun-wiki
     icon: oc-icon-database
     homepage: ''
