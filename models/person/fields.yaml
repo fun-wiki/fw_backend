@@ -57,3 +57,15 @@ fields:
             field: is_pseudo
             condition: checked
         type: partial
+    photo:
+        label: Фото
+        mode: image
+        imageWidth: '150'
+        imageHeight: '200'
+        span: full
+        type: mediafinder
+    bio:
+        label: Биография
+        span: full
+        size: large
+        type: richeditor

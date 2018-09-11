@@ -54,3 +54,9 @@
 1.0.19:
     - 'Drop table fw_backend_pseudos'
     - builder_table_delete_fw_backend_pseudos.php
+1.0.20:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_3.php
+1.0.21:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_4.php
