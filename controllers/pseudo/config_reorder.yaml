@@ -1,4 +1,0 @@
-title: Pseudo
-modelClass: fw\Backend\Models\Pseudo
-toolbar:
-    buttons: reorder_toolbar

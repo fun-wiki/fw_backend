@@ -11,28 +11,49 @@ fields:
             field: title
             type: slug
         type: text
+    is_pseudo:
+        label: Псевдоним
+        span: full
+        type: switch
     name:
         label: 'Полное имя'
         span: left
+        trigger:
+            action: hide
+            field: is_pseudo
+            condition: checked
         type: text
     name_translate:
         label: 'Полное имя (перевод)'
         span: right
         type: text
+        trigger:
+            action: hide
+            field: is_pseudo
+            condition: checked
     birthdate:
         label: 'Дата рождения'
-        mode: datetime
+        mode: date
         span: left
         type: datepicker
+        trigger:
+            action: hide
+            field: is_pseudo
+            condition: checked
     deathdata:
         label: 'Дата смерти'
+        mode: date
         span: auto
-        mode: datetime
         type: datepicker
-    pseudos:
-        label: Relation
+        trigger:
+            action: hide
+            field: is_pseudo
+            condition: checked
+    partial1:
         span: full
-        nameFrom: title
-        descriptionFrom: description
-        type: taglist
-        mode: relation
+        path: field_author
+        trigger:
+            action: show
+            field: is_pseudo
+            condition: checked
+        type: partial

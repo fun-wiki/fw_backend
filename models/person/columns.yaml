@@ -2,6 +2,8 @@ columns:
     id:
         label: id
         type: number
+        width: 5%
+        align: center
     title:
         label: title
         type: text

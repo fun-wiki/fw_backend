@@ -45,3 +45,12 @@
 1.0.16:
     - 'Updated table fw_backend_pseudos'
     - builder_table_update_fw_backend_pseudos.php
+1.0.17:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_2.php
+1.0.18:
+    - 'Updated table fw_backend_persons_pseudos'
+    - builder_table_update_fw_backend_persons_pseudos.php
+1.0.19:
+    - 'Drop table fw_backend_pseudos'
+    - builder_table_delete_fw_backend_pseudos.php
