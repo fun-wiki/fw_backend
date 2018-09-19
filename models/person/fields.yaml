@@ -15,6 +15,29 @@ fields:
         label: Псевдоним
         span: full
         type: switch
+    section1:
+        label: 'Вид деятельности'
+        span: full
+        type: section
+    is_actor:
+        label: Актер
+        span: storm
+        cssClass: col-md-1
+        type: checkbox
+    is_author:
+        label: Автор
+        span: storm
+        cssClass: col-md-1
+        type: checkbox
+    is_illustrator:
+        label: Иллюстратор
+        span: storm
+        cssClass: col-md-1
+        type: checkbox
+    section2:
+        label: 'Информация'
+        span: full
+        type: section
     name:
         label: 'Полное имя'
         span: left
@@ -50,6 +73,7 @@ fields:
             field: is_pseudo
             condition: checked
     partial1:
+        label: Настоящее имя
         span: full
         path: field_author
         trigger:
@@ -64,6 +88,10 @@ fields:
         imageHeight: '200'
         span: full
         type: mediafinder
+        trigger:
+            action: hide
+            field: is_pseudo
+            condition: checked
     bio:
         label: Биография
         span: full

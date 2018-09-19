@@ -60,3 +60,21 @@
 1.0.21:
     - 'Updated table fw_backend_person'
     - builder_table_update_fw_backend_person_4.php
+1.0.22:
+    - 'Created table fw_backend_careers'
+    - builder_table_create_fw_backend_careers.php
+1.0.23:
+    - 'Created table fw_backend_persons_careers'
+    - builder_table_create_fw_backend_persons_careers.php
+1.0.24:
+    - 'Updated table fw_backend_persons_careers'
+    - builder_table_update_fw_backend_persons_careers.php
+1.0.25:
+    - 'Drop table fw_backend_persons_careers'
+    - builder_table_delete_fw_backend_persons_careers.php
+1.0.26:
+    - 'Drop table fw_backend_careers'
+    - builder_table_delete_fw_backend_careers.php
+1.0.27:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_5.php
