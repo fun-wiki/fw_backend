@@ -18,6 +18,7 @@ class Plugin extends PluginBase
     return [
       'filters' => [
         'ru_date' => [$this, 'ruDate'],
+        'person' => [$this, 'person']
       ],
     ];
   }
@@ -28,6 +29,15 @@ class Plugin extends PluginBase
     $date = Carbon::createFromFormat('Y-m-d', $text);
     $key = $date->format('n');
     return $date->format('d ' . $months[$key] . ' Y');
+  }
+
+  public function person($text)
+  {
+    $parts = explode(" ", $text);
+    $first = array_shift($parts);
+    array_push($parts, $first);
+    $text = implode(" ", $parts);
+    return $text;
   }
 
 }
