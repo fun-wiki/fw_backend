@@ -78,3 +78,6 @@
 1.0.27:
     - 'Updated table fw_backend_person'
     - builder_table_update_fw_backend_person_5.php
+1.0.28:
+    - 'Created table fw_backend_persons_genres'
+    - builder_table_create_fw_backend_persons_genres.php

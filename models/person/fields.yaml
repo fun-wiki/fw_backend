@@ -81,6 +81,15 @@ fields:
             field: is_pseudo
             condition: checked
         type: partial
+    partial2:
+        label: Жанры
+        span: full
+        path: field_genres
+        trigger:
+            action: show
+            field: is_author
+            condition: checked
+        type: partial
     photo:
         label: Фото
         mode: image

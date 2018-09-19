@@ -7,3 +7,20 @@ columns:
     title:
         label: title
         type: text
+    is_pseudo:
+        label: pseudo
+        type: switch
+        width: 5%
+    is_author:
+        label: author
+        type: switch
+        width: 5%
+    is_illustrator:
+        label: illustrator
+        type: switch
+        width: 5%
+    is_actor:
+        label: actor
+        type: switch
+        width: 5%
+
