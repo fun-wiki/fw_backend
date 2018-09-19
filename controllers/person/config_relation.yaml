@@ -2,7 +2,7 @@
 #  Relation Behavior Config
 # ===================================
 
-pseudo:
+pseudos:
     label: Люди
     view:
         list: $/fw/backend/models/person/columns.yaml
