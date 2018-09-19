@@ -81,3 +81,6 @@
 1.0.28:
     - 'Created table fw_backend_persons_genres'
     - builder_table_create_fw_backend_persons_genres.php
+1.0.29:
+    - 'Created table fw_backend_universes_persons'
+    - builder_table_create_fw_backend_universes_persons.php

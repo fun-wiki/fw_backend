@@ -10,3 +10,12 @@ genres:
     manage:
         form: $/fw/backend/models/genre/fields.yaml
         recordsPerPage: 10
+
+persons:
+    label: Person
+    view:
+        list: $/fw/backend/models/person/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form: $/fw/backend/models/person/fields.yaml
+        recordsPerPage: 10

@@ -43,6 +43,10 @@ fields:
         span: left
         path: field_genre
         type: partial
+    partial2:
+        span: left
+        path: field_person
+        type: partial
     Description:
         label: Описание
         span: full
