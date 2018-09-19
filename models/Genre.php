@@ -27,6 +27,6 @@ class Genre extends Model
     public $table = 'fw_backend_genres';
 
     public $belongsToMany = [
-        'genres' => ['fw\Backend\Models\Universe', 'table' => 'fw_backend_universes_genres']
+        'universes' => ['fw\Backend\Models\Universe', 'table' => 'fw_backend_universes_genres']
     ];
 }
