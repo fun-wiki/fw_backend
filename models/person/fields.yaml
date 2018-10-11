@@ -35,7 +35,7 @@ fields:
         cssClass: col-md-1
         type: checkbox
     section2:
-        label: 'Информация'
+        label: Информация
         span: full
         type: section
     name:
@@ -73,7 +73,7 @@ fields:
             field: is_pseudo
             condition: checked
     partial1:
-        label: Настоящее имя
+        label: 'Настоящее имя'
         span: full
         path: field_author
         trigger:
@@ -106,3 +106,8 @@ fields:
         span: full
         size: large
         type: richeditor
+    _crossposting1:
+        label: title
+        span: full
+        page_preview: '/author/:slug'
+        type: crossposting
