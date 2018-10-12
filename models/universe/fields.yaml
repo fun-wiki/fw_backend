@@ -37,14 +37,14 @@ fields:
         type: section
     created_year:
         label: 'Год создания'
-        span: left
+        span: full
         type: text
     partial1:
         span: left
         path: field_genre
         type: partial
     partial2:
-        span: left
+        span: right
         path: field_person
         type: partial
     Description:
