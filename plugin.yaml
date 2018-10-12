@@ -5,25 +5,25 @@ plugin:
     icon: oc-icon-database
     homepage: ''
 navigation:
-    main-menu-item:
-        label: Fun-Wiki
+    fw-menu:
+        label: Энциклопедия
         url: fw/backend/universe
         icon: icon-adn
         sideMenu:
-            side-menu-item:
+            universes:
                 label: Вселенные
                 url: fw/backend/universe
                 icon: icon-sitemap
-            side-menu-item2:
+            person:
                 label: Люди
                 url: fw/backend/person
                 icon: icon-sitemap
     main-menu-item2:
-        label: 'Fun-Wiki (справочники)'
+        label: Справочники
         url: fw/backend/genre
         icon: icon-database
         sideMenu:
-            side-menu-item:
+            genres:
                 label: Жанры
                 url: fw/backend/genre
                 icon: icon-sitemap

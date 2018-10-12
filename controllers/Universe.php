@@ -20,6 +20,6 @@ class Universe extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('fw.Backend', 'main-menu-item', 'side-menu-item');
+        BackendMenu::setContext('fw.Backend', 'fw-menu', 'universes');
     }
 }
