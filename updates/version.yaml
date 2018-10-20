@@ -87,3 +87,6 @@
 1.0.30:
     - 'Updated table fw_backend_person'
     - builder_table_update_fw_backend_person_6.php
+1.0.31:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_4.php
