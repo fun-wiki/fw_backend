@@ -106,8 +106,3 @@ fields:
         span: full
         size: large
         type: richeditor
-    _crossposting1:
-        label: title
-        span: full
-        page_preview: '/author/:slug'
-        type: crossposting
