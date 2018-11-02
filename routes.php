@@ -11,7 +11,7 @@ Route::get('sitemap.xml', function()
     }
 );
 
-Route::get('fw_backend_deploy.php', function()
+Route::get('fw_backend_deploy', function()
     {
        /**
          * deploy.php by Hayden Schiff (oxguy3)
