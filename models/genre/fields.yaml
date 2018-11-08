@@ -1,11 +1,19 @@
 fields:
     title:
         label: Название
-        span: left
+        span: full
+        type: text
+    slug:
+        label: Slug
+        span: full
+        defaultFrom: title
+        preset:
+            field: title
+            type: slug
         type: text
     icon:
         label: Ярлык
-        span: right
+        span: full
         mode: image
         imageWidth: '40'
         imageHeight: '40'

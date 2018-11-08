@@ -7,3 +7,7 @@ columns:
     title:
         label: title
         type: text
+        searchable: true
+    slug:
+        label: slug
+        type: text

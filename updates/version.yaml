@@ -90,3 +90,6 @@
 1.0.31:
     - 'Updated table fw_backend_universes'
     - builder_table_update_fw_backend_universes_4.php
+1.0.32:
+    - 'Updated table fw_backend_genres'
+    - builder_table_update_fw_backend_genres_2.php
