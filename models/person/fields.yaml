@@ -1,63 +1,69 @@
 fields:
     title:
         label: Запись
-        span: full
         type: text
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
     slug:
         label: Slug
-        span: full
         defaultFrom: title
         preset:
             field: title
             type: slug
         type: text
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
     is_pseudo:
         label: Псевдоним
-        span: full
         type: switch
-    section1:
+        span: storm
+        cssClass: 'col-sm-12 col-lg-12'
+    section_roles:
         label: 'Вид деятельности'
-        span: full
         type: section
-    is_actor:
-        label: Актер
         span: storm
-        cssClass: col-md-1
-        type: checkbox
-    is_author:
-        label: Автор
-        span: storm
-        cssClass: col-md-1
-        type: checkbox
-    is_illustrator:
-        label: Иллюстратор
-        span: storm
-        cssClass: col-md-1
-        type: checkbox
-    section2:
+        cssClass: col-sm-12
+    section_info:
         label: Информация
-        span: full
+        span: storm
+        cssClass: col-sm-12
         type: section
+    photo:
+        label: Фото
+        mode: image
+        imageWidth: '150'
+        imageHeight: '200'
+        span: storm
+        cssClass: col-sm-2
+        type: mediafinder
+        trigger:
+            action: hide
+            field: is_pseudo
+            condition: checked
     name:
         label: 'Полное имя'
-        span: left
+        span: storm
+        cssClass: col-sm-10
         trigger:
             action: hide
             field: is_pseudo
             condition: checked
         type: text
     name_translate:
-        label: 'Полное имя (перевод)'
-        span: right
+        label: 'Полное имя (оригинал)'
+        span: storm
+        cssClass: col-sm-10
         type: text
         trigger:
             action: hide
             field: is_pseudo
             condition: checked
+
     birthdate:
         label: 'Дата рождения'
         mode: date
-        span: left
+        span: storm
+        cssClass: col-sm-2
         type: datepicker
         trigger:
             action: hide
@@ -66,7 +72,8 @@ fields:
     deathdata:
         label: 'Дата смерти'
         mode: date
-        span: auto
+        span: storm
+        cssClass: col-sm-2
         type: datepicker
         trigger:
             action: hide
@@ -74,35 +81,17 @@ fields:
             condition: checked
     partial1:
         label: 'Настоящее имя'
-        span: full
+        span: storm
+        cssClass: col-sm-12
         path: field_author
         trigger:
             action: show
             field: is_pseudo
             condition: checked
         type: partial
-    partial2:
-        label: Жанры
-        span: full
-        path: field_genres
-        trigger:
-            action: show
-            field: is_author
-            condition: checked
-        type: partial
-    photo:
-        label: Фото
-        mode: image
-        imageWidth: '150'
-        imageHeight: '200'
-        span: full
-        type: mediafinder
-        trigger:
-            action: hide
-            field: is_pseudo
-            condition: checked
     bio:
         label: Биография
-        span: full
         size: large
+        span: storm
+        cssClass: col-sm-12
         type: richeditor

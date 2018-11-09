@@ -93,3 +93,12 @@
 1.0.32:
     - 'Updated table fw_backend_genres'
     - builder_table_update_fw_backend_genres_2.php
+1.0.33:
+    - 'Created table fw_backend_persons_roles'
+    - builder_table_create_fw_backend_persons_roles.php
+1.0.35:
+    - 'Seed Person Roles'
+    - seeder1035.php
+1.0.36:
+    - 'Created table fw_backend_persons_persons_roles'
+    - builder_table_create_fw_backend_persons_persons_roles.php

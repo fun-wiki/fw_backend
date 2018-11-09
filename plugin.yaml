@@ -5,7 +5,6 @@ plugin:
     icon: oc-icon-database
     iconSvg: plugins/fw/backend/assets/images/plugin-logo.svg
     homepage: ''
-
 navigation:
     fw-menu:
         label: Энциклопедия
@@ -29,4 +28,8 @@ navigation:
             genres:
                 label: Жанры
                 url: fw/backend/genre
+                icon: icon-sitemap
+            PersonRoles:
+                label: 'Person Roles'
+                url: fw/backend/personroles
                 icon: icon-sitemap
