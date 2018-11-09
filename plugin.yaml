@@ -3,24 +3,25 @@ plugin:
     description: 'fun-wiki backend'
     author: fun-wiki
     icon: oc-icon-database
-    iconSvg: 'plugins/fw/backend/assets/images/plugin-logo.svg'
+    iconSvg: plugins/fw/backend/assets/images/plugin-logo.svg
     homepage: ''
+
 navigation:
     fw-menu:
         label: Энциклопедия
         url: fw/backend/universe
         icon: icon-adn
-        iconSvg: 'plugins/fw/backend/assets/images/plugin-logo.svg'
+        iconSvg: plugins/fw/backend/assets/images/plugin-logo.svg
         sideMenu:
             universes:
                 label: Вселенные
                 url: fw/backend/universe
-                icon: icon-sitemap
+                iconSvg: plugins/fw/backend/assets/images/universes.svg
             person:
                 label: Люди
                 url: fw/backend/person
-                icon: icon-sitemap
-    main-menu-item2:
+                iconSvg: plugins/fw/backend/assets/images/persons.svg
+    fw-menu-add:
         label: Справочники
         url: fw/backend/genre
         icon: icon-database
