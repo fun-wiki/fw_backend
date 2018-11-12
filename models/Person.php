@@ -9,21 +9,11 @@ class Person extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
-    /*
-     * Disable timestamps by default.
-     * Remove this line if timestamps are defined in the database table.
-     */
     public $timestamps = false;
 
-    /**
-     * @var array Validation rules
-     */
     public $rules = [
     ];
 
-    /**
-     * @var string The database table used by the model.
-     */
     public $table = 'fw_backend_person';
 
     public $belongsToMany = [
@@ -31,6 +21,17 @@ class Person extends Model
         'pseudos' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_persons_pseudos', 'key' => 'my_person_id', 'otherKey' => 'my_pseudo_id',],
         'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_persons_genres'],
         'universes' => ['fw\Backend\Models\Universe', 'table' => 'fw_backend_universes_persons'],
+        'personroles' => ['fw\Backend\Models\PersonRole', 'table' => 'fw_backend_persons_persons_roles']
     ];
 
+    public function getPersonrolesOptions()
+    {
+        $res = PersonRole::get(['id','title'])->toArray();
+        $ret = [];
+        foreach($res as $value) {
+            // Turns it into ['33'] => 'Audio (AU)'
+            $ret[$value['id']] = $value['title'];
+        }
+        return $ret;
+    }
 }
