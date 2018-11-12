@@ -23,6 +23,12 @@ fields:
         type: section
         span: storm
         cssClass: col-sm-12
+
+    personroles: 
+        type: multiselect
+        span: storm
+        cssClass: col-sm-12
+        
     section_info:
         label: Информация
         span: storm
