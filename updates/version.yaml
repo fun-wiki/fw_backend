@@ -111,3 +111,9 @@
 1.0.39:
     - 'Updated table fw_backend_organisatons'
     - builder_table_update_fw_backend_organisatons_2.php
+1.0.40:
+    - 'Updated table fw_backend_organisatons'
+    - builder_table_update_fw_backend_organisatons_3.php
+1.0.41:
+    - 'Updated table fw_backend_organisatons'
+    - builder_table_update_fw_backend_organisations.php

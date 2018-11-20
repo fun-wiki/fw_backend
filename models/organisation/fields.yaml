@@ -28,9 +28,8 @@ fields:
         type: text
     open_date:
         label: 'Дата образования'
-        mode: date
         span: auto
-        type: datepicker
+        type: text
     closed_date:
         label: 'Дата закрытия'
         mode: date

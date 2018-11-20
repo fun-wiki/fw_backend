@@ -13,7 +13,7 @@ class Organisation extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'fw_backend_organisatons';
+    public $table = 'fw_backend_organisations';
 
     /**
      * @var array Validation rules
