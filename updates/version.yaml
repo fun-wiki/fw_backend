@@ -102,3 +102,12 @@
 1.0.36:
     - 'Created table fw_backend_persons_persons_roles'
     - builder_table_create_fw_backend_persons_persons_roles.php
+1.0.37:
+    - 'Created table fw_backend_organisatons'
+    - builder_table_create_fw_backend_organisatons.php
+1.0.38:
+    - 'Updated table fw_backend_organisatons'
+    - builder_table_update_fw_backend_organisatons.php
+1.0.39:
+    - 'Updated table fw_backend_organisatons'
+    - builder_table_update_fw_backend_organisatons_2.php

@@ -1,0 +1,4 @@
+title: Organisations
+modelClass: fw\Backend\Models\Organisation
+toolbar:
+    buttons: reorder_toolbar

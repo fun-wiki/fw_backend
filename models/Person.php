@@ -24,14 +24,4 @@ class Person extends Model
         'personroles' => ['fw\Backend\Models\PersonRole', 'table' => 'fw_backend_persons_persons_roles']
     ];
 
-    public function getPersonrolesOptions()
-    {
-        $res = PersonRole::get(['id','title'])->toArray();
-        $ret = [];
-        foreach($res as $value) {
-            // Turns it into ['33'] => 'Audio (AU)'
-            $ret[$value['id']] = $value['title'];
-        }
-        return $ret;
-    }
 }
