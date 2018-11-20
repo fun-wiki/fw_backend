@@ -1,6 +1,6 @@
 list: $/fw/backend/models/organisation/columns.yaml
 modelClass: fw\Backend\Models\Organisation
-title: Organistions
+title: Organisations
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'fw/backend/organistions/update/:id'
+recordUrl: 'fw/backend/organisations/update/:id'

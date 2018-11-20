@@ -3,7 +3,7 @@
 use Backend\Classes\Controller;
 use BackendMenu;
 
-class Organistions extends Controller
+class Organisations extends Controller
 {
     public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController',        'Backend\Behaviors\ReorderController'    ];
     
@@ -14,6 +14,6 @@ class Organistions extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('fw.Backend', 'fw-menu', 'organistions');
+        BackendMenu::setContext('fw.Backend', 'fw-menu', 'organisations');
     }
 }

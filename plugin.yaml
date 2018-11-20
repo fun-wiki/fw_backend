@@ -22,7 +22,7 @@ navigation:
                 iconSvg: plugins/fw/backend/assets/images/persons.svg
             organistions:
                 label: Организации
-                url: fw/backend/organistions
+                url: fw/backend/organisations
                 icon: icon-sitemap
     fw-menu-add:
         label: Справочники
