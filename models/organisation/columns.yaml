@@ -1,0 +1,12 @@
+columns:
+    id:
+        label: id
+        type: number
+        width: 5%
+    title:
+        label: Название
+        type: text
+        width: 70%
+    slug:
+        label: slug
+        type: text

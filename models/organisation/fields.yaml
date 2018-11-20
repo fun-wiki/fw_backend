@@ -1,0 +1,55 @@
+fields:
+    title:
+        label: Заголовок
+        span: full
+        preset:
+            field: name
+            type: ''
+        type: text
+    slug:
+        label: Slug
+        span: full
+        defaultFrom: name
+        preset:
+            field: name
+            type: slug
+        type: text
+    info:
+        label: Информация
+        span: full
+        type: section
+    name:
+        label: Название
+        span: auto
+        type: text
+    name_ru:
+        label: 'Название (перевод)'
+        span: auto
+        type: text
+    open_date:
+        label: 'Дата образования'
+        mode: date
+        span: auto
+        type: datepicker
+    closed_date:
+        label: 'Дата закрытия'
+        mode: date
+        span: auto
+        type: datepicker
+    country:
+        label: Страна
+        span: full
+        type: text
+    description:
+        label: 'Информация об организации'
+        size: large
+        span: full
+        type: richeditor
+    logo:
+        label: Логотип
+        span: auto
+        mode: image
+        prompt: 'Добавить логотип'
+        imageWidth: '300'
+        imageHeight: '300'
+        type: mediafinder

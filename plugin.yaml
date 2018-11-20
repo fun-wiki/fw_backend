@@ -20,6 +20,10 @@ navigation:
                 label: Люди
                 url: fw/backend/person
                 iconSvg: plugins/fw/backend/assets/images/persons.svg
+            organistions:
+                label: Организации
+                url: fw/backend/organistions
+                icon: icon-sitemap
     fw-menu-add:
         label: Справочники
         url: fw/backend/genre

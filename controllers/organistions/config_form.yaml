@@ -1,0 +1,10 @@
+name: Organistions
+form: $/fw/backend/models/organisation/fields.yaml
+modelClass: fw\Backend\Models\Organisation
+defaultRedirect: fw/backend/organistions
+create:
+    redirect: 'fw/backend/organistions/update/:id'
+    redirectClose: fw/backend/organistions
+update:
+    redirect: fw/backend/organistions
+    redirectClose: fw/backend/organistions
