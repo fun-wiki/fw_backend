@@ -36,8 +36,7 @@ class Plugin extends PluginBase
   public function ruDate($text)
   {
     $months = [1 => 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
-    if (strlen($text) < 5) :  return $text;
-    endif;
+    if (strlen($text) < 5) return $text;
     $date = Carbon::createFromFormat('Y-m-d', $text);
     $key = $date->format('n');
     return $date->format('d ' . $months[$key] . ' Y');
