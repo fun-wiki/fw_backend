@@ -1,0 +1,23 @@
+fields:
+    title:
+        label: Название
+        span: full
+        type: text
+    section:
+        label: Информация
+        span: full
+        type: section
+    image:
+        label: Обложка
+        mode: image
+        span: full
+        type: mediafinder
+    quotes:
+        label: Цитата
+        span: full
+        type: text
+    description:
+        label: Описание
+        size: ''
+        span: full
+        type: textarea

@@ -120,3 +120,6 @@
 1.0.42:
     - 'update persons roles'
     - seeder1042.php
+1.0.43:
+    - 'Created table fw_backend_main_theme'
+    - builder_table_create_fw_backend_main_theme.php
