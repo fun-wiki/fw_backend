@@ -36,7 +36,7 @@ fields:
         span: full
         type: section
     created_year:
-        label: 'Год создания'
+        label: 'Год (Дата) создания'
         span: full
         type: text
     partial1:
