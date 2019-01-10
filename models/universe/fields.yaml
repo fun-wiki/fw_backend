@@ -38,7 +38,7 @@ fields:
     created_year:
         label: 'Год (Дата) создания'
         span: full
-        type: text
+        type: udatepicker
     partial1:
         span: left
         path: field_genre
