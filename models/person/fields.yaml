@@ -69,8 +69,8 @@ fields:
         label: 'Дата рождения'
         mode: date
         span: storm
-        cssClass: col-sm-2
-        type: datepicker
+        cssClass: col-sm-4
+        type: udatepicker
         trigger:
             action: hide
             field: is_pseudo
@@ -79,8 +79,8 @@ fields:
         label: 'Дата смерти'
         mode: date
         span: storm
-        cssClass: col-sm-2
-        type: datepicker
+        cssClass: col-sm-4
+        type: udatepicker
         trigger:
             action: hide
             field: is_pseudo

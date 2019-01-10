@@ -120,3 +120,9 @@
 1.0.42:
     - 'update persons roles'
     - seeder1042.php
+1.0.43:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_7.php
+1.0.44:
+    - 'add gamedesigner role'
+    - seeder1044.php
