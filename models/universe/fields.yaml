@@ -1,16 +1,15 @@
 fields:
     name:
-        label: 'Universe name'
+        label: Название вселенной
         span: full
         required: 1
         type: text
-        comment: 'Universe name'
     name_translate:
-        label: 'Universe name (translated)'
+        label: Название вселенной (перевод)
         span: full
         type: text
     slug:
-        label: Slug
+        label: slug
         span: full
         defaultFrom: name
         preset:
@@ -18,7 +17,7 @@ fields:
             type: slug
         type: text
     Images:
-        label: Images
+        label: Изображения
         span: full
         type: section
     logo:
@@ -32,7 +31,7 @@ fields:
         span: auto
         type: mediafinder
     Info:
-        label: Info
+        label: Информация
         span: full
         type: section
     created_year:
@@ -50,7 +49,7 @@ fields:
         type: nestedform
         usePanelStyles: false
         form: $/fw/backend/models/universe/creators.yaml
-    _description:
+    Description:
         label: Описание
         span: full
         type: section
