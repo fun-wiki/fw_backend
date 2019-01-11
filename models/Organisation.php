@@ -20,4 +20,8 @@ class Organisation extends Model
      */
     public $rules = [
     ];
+
+    public $belongsToMany = [
+        'universe' => ['fw\Backend\Models\Universe', 'table' => 'fw_backend_universes_organisations']
+    ];
 }

@@ -126,3 +126,12 @@
 1.0.44:
     - 'add gamedesigner role'
     - seeder1044.php
+1.0.45:
+    - 'Created table fw_backend_universes_organisations'
+    - builder_table_create_fw_backend_universes_organisations.php
+1.0.46:
+    - 'Updated table fw_backend_universes_organisations'
+    - builder_table_update_fw_backend_universes_organisations.php
+1.0.47:
+    - 'Updated table fw_backend_universes_organisations'
+    - builder_table_update_fw_backend_universes_organisations_2.php

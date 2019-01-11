@@ -1,0 +1,10 @@
+secondaryTabs:
+  fields:
+    primary:
+      tab: Люди
+      path: field_person
+      type: partial
+    secondary:
+      tab: Организации
+      path: field_organisation
+      type: partial

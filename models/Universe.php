@@ -28,7 +28,8 @@ class Universe extends Model
 
     public $belongsToMany = [
         'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_universes_genres', 'foreignKey' => 'genre_id'],
-        'persons' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_universes_persons']
+        'persons' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_universes_persons'],
+        'organisations' => ['fw\Backend\Models\Organisation', 'table' => 'fw_backend_universes_organisations']
     ];
 
 }

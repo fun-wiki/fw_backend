@@ -36,23 +36,26 @@ fields:
         span: full
         type: section
     created_year:
-        label: 'Год (Дата) создания'
+        label: Год (Дата) создания
         span: full
         type: udatepicker
-    partial1:
+    _genres:
+        label: Жанр
         span: left
         path: field_genre
         type: partial
-    partial2:
+    _creators:
+        label: Создатели
         span: right
-        path: field_person
-        type: partial
-    Description:
+        type: nestedform
+        usePanelStyles: false
+        form: $/fw/backend/models/universe/creators.yaml
+    _description:
         label: Описание
         span: full
         type: section
     description:
-        label: Описание
         span: full
         size: large
         type: richeditor
+

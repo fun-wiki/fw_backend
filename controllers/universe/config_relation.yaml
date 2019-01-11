@@ -19,3 +19,12 @@ persons:
     manage:
         form: $/fw/backend/models/person/fields.yaml
         recordsPerPage: 10
+
+organisations:
+    label: Organisations
+    view:
+        list: $/fw/backend/models/organisation/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form: $/fw/backend/models/organisation/fields.yaml
+        recordsPerPage: 10
