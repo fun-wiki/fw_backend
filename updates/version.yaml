@@ -135,3 +135,27 @@
 1.0.47:
     - 'Updated table fw_backend_universes_organisations'
     - builder_table_update_fw_backend_universes_organisations_2.php
+1.0.48:
+    - 'Created table fw_backend_test'
+    - builder_table_create_fw_backend_test.php
+1.0.49:
+    - 'Created table fw_backend_testpost'
+    - builder_table_create_fw_backend_testpost.php
+1.0.50:
+    - 'Updated table fw_backend_test'
+    - builder_table_update_fw_backend_test.php
+1.0.51:
+    - 'Updated table fw_backend_test'
+    - builder_table_update_fw_backend_test_2.php
+1.0.52:
+    - 'Updated table fw_backend_test'
+    - builder_table_update_fw_backend_test_3.php
+1.0.53:
+    - 'Updated table fw_backend_test'
+    - builder_table_update_fw_backend_test_4.php
+1.0.54:
+    - 'Updated table fw_backend_test'
+    - builder_table_update_fw_backend_test_5.php
+1.0.55:
+    - 'Updated table fw_backend_test'
+    - builder_table_update_fw_backend_test_6.php

@@ -37,3 +37,7 @@ navigation:
                 label: 'Person Roles'
                 url: fw/backend/personroles
                 icon: icon-sitemap
+    main-menu-item:
+        label: Test
+        url: fw/backend/test
+        icon: icon-area-chart

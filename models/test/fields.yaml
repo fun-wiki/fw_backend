@@ -1,0 +1,13 @@
+fields:
+    title:
+        label: Tile
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        type: text
+    content:
+        type: nestedform
+        usePanelStyles: false
+        form: $/fw/Backend/Models/Genre/fields.yaml
