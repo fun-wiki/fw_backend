@@ -159,3 +159,6 @@
 1.0.55:
     - 'Add literature_type'
     - seeder1055.php
+1.0.56:
+    - 'Updated table fw_backend_literature'
+    - builder_table_update_fw_backend_literature.php
