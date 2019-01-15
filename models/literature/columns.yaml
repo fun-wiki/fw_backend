@@ -5,3 +5,7 @@ columns:
     title:
         label: title
         type: text
+    author:
+        label: author
+        relation: authors
+        select: title
