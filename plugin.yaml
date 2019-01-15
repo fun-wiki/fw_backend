@@ -24,6 +24,10 @@ navigation:
                 label: Организации
                 url: fw/backend/organisations
                 icon: icon-sitemap
+            literature:
+                label: Приозведения
+                url: fw/backend/literature
+                icon: icon-book
     fw-menu-add:
         label: Справочники
         url: fw/backend/genre
@@ -37,6 +41,10 @@ navigation:
                 label: 'Person Roles'
                 url: fw/backend/personroles
                 icon: icon-sitemap
+            literature_type:
+                label: 'Вид произведения'
+                url: fw/backend/literaturetype
+                icon: icon-book
     main-menu-item:
         label: Test
         url: fw/backend/test

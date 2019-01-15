@@ -1,0 +1,20 @@
+fields:
+    title_original:
+        label: 'Оригинальное название'
+        span: full
+        type: text
+    title_ru:
+        label: 'Название (RU)'
+        span: full
+        type: text
+    literature_type:
+        label: Вид произведения
+        span: full
+        type: balloon-selector
+    authors:
+        label: Автор
+        path: field_person
+        type: partial
+    release_data:
+        label: Дата выхода
+        type: udatepicker

@@ -1,0 +1,4 @@
+title: LiteratureType
+modelClass: fw\Backend\Models\LiteratureType
+toolbar:
+    buttons: reorder_toolbar

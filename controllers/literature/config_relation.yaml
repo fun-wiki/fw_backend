@@ -1,0 +1,13 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+authors:
+    label:
+    view:
+        list: $/fw/backend/models/person/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form: $/fw/backend/models/person/fields.yaml
+        recordsPerPage: 10
+

@@ -1,0 +1,10 @@
+name: Literature
+form: $/fw/backend/models/literature/fields.yaml
+modelClass: fw\Backend\Models\Literature
+defaultRedirect: fw/backend/literature
+create:
+    redirect: 'fw/backend/literature/update/:id'
+    redirectClose: fw/backend/literature
+update:
+    redirect: fw/backend/literature
+    redirectClose: fw/backend/literature

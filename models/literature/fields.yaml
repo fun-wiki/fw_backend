@@ -1,0 +1,16 @@
+fields:
+    title:
+        label: Название
+        span: full
+        type: text
+    slug:
+        label: Slug
+        span: full
+        type: text
+    content:
+        label: Информация
+        span: full
+        type: nestedform
+        usePanelStyles: false
+        form: $/fw/Backend/Models/Literature/info.yaml
+
