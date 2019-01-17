@@ -8,7 +8,7 @@ fields:
         span: full
         type: text
     literature_type:
-        label: Вид произведения
+        label: 'Вид произведения'
         span: full
         type: balloon-selector
     authors:
@@ -16,8 +16,20 @@ fields:
         path: field_person
         type: partial
     release_data:
-        label: Дата выхода
+        label: 'Дата выхода'
         type: udatepicker
+    universe:
+        span: full
+        type: relation
+        nameFrom: name
     annotations:
         label: Аннотация
         type: richeditor
+    book_series:
+        label: 'Выберите серию'
+        span: full
+        dependsOn:
+            - universe
+        type: dropdown
+        options: listSeries
+        emptyOption: -- no status --

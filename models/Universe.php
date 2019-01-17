@@ -32,4 +32,13 @@ class Universe extends Model
         'organisations' => ['fw\Backend\Models\Organisation', 'table' => 'fw_backend_universes_organisations']
     ];
 
+    public $hasMany = [
+        'literature' => 'fw\Backend\Models\Literature',
+        'bookseries' => 'fw\Backend\Models\BookSeries'
+    ];
+
+    public $belongsTo = [
+        
+    ];
+
 }

@@ -162,3 +162,27 @@
 1.0.56:
     - 'Updated table fw_backend_literature'
     - builder_table_update_fw_backend_literature.php
+1.0.57:
+    - 'Created table fw_backend_relations_literature_universe'
+    - builder_table_create_fw_backend_relations_literature_universe.php
+1.0.58:
+    - 'Updated table fw_backend_relations_literature_universe'
+    - builder_table_update_fw_backend_relations_literature_universe.php
+1.0.59:
+    - 'Created table fw_backend_book_series'
+    - builder_table_create_fw_backend_book_series.php
+1.0.60:
+    - 'Created table fw_backend_relations_bookseries_universe'
+    - builder_table_create_fw_backend_relations_bookseries_universe.php
+1.0.61:
+    - 'Drop table fw_backend_relations_literature_universe'
+    - builder_table_delete_fw_backend_relations_literature_universe.php
+1.0.62:
+    - 'Updated table fw_backend_literature'
+    - builder_table_update_fw_backend_literature_2.php
+1.0.63:
+    - 'Updated table fw_backend_literature'
+    - builder_table_update_fw_backend_literature_3.php
+1.0.64:
+    - 'Updated table fw_backend_book_series'
+    - builder_table_update_fw_backend_book_series.php

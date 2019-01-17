@@ -11,3 +11,11 @@ authors:
         form: $/fw/backend/models/person/fields.yaml
         recordsPerPage: 10
 
+universes:
+    label:
+    view:
+        list: $/fw/backend/models/universe/columns.yaml
+        toolbarButtons: add
+    manage:
+        form: $/fw/backend/models/universe/fields.yaml
+        recordsPerPage: 10

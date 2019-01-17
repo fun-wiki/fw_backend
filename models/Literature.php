@@ -32,15 +32,27 @@ class Literature extends Model
     ];
 
     public $belongsToMany = [
-        'authors' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_persons_literature'],
+        'authors' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_persons_literature']
+    ];
+
+    public $belongsTo = [
+        'universe' => ['fw\Backend\Models\Universe']
     ];
 
     public $hasOne = [
-        'literature_type' => ['fw\Backend\Models\LiteratureType']
+        'literature_type' => ['fw\Backend\Models\LiteratureType'],
     ];
+
 
     public function getLiteratureTypeOptions()
     {
         return \fw\Backend\Models\LiteratureType::all()->lists('title', 'id');
+    }
+
+    public function listSeries($fieldName, $value, $formData)
+    {
+        return \fw\Backend\Models\Universe::where('id', $formData->universe)->lists('name', 'id');
+       // dd(\fw\Backend\Models\Universe::where('id', $formData->universe)->lists('name', 'id'));
+        //\fw\Backend\Models\Universe::where('id', $formData->universe)->lists('title', 'id');
     }
 }

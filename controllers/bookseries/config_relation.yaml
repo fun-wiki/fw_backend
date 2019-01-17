@@ -1,0 +1,12 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+universe:
+    label: universe
+    view:
+        list: $/fw/backend/models/universe/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        form: $/fw/backend/models/organisation/fields.yaml
+

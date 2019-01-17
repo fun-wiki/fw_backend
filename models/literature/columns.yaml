@@ -9,3 +9,7 @@ columns:
         label: author
         relation: authors
         select: title
+    universe: 
+        label: universe
+        relation: universe
+        select: name

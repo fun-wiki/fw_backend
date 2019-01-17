@@ -45,7 +45,7 @@ navigation:
                 label: 'Вид произведения'
                 url: fw/backend/literaturetype
                 icon: icon-book
-    main-menu-item:
-        label: Test
-        url: fw/backend/test
-        icon: icon-area-chart
+            book-series:
+                label: 'Книжные серии'
+                url: fw/backend/bookseries
+                icon: icon-book
