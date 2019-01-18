@@ -41,4 +41,8 @@ class Universe extends Model
         
     ];
 
+    // public function bookseries() {
+    //     return $this->hasMany('fw\Backend\Models\BookSeries');
+    // }
+
 }

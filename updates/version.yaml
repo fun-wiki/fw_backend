@@ -186,3 +186,18 @@
 1.0.64:
     - 'Updated table fw_backend_book_series'
     - builder_table_update_fw_backend_book_series.php
+1.0.65:
+    - 'Created table fw_backend_book'
+    - builder_table_create_fw_backend_book.php
+1.0.66:
+    - 'Created table fw_backend_relation_book_literature'
+    - builder_table_create_fw_backend_relation_book_literature.php
+1.0.67:
+    - 'Updated table fw_backend_book'
+    - builder_table_update_fw_backend_book.php
+1.0.68:
+    - 'Updated table fw_backend_literature'
+    - builder_table_update_fw_backend_literature_4.php
+1.0.69:
+    - 'Updated table fw_backend_literature'
+    - builder_table_update_fw_backend_literature_5.php

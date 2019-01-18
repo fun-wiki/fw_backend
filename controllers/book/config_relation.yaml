@@ -1,0 +1,9 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+literature:
+    label: Произведения
+    view:
+        list: $/fw/backend/models/literature/columns_sortable.yaml
+        toolbarButtons: add|remove

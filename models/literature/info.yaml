@@ -33,3 +33,6 @@ fields:
         type: dropdown
         options: listSeries
         emptyOption: -- no status --
+    number_in_series:
+        label: Номер в серии
+        type: number

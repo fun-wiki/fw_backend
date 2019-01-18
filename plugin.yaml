@@ -25,8 +25,12 @@ navigation:
                 url: fw/backend/organisations
                 icon: icon-sitemap
             literature:
-                label: Приозведения
+                label: Произведения
                 url: fw/backend/literature
+                icon: icon-book
+            book:
+                label: Книги
+                url: fw/backend/book
                 icon: icon-book
     fw-menu-add:
         label: Справочники

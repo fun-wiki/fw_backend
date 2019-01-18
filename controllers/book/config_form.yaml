@@ -1,0 +1,10 @@
+name: Book
+form: $/fw/backend/models/book/fields.yaml
+modelClass: fw\Backend\Models\Book
+defaultRedirect: fw/backend/book
+create:
+    redirect: 'fw/backend/book/update/:id'
+    redirectClose: fw/backend/book
+update:
+    redirect: fw/backend/book
+    redirectClose: fw/backend/book
