@@ -15,3 +15,9 @@ columns:
         searchable: true
         sortable: true
         path: ~/plugins/fw/backend/models/literature/_content_universe.htm
+    'content[book_series]':
+        label: series
+        type: partial
+        searchable: true
+        sortable: true
+        path: ~/plugins/fw/backend/models/literature/_content_bookseries.htm

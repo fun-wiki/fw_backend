@@ -6,6 +6,8 @@ fields:
     slug:
         label: slug
         span: full
+        dependsOn:
+            - content
         type: text
     content:
         label: Информация

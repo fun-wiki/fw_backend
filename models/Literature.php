@@ -9,6 +9,7 @@ class Literature extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
+    
     /*
      * Disable timestamps by default.
      * Remove this line if timestamps are defined in the database table.
@@ -53,17 +54,28 @@ class Literature extends Model
 
     public function listSeries($fieldName, $value, $formData)
     {
-
-        if (isset($formData)) {
-            $universe = \fw\Backend\Models\Universe::where('id', $formData->universe)->get();
-            
-            foreach ($universe as $key) {
-                $bookseries = $key->bookseries->lists('title', 'id');
-            }
-        } else {
-            $bookseries = [];
-        }
+        $bookseries = [];
         
+        $collection = Universe::where('id', $formData->universe)->get();
+
+        if (isset($collection)) {
+            foreach ($collection[0]->bookseries as $bookserie) {
+                $bookseries[$bookserie->id] = $bookserie->title; 
+            }
+        }
+        // dump($bookseries);
         return $bookseries;
+    }
+
+    public function filterFields($fields, $context = null)
+    {
+        // dump($fields);
+        if (isset($fields->slug)) {
+            $fields->slug->value = str_slug($fields->content->value['title_original']);
+        }
+
+        if (isset($fields->title)) {
+            $fields->title->value = $fields->content->value['title_original'];
+        }
     }
 }

@@ -2,15 +2,18 @@ fields:
     title:
         label: Название
         span: full
+        dependsOn:
+            - content
         type: text
     slug:
         label: Slug
         span: full
+        dependsOn:
+            - content
         type: text
     content:
         label: Информация
         span: full
         type: nestedform
         usePanelStyles: false
-        form: $/fw/Backend/Models/Literature/info.yaml
-
+        form: $/fw/Backend/Models/Literature/content.yaml

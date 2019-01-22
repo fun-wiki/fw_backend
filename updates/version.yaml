@@ -201,3 +201,6 @@
 1.0.69:
     - 'Updated table fw_backend_literature'
     - builder_table_update_fw_backend_literature_5.php
+1.0.70:
+    - 'Updated table fw_backend_literature'
+    - builder_table_update_fw_backend_literature_6.php

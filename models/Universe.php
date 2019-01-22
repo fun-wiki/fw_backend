@@ -33,16 +33,16 @@ class Universe extends Model
     ];
 
     public $hasMany = [
-        'literature' => 'fw\Backend\Models\Literature',
-        'bookseries' => 'fw\Backend\Models\BookSeries'
+        'literature' => ['fw\Backend\Models\Literature'],
+        'bookseries' => ['fw\Backend\Models\BookSeries']
     ];
 
     public $belongsTo = [
         
     ];
 
-    // public function bookseries() {
-    //     return $this->hasMany('fw\Backend\Models\BookSeries');
-    // }
+    public function bookseries() {
+        return $this->hasMany('fw\Backend\Models\BookSeries');
+    }
 
 }
