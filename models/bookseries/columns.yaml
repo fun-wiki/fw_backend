@@ -6,5 +6,6 @@ columns:
         label: title
         type: text
     universe:
-        label: slug
-        type: text
+        label: universe
+        relation: universe
+        select: name

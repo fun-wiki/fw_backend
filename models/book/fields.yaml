@@ -6,11 +6,23 @@ fields:
     slug:
         label: slug
         span: full
-        dependsOn:
-            - content
         type: text
-    content:
+    Section_info:
         label: Информация
-        type: nestedform
-        usePanelStyles: false
-        form: $/fw/Backend/Models/Book/info.yaml
+        type: section
+    title_original:
+        label: 'Оригинальное название'
+        span: full
+        type: text
+    title_ru:
+        label: 'Название (RU)'
+        span: full
+        type: text
+    book_type:
+        label: 'Тип книги'
+        span: full
+        type: balloon-selector
+    authors:
+        label: Автор
+        path: field_person
+        type: partial

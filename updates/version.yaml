@@ -204,3 +204,36 @@
 1.0.70:
     - 'Updated table fw_backend_literature'
     - builder_table_update_fw_backend_literature_6.php
+1.0.71:
+    - 'Drop table fw_backend_literature_type'
+    - builder_table_delete_fw_backend_literature_type.php
+1.0.72:
+    - 'Drop table fw_backend_literature'
+    - builder_table_delete_fw_backend_literature.php
+1.0.73:
+    - 'Drop table fw_backend_persons_literature'
+    - builder_table_delete_fw_backend_persons_literature.php
+1.0.74:
+    - 'Drop table fw_backend_relation_book_literature'
+    - builder_table_delete_fw_backend_relation_book_literature.php
+1.0.75:
+    - 'Updated table fw_backend_book'
+    - builder_table_update_fw_backend_books.php
+1.0.76:
+    - 'Created table fw_backend_book_types'
+    - builder_table_create_fw_backend_book_types.php
+1.0.77:
+    - 'Seed book types'
+    - seeder1077.php
+1.0.78:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_2.php
+1.0.79:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_3.php
+1.0.80:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_4.php
+1.0.81:
+    - 'Created table fw_backend_relation_book_person'
+    - builder_table_create_fw_backend_relation_book_person.php

@@ -1,7 +1,7 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
-
+use Db;
 /**
  * Model
  */
@@ -9,33 +9,23 @@ class Book extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
-    /*
-     * Disable timestamps by default.
-     * Remove this line if timestamps are defined in the database table.
-     */
     public $timestamps = false;
 
+    public $table = 'fw_backend_books';
 
-    /**
-     * @var string The database table used by the model.
-     */
-    public $table = 'fw_backend_book';
+    public $rules = [];
 
-    /**
-     * @var array Validation rules
-     */
-    public $rules = [
-    ];
+    public function getBookTypeOptions()
+    {
+        return 'fw\Backend\Models\BookType'::all()->lists('title', 'id');
+    }
 
-    public $jsonable = [
-        'content'
-    ];
-
-    public $hasOne = [
+    public $belongsTo = [
+        'book_type' =>['fw\Backend\Models\BookType']
     ];
 
     public $belongsToMany = [
-        'literature' => ['fw\Backend\Models\Literature', 'table' => 'fw_backend_relation_book_literature']
+        'authors' => ['fw\Backend\Models\Person' , 'table' => 'fw_backend_relation_book_person',]
     ];
 
 }

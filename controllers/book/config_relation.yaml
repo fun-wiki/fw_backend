@@ -2,8 +2,11 @@
 #  Relation Behavior Config
 # ===================================
 
-literature:
-    label: Произведения
+authors:
+    label: Авторы
     view:
-        list: $/fw/backend/models/literature/columns_sortable.yaml
-        toolbarButtons: add|remove
+        list: $/fw/backend/models/person/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form: $/fw/backend/models/person/fields.yaml
+        list: $/fw/backend/models/person/columns_authors.yaml

@@ -1,6 +1,7 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
+use Db;
 
 /**
  * Model
