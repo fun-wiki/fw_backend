@@ -41,7 +41,10 @@ class Book extends Model
     public function listSeries($fieldName, $value, $formData)
     {
         $bookseries = [];
-        $collection = Universe::where('id', $formData->universe->id)->get();
+        if (isset($formData->universe->id)) {
+            $collection = Universe::where('id', $formData->universe->id)->get();
+        }
+
 
         if (isset($collection)) {
             foreach ($collection[0]->bookseries as $bookserie) {

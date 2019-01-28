@@ -1,29 +1,38 @@
 fields:
+    Section_main:
+        label: Запись
+        type: section
+        span: storm
     title:
         label: Название
-        span: full
         dependsOn:
             - title_original
             - title_ru
         type: text
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
     slug:
         label: slug
-        span: full
         type: text
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
     Section_info:
         label: Информация
         type: section
     title_original:
         label: 'Оригинальное название'
-        span: full
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
         type: text
     title_ru:
         label: 'Название (RU)'
-        span: full
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
         type: text
     book_type:
         label: 'Тип книги'
-        span: full
+        span: storm
+        cssClass: 'col-sm-12'
         type: balloon-selector
     authors:
         label: Автор
