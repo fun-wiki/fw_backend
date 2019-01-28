@@ -18,7 +18,7 @@ class Person extends Model
     public $table = 'fw_backend_person';
 
     public $belongsToMany = [
-        'persons' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_relation_persons_pseudos', 'key' => 'pseudo_id', 'otherKey' => 'person_id',],
+        'persons' => ['fw\Backend\Models\Person'],
         'pseudos' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_relation_persons_pseudos', 'key' => 'person_id', 'otherKey' => 'pseudo_id',],
         'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_persons_genres'],
         'universes' => ['fw\Backend\Models\Universe', 'table' => 'fw_backend_universes_persons'],

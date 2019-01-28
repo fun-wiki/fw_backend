@@ -9,7 +9,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 class Book extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     public $timestamps = false;
 
     public $table = 'fw_backend_books';
@@ -26,7 +26,8 @@ class Book extends Model
     ];
 
     public $belongsToMany = [
-        'authors' => ['fw\Backend\Models\Person' , 'table' => 'fw_backend_relation_book_person']
+        'authors' => ['fw\Backend\Models\Person' , 'table' => 'fw_backend_relation_book_person'],
+        'pseudos' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_relation_persons_pseudos', 'key' => 'person_id', 'otherKey' => 'pseudo_id',],
     ];
 
 }

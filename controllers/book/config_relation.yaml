@@ -5,18 +5,22 @@
 authors:
     label: Авторы
     view:
-        list: $/fw/backend/models/person/columns_authors.yaml
+        list:  ~/plugins/fw/backend/models/person/columns_authors.yaml
         toolbarButtons: create|add|remove
     manage:
-        form: $/fw/backend/models/person/fields.yaml
-        list: $/fw/backend/models/person/columns_authors.yaml
+        form:  ~/plugins/fw/backend/models/person/fields.yaml
+        list:  ~/plugins/fw/backend/models/person/columns_authors.yaml
         scope: authors
         showSearch: true
 
 pseudos:
-    label: Pseudo
+    label: Люди
+    view:
+        list:  ~/plugins/fw/backend/models/person/columns_authors.yaml
+        toolbarButtons: create|add|remove
     manage:
-        form: $/fw/backend/models/person/fields.yaml
-    pivot:
-        form: $/fw/backend/models/person/fields.yaml
-
+        form:  ~/plugins/fw/backend/models/person/fields.yaml
+        list:  ~/plugins/fw/backend/models/person/columns_authors.yaml
+        scope: nopseudo
+        showSearch: true
+        recordsPerPage: 10
