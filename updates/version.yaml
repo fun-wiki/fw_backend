@@ -246,3 +246,27 @@
 1.0.84:
     - 'Updated table fw_backend_persons_pseudos'
     - builder_table_update_fw_backend_relation_persons_pseudos.php
+1.0.85:
+    - 'Created table fw_backend_realation_book_genres'
+    - builder_table_create_fw_backend_realation_book_genres.php
+1.0.86:
+    - 'Updated table fw_backend_realation_book_genres'
+    - builder_table_update_fw_backend_relation_book_genres.php
+1.0.87:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_5.php
+1.0.88:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_6.php
+1.0.89:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_7.php
+1.0.90:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_8.php
+1.0.91:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_9.php
+1.0.92:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_10.php

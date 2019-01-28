@@ -24,3 +24,12 @@ pseudos:
         scope: nopseudo
         showSearch: true
         recordsPerPage: 10
+
+genres:
+    label: Жанры
+    view:
+        list:  ~/plugins/fw/backend/models/genre/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form:  ~/plugins/fw/backend/models/genre/fields.yaml
+        recordsPerPage: 10

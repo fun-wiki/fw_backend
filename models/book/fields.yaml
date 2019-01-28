@@ -2,6 +2,9 @@ fields:
     title:
         label: Название
         span: full
+        dependsOn:
+            - title_original
+            - title_ru
         type: text
     slug:
         label: slug
@@ -26,3 +29,53 @@ fields:
         label: Автор
         path: field_person
         type: partial
+    genres:
+        label: Жанр
+        path: genres
+        type: partial
+    universe:
+        label: Вселенная
+        type: relation
+        nameFrom: name
+        emptyOption: '-- Выберите вселенную --'
+    book_series:
+        label: 'Выберите серию'
+        span: full
+        dependsOn:
+            - universe
+        type: dropdown
+        options: listSeries
+        emptyOption: '-- no status --'
+    number_in_series:
+        label: 'Номер в серии'
+        type: number
+    annotations:
+        label: Аннотация
+        type: richeditor
+    cover:
+        label: 'Добавьте обложку'
+        mode: image
+        span: full
+        type: mediafinder
+    editions:
+        label: Издания
+        prompt: 'Добавить издание'
+        span: auto
+        type: repeater
+        form:
+            fields:
+                cover:
+                    label: Обложка
+                    mode: file
+                    span: auto
+                    type: mediafinder
+                isbn:
+                    label: isbn
+                    span: auto
+                    type: text
+                publisher:
+                    label: Relation
+                    span: auto
+                    nameFrom: name
+                    descriptionFrom: description
+                    type: relation
