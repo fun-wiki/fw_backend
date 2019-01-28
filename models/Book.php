@@ -1,7 +1,8 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
-use Db;
+use Spatie\QueryBuilder\QueryBuilder;
+
 /**
  * Model
  */
@@ -25,7 +26,7 @@ class Book extends Model
     ];
 
     public $belongsToMany = [
-        'authors' => ['fw\Backend\Models\Person' , 'table' => 'fw_backend_relation_book_person',]
+        'authors' => ['fw\Backend\Models\Person' , 'table' => 'fw_backend_relation_book_person']
     ];
 
 }

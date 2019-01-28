@@ -2,6 +2,7 @@ columns:
     title:
         label: title
         type: text
-    slug:
-        label: slug
-        type: text
+    persons:
+        label: Автор
+        relation: authors
+        select: title

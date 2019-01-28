@@ -24,11 +24,11 @@ fields:
         span: storm
         cssClass: col-sm-12
 
-    personroles: 
+    personroles:
         type: multiselect
         span: storm
         cssClass: col-sm-12
-        
+
     section_info:
         label: Информация
         span: storm
@@ -85,16 +85,17 @@ fields:
             action: hide
             field: is_pseudo
             condition: checked
-    partial1:
+    pseudos:
         label: 'Настоящее имя'
         span: storm
         cssClass: col-sm-12
-        path: field_author
+        path: $/fw/Backend/Controllers/Person/_field_author.htm
         trigger:
             action: show
             field: is_pseudo
             condition: checked
         type: partial
+
     bio:
         label: Биография
         size: large

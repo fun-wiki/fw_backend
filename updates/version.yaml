@@ -237,3 +237,12 @@
 1.0.81:
     - 'Created table fw_backend_relation_book_person'
     - builder_table_create_fw_backend_relation_book_person.php
+1.0.82:
+    - 'Updated table fw_backend_persons_pseudos'
+    - builder_table_update_fw_backend_persons_pseudos_2.php
+1.0.83:
+    - 'Updated table fw_backend_persons_pseudos'
+    - builder_table_update_fw_backend_persons_pseudos_3.php
+1.0.84:
+    - 'Updated table fw_backend_persons_pseudos'
+    - builder_table_update_fw_backend_relation_persons_pseudos.php

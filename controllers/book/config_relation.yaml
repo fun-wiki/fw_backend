@@ -5,8 +5,18 @@
 authors:
     label: Авторы
     view:
-        list: $/fw/backend/models/person/columns.yaml
+        list: $/fw/backend/models/person/columns_authors.yaml
         toolbarButtons: create|add|remove
     manage:
         form: $/fw/backend/models/person/fields.yaml
         list: $/fw/backend/models/person/columns_authors.yaml
+        scope: authors
+        showSearch: true
+
+pseudos:
+    label: Pseudo
+    manage:
+        form: $/fw/backend/models/person/fields.yaml
+    pivot:
+        form: $/fw/backend/models/person/fields.yaml
+

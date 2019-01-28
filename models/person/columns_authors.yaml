@@ -1,14 +1,5 @@
 columns:
-    id:
-        label: id
-        type: number
-        width: 5%
-        align: center
     title:
-        label: title
+        label: Ф.И.О. автора
         type: text
-    personroles:
-        label: roles
-        relation: personroles
-        select: title
-        width: 15%
+        searchable: true

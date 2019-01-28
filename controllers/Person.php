@@ -11,12 +11,12 @@ class Person extends Controller
         'Backend\Behaviors\ReorderController',
         'Backend.Behaviors.RelationController'
     ];
-    
+
     public $listConfig = [
         'default' => 'config_list.yaml',
         'authors' => 'config_list_authors.yaml'
     ];
-    
+
     public $formConfig = 'config_form.yaml';
     public $reorderConfig = 'config_reorder.yaml';
     public $relationConfig = 'config_relation.yaml';
@@ -27,8 +27,4 @@ class Person extends Controller
         BackendMenu::setContext('fw.Backend', 'fw-menu', 'person');
     }
 
-    public function listExtendRecords($records)
-    {
-        dump($records);
-    }
 }
