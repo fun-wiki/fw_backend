@@ -1,0 +1,5 @@
+columns:
+    title:
+        label: Ф.И.О. автора
+        type: text
+        searchable: true

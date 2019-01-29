@@ -1,16 +1,90 @@
 fields:
+    Section_main:
+        label: Запись
+        type: section
+        span: storm
     title:
         label: Название
-        span: full
+        dependsOn:
+            - title_original
+            - title_ru
         type: text
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
     slug:
         label: slug
+        type: text
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
+    Section_info:
+        label: Информация
+        type: section
+    title_original:
+        label: 'Оригинальное название'
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
+        type: text
+    title_ru:
+        label: 'Название (RU)'
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
+        type: text
+    book_type:
+        label: 'Тип книги'
+        span: storm
+        cssClass: 'col-sm-12'
+        type: balloon-selector
+    authors:
+        label: Автор
+        path: field_person
+        type: partial
+    genres:
+        label: Жанр
+        path: genres
+        type: partial
+    universe:
+        label: Вселенная
+        type: relation
+        nameFrom: name
+        emptyOption: '-- Выберите вселенную --'
+    book_series:
+        label: 'Выберите серию'
         span: full
         dependsOn:
-            - content
-        type: text
-    content:
-        label: Информация
-        type: nestedform
-        usePanelStyles: false
-        form: $/fw/Backend/Models/Book/info.yaml
+            - universe
+        type: dropdown
+        options: listSeries
+        emptyOption: '-- no status --'
+    number_in_series:
+        label: 'Номер в серии'
+        type: number
+    annotations:
+        label: Аннотация
+        type: richeditor
+    cover:
+        label: 'Добавьте обложку'
+        mode: image
+        span: full
+        type: mediafinder
+    editions:
+        label: Издания
+        prompt: 'Добавить издание'
+        span: auto
+        type: repeater
+        form:
+            fields:
+                cover:
+                    label: Обложка
+                    mode: file
+                    span: auto
+                    type: mediafinder
+                isbn:
+                    label: isbn
+                    span: auto
+                    type: text
+                publisher:
+                    label: Relation
+                    span: auto
+                    nameFrom: name
+                    descriptionFrom: description
+                    type: relation

@@ -5,18 +5,20 @@
 pseudos:
     label: Люди
     view:
-        list: $/fw/backend/models/person/columns.yaml
+        list:  ~/plugins/fw/backend/models/person/columns_authors.yaml
         toolbarButtons: create|add|remove
     manage:
-        form: $/fw/backend/models/person/fields.yaml
+        form:  ~/plugins/fw/backend/models/person/fields.yaml
+        list:  ~/plugins/fw/backend/models/person/columns_authors.yaml
+        scope: nopseudo
+        showSearch: true
         recordsPerPage: 10
-
 
 genres:
     label: Жанры
     view:
-        list: $/fw/backend/models/genre/columns.yaml
+        list:  ~/plugins/fw/backend/models/genre/columns.yaml
         toolbarButtons: create|add|remove
     manage:
-        form: $/fw/backend/models/genre/fields.yaml
+        form:  ~/plugins/fw/backend/models/genre/fields.yaml
         recordsPerPage: 10

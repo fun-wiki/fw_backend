@@ -30,7 +30,4 @@ class Genre extends Model
         'universes' => ['fw\Backend\Models\Universe', 'table' => 'fw_backend_universes_genres']
     ];
 
-    public $morphOne = [
-        'test' => ['fw\Backend\Models\Test', 'name' => 'content']
-    ];
 }

@@ -22,9 +22,6 @@ fields:
         span: full
         type: relation
         nameFrom: name
-    annotations:
-        label: Аннотация
-        type: richeditor
     book_series:
         label: 'Выберите серию'
         span: full
@@ -36,3 +33,7 @@ fields:
     number_in_series:
         label: Номер в серии
         type: number
+    annotations:
+        label: Аннотация
+        type: richeditor
+

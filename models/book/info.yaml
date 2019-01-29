@@ -1,5 +1,5 @@
 fields:
-    list:
+    literature:
       label: Добавьте произведение
-      path: field_literature
-      type: partial
+      type: relation
+      nameFrom: title

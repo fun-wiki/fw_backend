@@ -26,4 +26,8 @@ class PersonRole extends Model
      */
     public $rules = [
     ];
+
+    public $belongsToMany = [
+        'persons' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_persons_persons_roles']
+    ];
 }

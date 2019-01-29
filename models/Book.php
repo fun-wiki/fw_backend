@@ -1,6 +1,7 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
+use Spatie\QueryBuilder\QueryBuilder;
 
 /**
  * Model
@@ -8,34 +9,61 @@ use Model;
 class Book extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
-    /*
-     * Disable timestamps by default.
-     * Remove this line if timestamps are defined in the database table.
-     */
+
     public $timestamps = false;
 
+    public $table = 'fw_backend_books';
 
-    /**
-     * @var string The database table used by the model.
-     */
-    public $table = 'fw_backend_book';
-
-    /**
-     * @var array Validation rules
-     */
-    public $rules = [
-    ];
+    public $rules = [];
 
     public $jsonable = [
-        'content'
+        'editions'
     ];
 
-    public $hasOne = [
+    public function getBookTypeOptions()
+    {
+        return 'fw\Backend\Models\BookType'::all()->lists('title', 'id');
+    }
+
+    public $belongsTo = [
+        'book_type' =>['fw\Backend\Models\BookType'],
+        'universe' => ['fw\Backend\Models\Universe'],
+        'book_series' => ['fw\Backend\Models\BookSeries']
     ];
 
     public $belongsToMany = [
-        'literature' => ['fw\Backend\Models\Literature', 'table' => 'fw_backend_relation_book_literature']
+        'authors' => ['fw\Backend\Models\Person' , 'table' => 'fw_backend_relation_book_person'],
+        'publisher' => ['fw\Backend\Models\Organisation' , 'table' => 'fw_backend_relation_book_person'],
+        'pseudos' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_relation_persons_pseudos', 'key' => 'person_id', 'otherKey' => 'pseudo_id',],
+        'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_relation_book_genres'],
     ];
+
+    public function listSeries($fieldName, $value, $formData)
+    {
+        $bookseries = [];
+        if (isset($formData->universe->id)) {
+            $collection = Universe::where('id', $formData->universe->id)->get();
+        }
+
+
+        if (isset($collection)) {
+            foreach ($collection[0]->bookseries as $bookserie) {
+                $bookseries[$bookserie->id] = $bookserie->title;
+            }
+        }
+        return $bookseries;
+    }
+
+    public function filterFields($fields, $context = null)
+    {
+        if (isset($fields->title_ru)) {
+            if ($fields->title_ru->value != null) {
+                $fields->title->value = $fields->title_ru->value;
+            } else {
+                $fields->title->value = $fields->title_original->value;
+            }
+            $fields->slug->value = str_slug($fields->title->value);
+        }
+    }
 
 }

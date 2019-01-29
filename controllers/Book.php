@@ -21,4 +21,9 @@ class Book extends Controller
     {
         parent::__construct();
     }
+
+    public function init() {
+        initRelation('\fw\Backend\Models\Person');
+    }
+
 }
