@@ -42,14 +42,21 @@ fields:
         label: Жанр
         path: genres
         type: partial
+    Section_series:
+        label: Информация о серии
+        type: section
+        span: storm
     universe:
         label: Вселенная
         type: relation
         nameFrom: name
         emptyOption: '-- Выберите вселенную --'
+        span: storm
+        cssClass: 'col-sm-5 col-lg-5'
     book_series:
         label: 'Выберите серию'
-        span: full
+        span: storm
+        cssClass: 'col-sm-5 col-lg-5'
         dependsOn:
             - universe
         type: dropdown
@@ -58,6 +65,8 @@ fields:
     number_in_series:
         label: 'Номер в серии'
         type: number
+        span: storm
+        cssClass: 'col-sm-2 col-lg-2'
     annotations:
         label: Аннотация
         type: richeditor

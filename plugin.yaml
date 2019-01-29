@@ -24,10 +24,6 @@ navigation:
                 label: Организации
                 url: fw/backend/organisations
                 icon: icon-sitemap
-            literature:
-                label: Произведения
-                url: fw/backend/literature
-                icon: icon-book
             book:
                 label: Книги
                 url: fw/backend/book
