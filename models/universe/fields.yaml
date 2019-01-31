@@ -44,14 +44,12 @@ fields:
         path: field_genre
         type: partial
     persons:
-        tab: Люди
+        label: Люди
         type: taglist
         mode: relation
         nameFrom: title
-        fieldName: persons
-        valueFrom: persons
     organisations:
-        tab: Организации
+        label: Организации
         type: taglist
         mode: relation
         nameFrom: title
@@ -63,7 +61,3 @@ fields:
         span: full
         size: large
         type: richeditor
-    bookseries:
-        type: relation
-        nameFrom: name_original
-
