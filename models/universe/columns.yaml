@@ -7,3 +7,8 @@ columns:
     name:
         label: name
         type: text
+    complete:
+        label: Готовность
+        type: partial
+        width: 5%
+        path: ~/plugins/fw/backend/models/universe/_complete.htm

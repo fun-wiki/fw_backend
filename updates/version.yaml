@@ -282,3 +282,6 @@
 1.0.96:
     - 'Updated table fw_backend_organisations'
     - builder_table_update_fw_backend_organisations_2.php
+1.0.97:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_7.php
