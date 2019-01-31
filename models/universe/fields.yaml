@@ -43,12 +43,18 @@ fields:
         span: left
         path: field_genre
         type: partial
-    _creators:
-        label: Создатели
-        span: right
-        type: nestedform
-        usePanelStyles: false
-        form: $/fw/backend/models/universe/creators.yaml
+    persons:
+        tab: Люди
+        type: taglist
+        mode: relation
+        nameFrom: title
+        fieldName: persons
+        valueFrom: persons
+    organisations:
+        tab: Организации
+        type: taglist
+        mode: relation
+        nameFrom: title
     Description:
         label: Описание
         span: full

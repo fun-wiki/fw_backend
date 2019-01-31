@@ -270,3 +270,15 @@
 1.0.92:
     - 'Updated table fw_backend_books'
     - builder_table_update_fw_backend_books_10.php
+1.0.93:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_5.php
+1.0.94:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_6.php
+1.0.95:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_8.php
+1.0.96:
+    - 'Updated table fw_backend_organisations'
+    - builder_table_update_fw_backend_organisations_2.php

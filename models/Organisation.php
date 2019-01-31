@@ -21,6 +21,10 @@ class Organisation extends Model
     public $rules = [
     ];
 
+    protected $fillable = [
+        'title'
+    ];
+
     public $belongsToMany = [
         'universe' => ['fw\Backend\Models\Universe', 'table' => 'fw_backend_universes_organisations']
     ];

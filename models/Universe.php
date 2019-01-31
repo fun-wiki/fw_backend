@@ -1,6 +1,7 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
+use Event;
 
 /**
  * Model
@@ -21,6 +22,7 @@ class Universe extends Model
     public $rules = [
     ];
 
+    public $jsonable = ['creators'];
     /**
      * @var string The database table used by the model.
      */
@@ -37,12 +39,13 @@ class Universe extends Model
         'bookseries' => ['fw\Backend\Models\BookSeries']
     ];
 
-    public $belongsTo = [
-        
-    ];
-
-    public function bookseries() {
-        return $this->hasMany('fw\Backend\Models\BookSeries');
+    public function beforeSave()
+    {
+        //$this->persons = $this->creators['persons'];
+        function(\Backend\Widgets\Form $formWidget)
+        { 
+            \Log::info($formWidgets);
+        };
     }
 
 }

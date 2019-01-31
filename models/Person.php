@@ -15,6 +15,10 @@ class Person extends Model
     public $rules = [
     ];
 
+    protected $fillable = [
+        'title'
+    ];
+
     public $table = 'fw_backend_person';
 
     public $belongsToMany = [

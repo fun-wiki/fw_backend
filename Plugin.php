@@ -2,6 +2,7 @@
 
 use System\Classes\PluginBase;
 use Carbon\Carbon;
+use Event;
 
 class Plugin extends PluginBase
 {
@@ -49,6 +50,15 @@ class Plugin extends PluginBase
     array_push($parts, $first);
     $text = implode(" ", $parts);
     return $text;
+  }
+
+  public function boot()
+  {
+    Event::listen('backend.form.extendFields', function($controlLibrary) {
+        $controlLibrary->AddCss([
+            '$/fw/backend/assets/css/style.css',
+        ]);
+    });
   }
 
 }
