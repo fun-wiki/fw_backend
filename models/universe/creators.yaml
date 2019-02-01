@@ -1,8 +1,0 @@
-
-secondaryTabs:
-    fields:
-        organisations:
-            tab: Организации
-            type: taglist
-            mode: relation
-            nameFrom: title

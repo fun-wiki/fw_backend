@@ -1,4 +1,4 @@
-name: Universe
+name: '> Вселенная'
 form: $/fw/backend/models/universe/fields.yaml
 modelClass: fw\Backend\Models\Universe
 defaultRedirect: fw/backend/universe

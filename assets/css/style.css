@@ -2,3 +2,74 @@
     width: 0px !important;
     border: 0 !important
 }
+
+.cover-image {
+    position: relative;
+    min-height: 300px;
+}
+
+.cover-image>.field-mediafinder.style-image-single .find-button {
+    display: block;
+    border: 2px dotted rgba(0, 0, 0, 0.1);
+    position: relative;
+    outline: none;
+    min-height: 300px;
+    width: 100%;
+}
+
+.label-image {
+    position: absolute;
+    bottom: 40px;
+    right: 35px;
+}
+
+.cover-image>.field-mediafinder.style-image-single .find-object {
+    display: none;
+    padding-bottom: 0;
+}
+
+.cover-image>.field-mediafinder.style-image-single .find-object .info {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.5);
+    height: 40px;
+    width: 40%;
+}
+
+
+.cover-image>.field-mediafinder.style-image-single .find-object .info >h4 {
+    margin: 0;
+}
+
+.label-image>.field-mediafinder.style-image-single .find-object .info {
+    position: absolute;
+    margin-top: 30px;
+    padding: 10px 15px;
+    background:rgba(255, 255, 255, 0.5);
+    height: 40px;
+}
+
+.label-image>.field-mediafinder.style-image-single .find-object .info >h4 {
+    margin: 0;
+}
+
+.label-image>.field-mediafinder.style-image-single .find-object .icon-container {
+    display: block;
+    border: none;
+    background: none;
+}
+
+.label-image>.field-mediafinder.style-image-single .find-button {
+    display: block;
+    border: 2px dotted rgba(200, 200, 200, 0.8);
+    position: relative;
+    outline: none;
+}
+
+.wrap {
+    margin: 0;
+    padding: 0;
+}

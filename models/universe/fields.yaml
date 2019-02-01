@@ -1,63 +1,102 @@
 fields:
+
+    Page_info:
+        label: 'Информация о странице'
+        type: section
+        span: storm
+        cssClass: 'col-sm-12 col-lg-12'
+
     name:
-        label: Название вселенной
-        span: full
+        label: 'Название вселенной'
         required: 1
         type: text
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
     name_translate:
-        label: Название вселенной (перевод)
-        span: full
+        label: 'Название вселенной (перевод)'
         type: text
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
     slug:
         label: slug
-        span: full
         defaultFrom: name
         preset:
             field: name
             type: slug
         type: text
+        span: storm
+        cssClass: 'col-sm-12 col-lg-12'
+        hidden: 1
+
     Images:
         label: Изображения
-        span: full
+        span: storm
         type: section
-    logo:
-        label: Логотип
-        mode: image
-        span: auto
-        type: mediafinder
+        cssClass: 'col-sm-12 col-lg-12'
+
+    _images_block_start:
+        type: wrapstart
+        cssClass: wrap row
     cover:
         label: Обложка
         mode: image
-        span: auto
+        imageWidth: '1920'
+        imageHeight: '1080'
+        span: storm
+        cssClass: 'cover-image col-sm-12 col-lg-12'
         type: mediafinder
+    logo:
+        label: Логотип
+        mode: image
+        imageWidth: '300'
+        imageHeight: '200'
+        span: storm
+        cssClass: label-image
+        type: mediafinder
+    _images_block_end:
+        type: wrapend
+
     Info:
         label: Информация
-        span: full
+        span: storm
         type: section
+        cssClass: 'col-sm-12 col-lg-12'
+
     created_year:
-        label: Год (Дата) создания
-        span: full
+        label: 'Год (Дата) создания'
+        span: storm
+        cssClass: 'col-sm-12 col-lg-12'
         type: udatepicker
-    _genres:
-        label: Жанр
-        span: left
-        path: field_genre
-        type: partial
     persons:
         label: Люди
         type: taglist
         mode: relation
         nameFrom: title
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
     organisations:
         label: Организации
         type: taglist
         mode: relation
         nameFrom: title
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
+    genres:
+        label: Жанр
+        type: taglist
+        mode: relation
+        nameFrom: title
+        span: storm
+        cssClass: 'col-sm-12 col-lg-12'
+
     Description:
         label: Описание
         span: full
         type: section
+        span: storm
+        cssClass: 'col-sm-12 col-lg-12'
     description:
-        span: full
+        span: storm
+        cssClass: 'col-sm-12 col-lg-12'
         size: large
         type: richeditor
