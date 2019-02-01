@@ -38,14 +38,4 @@ class Universe extends Model
         'literature' => ['fw\Backend\Models\Literature'],
         'bookseries' => ['fw\Backend\Models\BookSeries']
     ];
-
-    public function beforeSave()
-    {
-        //$this->persons = $this->creators['persons'];
-        function(\Backend\Widgets\Form $formWidget)
-        { 
-            \Log::info($formWidgets);
-        };
-    }
-
 }

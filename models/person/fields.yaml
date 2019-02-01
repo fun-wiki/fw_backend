@@ -89,16 +89,20 @@ fields:
         label: 'Настоящее имя'
         span: storm
         cssClass: col-sm-12
-        path: $/fw/Backend/Controllers/Person/_field_author.htm
         trigger:
             action: show
             field: is_pseudo
             condition: checked
-        type: partial
+        type: taglist
+        mode: relation
 
     bio:
         label: Биография
         size: large
         span: storm
         cssClass: col-sm-12
-        type: richeditor
+        type: richeditor        
+        trigger:
+            action: hide
+            field: is_pseudo
+            condition: checked

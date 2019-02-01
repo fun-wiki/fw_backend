@@ -285,3 +285,6 @@
 1.0.97:
     - 'Updated table fw_backend_universes'
     - builder_table_update_fw_backend_universes_7.php
+1.0.98:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_9.php

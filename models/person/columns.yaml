@@ -15,5 +15,10 @@ columns:
         label: roles
         relation: personroles
         select: title
-        width: 15%
+        width: 20%
+    complete:
+        label: Заполненность
+        type: partial
+        width: 5%
+        path: ~/plugins/fw/backend/models/person/partials/_complete.htm
 
