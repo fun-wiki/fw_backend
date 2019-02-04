@@ -288,3 +288,45 @@
 1.0.98:
     - 'Updated table fw_backend_person'
     - builder_table_update_fw_backend_person_9.php
+1.0.99:
+    - 'Updated table fw_backend_book_series'
+    - builder_table_update_fw_backend_book_series_2.php
+1.0.100:
+    - 'Updated table fw_backend_book_series'
+    - builder_table_update_fw_backend_book_series_3.php
+1.0.101:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_11.php
+1.0.102:
+    - 'Created table fw_backend_literature_type'
+    - builder_table_create_fw_backend_literature_type_2.php
+1.0.103:
+    - 'Updated table fw_backend_literature_type'
+    - builder_table_update_fw_backend_literature_type.php
+1.0.104:
+    - 'Updated table fw_backend_literature_type'
+    - builder_table_update_fw_backend_literature_type_2.php
+1.0.105:
+    - 'Add literature type'
+    - seeder10103.php
+1.0.106:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_12.php
+1.0.107:
+    - 'Created table fw_backend_book_editions'
+    - builder_table_create_fw_backend_book_editions.php
+1.0.108:
+    - 'Updated table fw_backend_book_editions'
+    - builder_table_update_fw_backend_book_editions.php
+1.0.109:
+    - 'Updated table fw_backend_book_editions'
+    - builder_table_update_fw_backend_book_editions_2.php
+1.0.110:
+    - 'Created table fw_backend_relation_book_bookeditions'
+    - builder_table_create_fw_backend_relation_book_bookeditions.php
+1.0.111:
+    - 'Created table fw_backend_relation_bookeditions_universes'
+    - builder_table_create_fw_backend_relation_bookeditions_universes.php
+1.0.112:
+    - 'Updated table fw_backend_book_editions'
+    - builder_table_update_fw_backend_book_editions_3.php

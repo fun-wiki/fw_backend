@@ -3,6 +3,7 @@ fields:
         label: Запись
         type: section
         span: storm
+        cssClass: col-sm-12
     title:
         label: Название
         dependsOn:
@@ -19,6 +20,8 @@ fields:
     Section_info:
         label: Информация
         type: section
+        span: storm
+        cssClass: col-sm-12
     title_original:
         label: 'Оригинальное название'
         span: storm
@@ -29,23 +32,35 @@ fields:
         span: storm
         cssClass: 'col-sm-6 col-lg-6'
         type: text
-    book_type:
-        label: 'Тип книги'
+    literature_type:
+        label: 'Тип произведения'
         span: storm
-        cssClass: 'col-sm-12'
+        cssClass: col-sm-6
         type: balloon-selector
+    release_data:
+        label: 'Дата создания'
+        span: storm
+        cssClass: col-sm-6
+        type: udatepicker
     authors:
         label: Автор
-        path: field_person
-        type: partial
+        type: taglist
+        mode: relation
+        nameFrom: title
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
     genres:
         label: Жанр
-        path: genres
-        type: partial
+        type: taglist
+        mode: relation
+        nameFrom: title
+        span: storm
+        cssClass: 'col-sm-6 col-lg-6'
     Section_series:
-        label: Информация о серии
+        label: 'Информация о серии'
         type: section
         span: storm
+        cssClass: col-sm-12
     universe:
         label: Вселенная
         type: relation
@@ -67,33 +82,14 @@ fields:
         type: number
         span: storm
         cssClass: 'col-sm-2 col-lg-2'
+    Section_annotations:
+        label: 'О книге'
+        type: section
+        span: storm
+        cssClass: col-sm-12
     annotations:
         label: Аннотация
         type: richeditor
-    cover:
-        label: 'Добавьте обложку'
-        mode: image
-        span: full
-        type: mediafinder
-    editions:
-        label: Издания
-        prompt: 'Добавить издание'
-        span: auto
-        type: repeater
-        form:
-            fields:
-                cover:
-                    label: Обложка
-                    mode: file
-                    span: auto
-                    type: mediafinder
-                isbn:
-                    label: isbn
-                    span: auto
-                    type: text
-                publisher:
-                    label: Relation
-                    span: auto
-                    nameFrom: name
-                    descriptionFrom: description
-                    type: relation
+        span: storm
+        cssClass: col-sm-12
+

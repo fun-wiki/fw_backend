@@ -21,6 +21,10 @@ class BookSeries extends Model
      */
     public $table = 'fw_backend_book_series';
 
+    public $fillable = [
+        'title'
+    ];
+
     /**
      * @var array Validation rules
      */

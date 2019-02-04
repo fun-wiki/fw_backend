@@ -1,0 +1,16 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+books:
+    label: Содержание
+    view:
+        list:  ~/plugins/fw/backend/models/book/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form:  ~/plugins/fw/backend/models/book/fields.yaml
+        list:  ~/plugins/fw/backend/models/book/columns.yaml
+        scope: universe
+        showSearch: true
+
+

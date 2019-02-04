@@ -25,8 +25,16 @@ navigation:
                 url: fw/backend/organisations
                 icon: icon-sitemap
             book:
-                label: Книги
+                label: Произведения
                 url: fw/backend/book
+                icon: icon-book
+            book-editions:
+                label: Книги
+                url: fw/backend/bookedition
+                icon: icon-book
+            book-series:
+                label: 'Книжные серии'
+                url: fw/backend/bookseries
                 icon: icon-book
     fw-menu-add:
         label: Справочники
@@ -44,8 +52,4 @@ navigation:
             literature_type:
                 label: 'Вид произведения'
                 url: fw/backend/literaturetype
-                icon: icon-book
-            book-series:
-                label: 'Книжные серии'
-                url: fw/backend/bookseries
                 icon: icon-book

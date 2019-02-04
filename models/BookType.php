@@ -12,7 +12,11 @@ class BookType extends Model
     public $rules = [];
 
     public $hasMany = [
-        'book' => ['fw\Backend\Models\Book']
+        'book' => ['fw\Backend\Models\Book'],
+        'book_edition' => BookEdition::class
+    ];
+
+    public $belongsToMany = [
     ];
 
 }

@@ -1,0 +1,42 @@
+fields:
+    title:
+        label: Название
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        type: text
+    cover:
+        label: Обложка
+        mode: image
+        span: full
+        type: mediafinder
+    isbn:
+        label: ISBN
+        span: auto
+        type: text
+    book_type: 
+        label: Тип книги
+        type: balloon-selector
+    release_date:
+        label: 'Дата выхода'
+        span: auto
+        type: udatepicker
+    first_edition:
+        label: 'Первое издание'
+        span: full
+        type: checkbox
+    universes:
+        label: 'Выберите вселенную'
+        type: taglist 
+        mode: relation
+    books:
+        label: Содержание
+        type: partial
+        path: booklist
+    annotations:
+        label: Описание
+        span: full
+        size: ''
+        type: richeditor
