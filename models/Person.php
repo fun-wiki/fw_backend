@@ -10,7 +10,7 @@ class Person extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
-    public $timestamps = false;
+    public $timestamps = true;
 
     public $rules = [
     ];

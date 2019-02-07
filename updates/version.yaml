@@ -333,3 +333,6 @@
 1.0.113:
     - 'Updated table fw_backend_organisations'
     - builder_table_update_fw_backend_organisations_3.php
+1.0.114:
+    - 'Updated table fw_backend_book_editions'
+    - builder_table_update_fw_backend_book_editions_4.php

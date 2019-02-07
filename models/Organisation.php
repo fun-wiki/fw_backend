@@ -10,16 +10,11 @@ class Organisation extends Model
     use \October\Rain\Database\Traits\Validation;
     
 
-    /**
-     * @var string The database table used by the model.
-     */
     public $table = 'fw_backend_organisations';
 
-    /**
-     * @var array Validation rules
-     */
-    public $rules = [
-    ];
+    public $rules = [];
+
+    public $timestamps = true;
 
     protected $fillable = [
         'title'
