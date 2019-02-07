@@ -47,4 +47,13 @@ class BookEdition extends Model
         return Universe::all()->lists('title', 'id');
     }
 
+    public function filterFields($fields, $context = null)
+    {
+        trace_log('filtered');
+    }
+
+    public function beforeSave()
+    {
+        \Log::info($this->books);
+    }
 }

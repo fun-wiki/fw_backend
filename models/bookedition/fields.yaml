@@ -15,9 +15,11 @@ fields:
     isbn:
         label: ISBN
         span: auto
+        dependsOn:
+            - books
         type: text
-    book_type: 
-        label: Тип книги
+    book_type:
+        label: 'Тип книги'
         type: balloon-selector
     release_date:
         label: 'Дата выхода'
@@ -29,14 +31,15 @@ fields:
         type: checkbox
     universes:
         label: 'Выберите вселенную'
-        type: taglist 
+        type: taglist
         mode: relation
     books:
-        label: Содержание
-        type: partial
+        span: full
         path: booklist
+        type: partial
     annotations:
         label: Описание
         span: full
         size: ''
         type: richeditor
+

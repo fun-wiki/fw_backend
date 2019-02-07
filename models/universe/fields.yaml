@@ -18,32 +18,27 @@ fields:
         path: post_toolbar
         cssClass: collapse-visible
 
-tabs:
-    fields:
-        _test:
-            label: gfg
-            type: text
-
 secondaryTabs:
     stretch: true
+    paneCssClass:
+        Информация: paddingTabs
     fields:
 
         _images_block_start:
-            tab: images
+            tab: Обложка
             type: wrapstart
             cssClass: wrap row
         cover:
-            label: Обложка
-            tab: images
+            tab: Обложка
             mode: image
             imageWidth: '1920'
             imageHeight: '1080'
-            span: storm
-            cssClass: 'cover-image col-sm-12 col-lg-12'
+            span: full
+            cssClass: cover-image
             type: mediafinder
         logo:
             label: Логотип
-            tab: images
+            tab: Обложка
             mode: image
             imageWidth: '300'
             imageHeight: '200'
@@ -52,38 +47,33 @@ secondaryTabs:
             type: mediafinder
         _images_block_end:
             type: wrapend
-            tab: images
+            tab: Обложка
+            cssClass: wrap row
 
-        Info:
-            label: Информация
-            tab: images
-            span: storm
-            type: section
-            cssClass: 'col-sm-12 col-lg-12'
         
         name_translate:
-            tab: images
+            tab: Информация
             label: 'Название вселенной (перевод)'
             type: text
             span: storm
             cssClass: 'col-sm-6 col-lg-6'
 
         created_year:
-            tab: images
+            tab: Информация
             label: 'Год (Дата) создания'
             span: storm
-            cssClass: 'col-sm-12 col-lg-12'
+            cssClass: col-sm-6 col-lg-6
             type: udatepicker
         persons:
             label: Люди
-            tab: images
+            tab: Информация
             type: taglist
             mode: relation
             nameFrom: title
             span: storm
             cssClass: 'col-sm-6 col-lg-6'
         organisations:
-            tab: images
+            tab: Информация
             label: Организации
             type: taglist
             mode: relation
@@ -91,7 +81,7 @@ secondaryTabs:
             span: storm
             cssClass: 'col-sm-6 col-lg-6'
         genres:
-            tab: images
+            tab: Информация
             label: Жанр
             type: taglist
             mode: relation
@@ -100,16 +90,8 @@ secondaryTabs:
             cssClass: 'col-sm-12 col-lg-12'
             customTags: false
 
-        Description:
-            tab: images
-            label: Описание
-            span: full
-            type: section
-            span: storm
-            cssClass: 'col-sm-12 col-lg-12'
         description:
-            tab: images
-            span: storm
-            cssClass: 'col-sm-12 col-lg-12'
-            size: large
+            tab: Описание
+            span: full
+            size: huge
             type: richeditor
