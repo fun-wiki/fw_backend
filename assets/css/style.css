@@ -79,18 +79,12 @@
     padding-top: 10px !important;
 }
 
-.fancy-layout .form-tabless-fields {
-    background-color: #35676d;
-}
 
 .fancy-layout .form-tabless-fields input[type=text] {
     padding-left: 10px;
     padding-right: 10px;
 }
 
-.fancy-layout .form-tabless-fields .loading-indicator-container .loading-indicator {
-    background-color: #35676d;
-}
 
 .field-mediafinder.style-image-single .find-object .icon-container {
     border: 0 !important

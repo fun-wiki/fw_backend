@@ -14,5 +14,6 @@ class LiteratureType extends Controller
     public function __construct()
     {
         parent::__construct();
+        BackendMenu::setContext('fw.Backend', 'fw-menu-add', 'literature_type');
     }
 }

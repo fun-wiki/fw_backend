@@ -13,5 +13,6 @@ class PersonRoles extends Controller
     public function __construct()
     {
         parent::__construct();
+        BackendMenu::setContext('fw.Backend', 'fw-menu-add', 'PersonRoles');
     }
 }
