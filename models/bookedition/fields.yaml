@@ -7,39 +7,65 @@ fields:
         label: Slug
         span: auto
         type: text
-    cover:
-        label: Обложка
-        mode: image
-        span: full
-        type: mediafinder
-    isbn:
-        label: ISBN
-        span: auto
-        dependsOn:
-            - books
-        type: text
-    book_type:
-        label: 'Тип книги'
-        type: balloon-selector
-    release_date:
-        label: 'Дата выхода'
-        span: auto
-        type: udatepicker
-    first_edition:
-        label: 'Первое издание'
-        span: full
-        type: checkbox
-    universes:
-        label: 'Выберите вселенную'
-        type: taglist
-        mode: relation
-    books:
-        span: full
-        path: booklist
+    toolbar:
         type: partial
-    annotations:
-        label: Описание
-        span: full
-        size: ''
-        type: richeditor
+        path: post_toolbar
+        cssClass: collapse-visible
+        span: left
+
+secondaryTabs:
+    stretch: true
+    paneCssClass:
+        Информация: paddingTabs
+        Содержание: paddingTabs
+    fields: 
+        cover:
+            label: Обложка
+            tab: Информация
+            mode: image
+            span: storm
+            cssClass: col-sm-2 personPhoto
+            type: mediafinder
+            imageWidth: 150
+            imageHeight: 300
+        book_type:
+            label: 'Тип книги'
+            tab: Информация
+            type: balloon-selector
+            span: storm
+            cssClass: col-sm-10
+        isbn:
+            label: ISBN
+            tab: Информация
+            span: storm
+            cssClass: col-sm-5
+            type: text
+        release_date:
+            label: 'Дата выхода'
+            tab: Информация
+            span: storm
+            cssClass: col-sm-5
+            type: udatepicker
+        universes:
+            label: 'Вселенные'
+            tab: Информация
+            type: taglist
+            mode: relation
+            span: storm
+            cssClass: col-sm-10
+
+        books:
+            tab: Содержание
+            stretch: true
+            span: storm
+            cssClass: col-sm-12
+            path: booklist
+            type: partial
+
+        annotations:
+            tab: Аннотация
+            span: full
+            size: huge
+            stretch: true
+            type: richeditor
 

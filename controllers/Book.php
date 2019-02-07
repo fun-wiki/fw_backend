@@ -20,10 +20,11 @@ class Book extends Controller
     public function __construct()
     {
         parent::__construct();
+        BackendMenu::setContext('fw.Backend', 'fw-menu-add', 'book');
+        
     }
 
     public function init() {
         initRelation('\fw\Backend\Models\Person');
     }
-
 }
