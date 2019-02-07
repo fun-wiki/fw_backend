@@ -345,3 +345,6 @@
 1.0.117:
     - 'Updated table fw_backend_book_editions'
     - builder_table_update_fw_backend_book_editions_7.php
+1.0.118:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_13.php
