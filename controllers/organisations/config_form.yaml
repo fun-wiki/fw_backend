@@ -1,4 +1,4 @@
-name: Organisations
+name: Организация
 form: $/fw/backend/models/organisation/fields.yaml
 modelClass: fw\Backend\Models\Organisation
 defaultRedirect: fw/backend/organisations

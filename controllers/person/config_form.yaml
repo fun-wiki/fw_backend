@@ -1,4 +1,4 @@
-name: Person
+name: Человек
 form: $/fw/backend/models/person/fields.yaml
 modelClass: fw\Backend\Models\Person
 defaultRedirect: fw/backend/person

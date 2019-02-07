@@ -7,6 +7,8 @@ columns:
         label: Название
         type: text
         width: 70%
-    slug:
-        label: slug
-        type: text
+    complete:
+        label: Заполненность
+        type: partial
+        width: 5%
+        path: ~/plugins/fw/backend/models/organisation/partials/_complete.htm

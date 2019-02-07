@@ -1,0 +1,63 @@
+<?
+$complete = 0;
+$num_fields = 0;
+
+
+$fields = $vars['record']->attributes;
+
+// dd($vars['record']);
+
+foreach ($fields as $key => $value) {
+    if ($key === "id") {
+        continue;
+    }
+
+    if ($key === "title") {
+        continue;
+    }
+
+    if ($key === "created_at") {
+        continue;
+    }
+
+    if ($key === "updated_at") {
+        continue;
+    }
+
+    if ($key === "complete") {
+        continue;
+    }
+
+    if ($key === "closed_date") {
+        continue;
+    }
+
+    if ($key === "country") {
+        continue;
+    }
+
+    if ($key === "name_ru") {
+        continue;
+    }
+
+    if ($key === "official_site") {
+        continue;
+    }
+
+    if ($value != null or $value != '') {
+        $complete++;
+    }
+    $num_fields++;
+}
+
+
+
+
+$result = ceil($complete/($num_fields)*100);
+
+\fw\Backend\Models\Organisation::where('id', $vars['record']->id)
+    ->update(['complete' => $result])
+?>
+
+<? echo $result; ?>%
+

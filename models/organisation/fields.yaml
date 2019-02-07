@@ -1,54 +1,76 @@
 fields:
     title:
         label: Заголовок
-        span: full
+        span: left
         preset:
             field: name
             type: ''
         type: text
     slug:
         label: Slug
-        span: full
+        span: right
         defaultFrom: name
         preset:
             field: name
             type: slug
         type: text
-    info:
-        label: Информация
-        span: full
-        type: section
-    name:
-        label: Название
-        span: auto
-        type: text
-    name_ru:
-        label: 'Название (перевод)'
-        span: auto
-        type: text
-    open_date:
-        label: 'Дата образования'
-        span: auto
-        type: text
-    closed_date:
-        label: 'Дата закрытия'
-        mode: date
-        span: auto
-        type: datepicker
-    country:
-        label: Страна
-        span: full
-        type: text
-    description:
-        label: 'Информация об организации'
-        size: large
-        span: full
-        type: richeditor
-    logo:
-        label: Логотип
-        span: auto
-        mode: image
-        prompt: 'Добавить логотип'
-        imageWidth: '300'
-        imageHeight: '300'
-        type: mediafinder
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+        span: left
+
+secondaryTabs:
+    stretch: true
+    paneCssClass:
+        Информация: paddingTabs
+    fields:
+        logo:
+            label: Логотип
+            tab: Информация
+            span: storm
+            cssClass: col-sm-2 personPhoto
+            mode: image
+            prompt: 'Добавить логотип'
+            imageWidth: 150
+            imageHeight: 150
+            type: mediafinder
+        name:
+            label: Название
+            tab: Информация
+            span: storm
+            cssClass: col-sm-10
+            type: text
+        name_ru:
+            label: 'Название (перевод)'
+            tab: Информация
+            span: storm
+            cssClass: col-sm-10
+            type: text
+        open_date:
+            label: 'Дата образования'
+            tab: Информация
+            span: storm
+            cssClass: col-sm-5
+            type: udatepicker
+        closed_date:
+            label: 'Дата закрытия'
+            tab: Информация
+            mode: date
+            span: storm
+            cssClass: col-sm-5
+            type: udatepicker
+        country:
+            label: Страна
+            tab: Информация
+            type: text
+            span: storm
+            cssClass: col-sm-10
+
+        description:
+            tab: Описание
+            size: huge
+            stretch: true
+            span: full
+            type: richeditor
+
