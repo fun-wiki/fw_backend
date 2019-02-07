@@ -336,3 +336,12 @@
 1.0.114:
     - 'Updated table fw_backend_book_editions'
     - builder_table_update_fw_backend_book_editions_4.php
+1.0.115:
+    - 'Updated table fw_backend_book_editions'
+    - builder_table_update_fw_backend_book_editions_5.php
+1.0.116:
+    - 'Updated table fw_backend_book_editions'
+    - builder_table_update_fw_backend_book_editions_6.php
+1.0.117:
+    - 'Updated table fw_backend_book_editions'
+    - builder_table_update_fw_backend_book_editions_7.php

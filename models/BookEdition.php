@@ -54,6 +54,16 @@ class BookEdition extends Model
 
     public function beforeSave()
     {
-        \Log::info($this->books);
+        $books = $this->books;
+        $booksId = [];
+        
+        foreach ($books as $key => $value) {
+            //array_push($booksId, $value['id']);
+            // $bookcollection = \fw\Backend\Models\Book::where('id', $value['id'])->get();
+        }
+
+        // $bookcollection = \fw\Backend\Models\Book::whereIn('id', )->authors;
+
+        //\Log::info($bookcollection);
     }
 }

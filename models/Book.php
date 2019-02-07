@@ -88,5 +88,5 @@ class Book extends Model
         }
         return $query->whereIn('universe_id', $universeId)->get();
     }
-
+    
 }

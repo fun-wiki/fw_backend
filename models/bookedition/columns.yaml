@@ -5,6 +5,7 @@ columns:
     title:
         label: title
         type: text
-    first_edition:
-        label: first_edition
-        type: text
+    authors:
+        label: author
+        type: partial
+        path: ~/plugins/fw/backend/models/bookedition/partials/_authors.htm
