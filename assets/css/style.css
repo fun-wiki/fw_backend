@@ -99,3 +99,20 @@
 .field-mediafinder.style-image-single .find-object .icon-container img {
     border-radius: 0 !important;
 }
+
+.isPseudo {
+    margin-top: 5px;
+}
+
+.personPhoto {
+    height: 300px
+}
+
+.personPhoto>.field-mediafinder.style-image-single .find-button {
+    display: block;
+    border: 2px dotted rgba(0, 0, 0, 0.1);
+    position: relative;
+    outline: none;
+    min-height: 300px;
+    width: 100%;
+}

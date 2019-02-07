@@ -95,3 +95,4 @@ secondaryTabs:
             span: full
             size: huge
             type: richeditor
+            stretch: true

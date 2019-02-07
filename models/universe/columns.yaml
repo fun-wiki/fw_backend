@@ -5,7 +5,7 @@ columns:
         width: 5%
         align: center
     name:
-        label: name
+        label: Название
         type: text
     complete:
         label: Заполненность

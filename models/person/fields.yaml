@@ -2,107 +2,122 @@ fields:
     title:
         label: Запись
         type: text
-        span: storm
-        cssClass: 'col-sm-6 col-lg-6'
+        span: left
     slug:
         label: Slug
         defaultFrom: title
         preset:
             field: title
             type: slug
+        dependsOn:
+            - title
         type: text
-        span: storm
-        cssClass: 'col-sm-6 col-lg-6'
+        span: right
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+        span: left
     is_pseudo:
         label: Псевдоним
         type: switch
-        span: storm
-        cssClass: 'col-sm-12 col-lg-12'
-    section_roles:
-        label: 'Вид деятельности'
-        type: section
-        span: storm
-        cssClass: col-sm-12
+        span: auto
+        cssClass: isPseudo
 
-    personroles:
-        type: multiselect
-        span: storm
-        cssClass: col-sm-12
+secondaryTabs:
+    stretch: true
+    paneCssClass:
+        Информация: paddingTabs
+        Псевдоним: paddingTabs
 
-    section_info:
-        label: Информация
-        span: storm
-        cssClass: col-sm-12
-        type: section
-    photo:
-        label: Фото
-        mode: image
-        imageWidth: '150'
-        imageHeight: '200'
-        span: storm
-        cssClass: col-sm-2
-        type: mediafinder
-        trigger:
-            action: hide
-            field: is_pseudo
-            condition: checked
-    name:
-        label: 'Полное имя'
-        span: storm
-        cssClass: col-sm-10
-        trigger:
-            action: hide
-            field: is_pseudo
-            condition: checked
-        type: text
-    name_translate:
-        label: 'Полное имя (оригинал)'
-        span: storm
-        cssClass: col-sm-10
-        type: text
-        trigger:
-            action: hide
-            field: is_pseudo
-            condition: checked
+    fields:
+        photo:
+            label: Фото
+            tab: Информация
+            mode: image
+            imageWidth: 150
+            imageHeight: 300
+            span: storm
+            cssClass: col-sm-2 personPhoto
+            type: mediafinder
+            trigger:
+                action: hide
+                field: is_pseudo
+                condition: checked
+        name:
+            label: 'Полное имя'
+            tab: Информация
+            span: storm
+            cssClass: col-sm-10
+            trigger:
+                action: hide
+                field: is_pseudo
+                condition: checked
+            type: text
+        name_translate:
+            label: 'Полное имя (оригинал)'
+            tab: Информация
+            span: storm
+            cssClass: col-sm-10
+            type: text
+            trigger:
+                action: hide
+                field: is_pseudo
+                condition: checked
+        birthdate:
+            label: 'Дата рождения'
+            tab: Информация
+            mode: date
+            span: storm
+            cssClass: col-sm-5
+            type: udatepicker
+            trigger:
+                action: hide
+                field: is_pseudo
+                condition: checked
+        deathdata:
+            label: 'Дата смерти'
+            tab: Информация
+            mode: date
+            span: storm
+            cssClass: col-sm-5
+            type: udatepicker
+            trigger:
+                action: hide
+                field: is_pseudo
+                condition: checked
+        personroles:
+            label: Вид деятельности
+            type: multiselect
+            tab: Информация
+            span: storm
+            cssClass: col-sm-10
+            trigger:
+                action: hide
+                field: is_pseudo
+                condition: checked
+                
+        bio:
+            tab: Биография
+            size: huge
+            stretch: true
+            span: full
+            type: richeditor        
+            trigger:
+                action: hide
+                field: is_pseudo
+                condition: checked
 
-    birthdate:
-        label: 'Дата рождения'
-        mode: date
-        span: storm
-        cssClass: col-sm-4
-        type: udatepicker
-        trigger:
-            action: hide
-            field: is_pseudo
-            condition: checked
-    deathdata:
-        label: 'Дата смерти'
-        mode: date
-        span: storm
-        cssClass: col-sm-4
-        type: udatepicker
-        trigger:
-            action: hide
-            field: is_pseudo
-            condition: checked
-    pseudos:
-        label: 'Настоящее имя'
-        span: storm
-        cssClass: col-sm-12
-        trigger:
-            action: show
-            field: is_pseudo
-            condition: checked
-        type: taglist
-        mode: relation
+        pseudos:
+            label: 'Настоящее имя'
+            tab: Псевдоним
+            span: storm
+            cssClass: col-sm-12
+            trigger:
+                action: show
+                field: is_pseudo
+                condition: checked
+            type: taglist
+            mode: relation
 
-    bio:
-        label: Биография
-        size: large
-        span: storm
-        cssClass: col-sm-12
-        type: richeditor        
-        trigger:
-            action: hide
-            field: is_pseudo
-            condition: checked
+
