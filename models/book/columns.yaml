@@ -1,4 +1,6 @@
 columns:
+    id:
+        label: id
     title:
         label: title
         type: text

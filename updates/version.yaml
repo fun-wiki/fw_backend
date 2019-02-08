@@ -348,3 +348,12 @@
 1.0.118:
     - 'Updated table fw_backend_books'
     - builder_table_update_fw_backend_books_13.php
+1.0.119:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_10.php
+1.0.120:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_11.php
+1.0.121:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_12.php

@@ -88,5 +88,30 @@ class Book extends Model
         }
         return $query->whereIn('universe_id', $universeId)->get();
     }
-    
+
+    public function afterSave()
+    {
+        
+        $authors = $this->authors;
+
+        $roles = \fw\Backend\Models\PersonRole::where('title', 'Автор')->first();
+
+        $authorsId = [];
+
+        foreach ($authors as $author) {
+            $pivotData = ["person_id"=>$author->id,"person_role_id"=>$roles->id];
+            
+            if (isset($author->personroles[0])) {
+                foreach ($author->personroles as $role) {
+                    if ($role->id === $roles->id) {
+                        continue;
+                    } else {
+                        $person = \fw\Backend\Models\Person::find($author->id)->personroles()->add($roles, $pivotData);
+                    }
+                }
+            } else {
+                $person = \fw\Backend\Models\Person::find($author->id)->personroles()->add($roles, $pivotData); 
+            }
+        }
+    }
 }

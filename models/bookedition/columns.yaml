@@ -2,10 +2,15 @@ columns:
     id:
         label: id
         type: number
+        width: 5%
     title:
-        label: title
+        label: Название
         type: text
     authors:
-        label: author
+        label: Автор
         type: partial
         path: ~/plugins/fw/backend/models/bookedition/partials/_authors.htm
+    universes:
+        label: Вселенные
+        relation: universes
+        select: name
