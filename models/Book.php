@@ -34,8 +34,8 @@ class Book extends Model
 
     public $belongsToMany = [
         'authors' => ['fw\Backend\Models\Person' , 'table' => 'fw_backend_relation_book_person'],
-        'publisher' => ['fw\Backend\Models\Organisation' , 'table' => 'fw_backend_relation_book_person'],
-        'pseudos' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_relation_persons_pseudos', 'key' => 'person_id', 'otherKey' => 'pseudo_id',],
+        //'publisher' => ['fw\Backend\Models\Organisation' , 'table' => 'fw_backend_relation_book_person'],
+        //'pseudos' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_relation_persons_pseudos', 'key' => 'person_id', 'otherKey' => 'pseudo_id',],
         'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_relation_book_genres'],
         'book_editions' => ['fw\Backend\Models\BookEdition', 'table' => 'fw_backend_relation_book_bookeditions', 'key' => 'book_edition_id', 'otherKey' => 'book_id']
     ];

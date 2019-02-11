@@ -17,7 +17,8 @@ columns:
         width: 15%
     book_series:
         label: Серия
-        valueFrom: title
+        relation: book_series
+        select: title
         width: 15%
     number_in_series:
         label: Номер в серии
