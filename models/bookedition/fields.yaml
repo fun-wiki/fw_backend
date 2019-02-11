@@ -6,6 +6,11 @@ fields:
     slug:
         label: Slug
         span: auto
+        dependsOn:
+            - title
+        preset:
+            field: title
+            type: slug
         type: text
     toolbar:
         type: partial
@@ -18,7 +23,7 @@ secondaryTabs:
     paneCssClass:
         Информация: paddingTabs
         Содержание: paddingTabs
-    fields: 
+    fields:
         cover:
             label: Обложка
             tab: Информация
@@ -29,7 +34,7 @@ secondaryTabs:
             imageWidth: 150
             imageHeight: 300
         book_type:
-            label: 'Тип книги'
+            label: Тип книги
             tab: Информация
             type: balloon-selector
             span: storm
@@ -41,19 +46,18 @@ secondaryTabs:
             cssClass: col-sm-5
             type: text
         release_date:
-            label: 'Дата выхода'
+            label: Дата выхода
             tab: Информация
             span: storm
             cssClass: col-sm-5
             type: udatepicker
         universes:
-            label: 'Вселенные'
+            label: Вселенные
             tab: Информация
             type: taglist
             mode: relation
             span: storm
             cssClass: col-sm-10
-
         books:
             tab: Содержание
             stretch: true
@@ -61,11 +65,9 @@ secondaryTabs:
             cssClass: col-sm-12
             path: booklist
             type: partial
-
         annotations:
             tab: Аннотация
             span: full
             size: huge
             stretch: true
             type: richeditor
-
