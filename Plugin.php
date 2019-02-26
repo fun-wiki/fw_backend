@@ -38,6 +38,7 @@ class Plugin extends PluginBase
   {
     $months = [1 => 'января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
     if (strlen($text) < 5) return $text;
+    if (strlen($text) > 10) { $text = substr($text, 0, 10);}
     $date = Carbon::createFromFormat('Y-m-d', $text);
     $key = $date->format('n');
     return $date->format('d ' . $months[$key] . ' Y');
