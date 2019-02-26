@@ -21,6 +21,10 @@ class News extends Model
     public $rules = [
     ];
 
+    protected $fillable = [
+        'title', 'slug', 'description'
+    ];
+
     public $belongsTo = [
         'universe' => ['fw\Backend\Models\Universe'],
     ];
