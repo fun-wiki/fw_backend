@@ -1,0 +1,23 @@
+columns:
+    id:
+        label: id
+        type: number
+    title:
+        label: title
+        type: text
+    slug:
+        label: slug
+        type: text
+    news_type:
+        label: news_type
+        type: text
+    universe:
+        label: universe
+        relation: universe
+        select: name
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime

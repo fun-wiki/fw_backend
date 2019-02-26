@@ -1,0 +1,50 @@
+fields:
+    title:
+        label: Название
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        type: text
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+        span: left
+secondaryTabs:
+    fields:
+        news_type:
+            tab: Информация
+            label: 'Тип новости'
+            span: storm
+            cssClass: col-sm-12
+            type: dropdown
+            options:
+                news: Новость
+                trailer: Трейлер
+        universe:
+            tab: Информация
+            label: Вселенная
+            span: storm
+            cssClass: col-sm-12
+            type: recordfinder
+            list: ~/plugins/fw/backend/models/universe/columns.yaml
+        cover:
+            label: Изображение
+            mode: image
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            imageWidth: '320'
+            imageHeight: '180'
+            type: fileupload
+            tab: Информация
+            span: storm
+            cssClass: col-sm-12
+        description:
+            tab: Новость
+            size: large
+            span: full
+            type: richeditor

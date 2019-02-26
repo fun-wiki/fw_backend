@@ -1,0 +1,10 @@
+name: News
+form: $/fw/backend/models/news/fields.yaml
+modelClass: fw\Backend\Models\News
+defaultRedirect: fw/backend/news
+create:
+    redirect: 'fw/backend/news/update/:id'
+    redirectClose: fw/backend/news
+update:
+    redirect: fw/backend/news
+    redirectClose: fw/backend/news

@@ -12,6 +12,10 @@ navigation:
         icon: icon-adn
         iconSvg: plugins/fw/backend/assets/images/plugin-logo.svg
         sideMenu:
+            news:
+                label: Новости
+                url: fw/backend/news
+                icon: icon-newspaper-o
             universes:
                 label: Вселенные
                 url: fw/backend/universe
@@ -28,7 +32,6 @@ navigation:
                 label: Книги
                 url: fw/backend/bookedition
                 icon: icon-book
-
     fw-menu-add:
         label: Справочники
         url: fw/backend/genre

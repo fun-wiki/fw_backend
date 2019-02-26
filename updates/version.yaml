@@ -357,3 +357,9 @@
 1.0.121:
     - 'Updated table fw_backend_person'
     - builder_table_update_fw_backend_person_12.php
+1.0.122:
+    - 'Created table fw_backend_news'
+    - builder_table_create_fw_backend_news.php
+1.0.123:
+    - 'Updated table fw_backend_news'
+    - builder_table_update_fw_backend_news.php
