@@ -6,6 +6,12 @@ fields:
     slug:
         label: Slug
         span: auto
+        dependsOn:
+            - title
+        defaultFrom: title
+        preset:
+            field: title
+            type: slug
         type: text
     toolbar:
         type: partial
