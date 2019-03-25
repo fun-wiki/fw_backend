@@ -9,10 +9,12 @@ Route::get('sitemap.xml', function()
         $persons = Person::all();
         $universes = Universe::all();
         $bookEdition = \fw\Backend\Models\BookEdition::all();
+        $news = News::all();
         return Response::view('fw.backend::sitemap', [
             'persons' => $persons, 
             'universes' => $universes,
-            'book_edition' => $bookEdition
+            'book_edition' => $bookEdition,
+            'news' => $news
         ])->header('Content-Type', 'text/xml');
     }
 );

@@ -36,5 +36,18 @@
     </url>
     {% endfor %}
 
+    {% for record in news %}
+    <url>
+        <loc>{{ url('/') }}/news/{{ record.slug }}</loc>
+        {% if record.updated_at %}
+        <lastmod>{{ record.updated_at|date('c') }}</lastmod>
+        {% else %}
+        <lastmod>{{ record.created_at|date('c') }}</lastmod>
+        {% endif %}
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    {% endfor %}
+
 
 </urlset>
