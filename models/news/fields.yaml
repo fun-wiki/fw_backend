@@ -19,12 +19,15 @@ fields:
         cssClass: collapse-visible
         span: left
 secondaryTabs:
+    stretch: true
+    paneCssClass:
+        Информация: paddingTabs
     fields:
         news_type:
             tab: Информация
             label: 'Тип новости'
             span: storm
-            cssClass: col-sm-12
+            cssClass: col-sm-6
             type: dropdown
             options:
                 news: Новость
@@ -33,9 +36,18 @@ secondaryTabs:
             tab: Информация
             label: Вселенная
             span: storm
-            cssClass: col-sm-12
+            cssClass: col-sm-6
             type: recordfinder
             list: ~/plugins/fw/backend/models/universe/columns.yaml
+        link:
+            label: Ссылка на видео
+            tab: Информация
+            span: storm
+            cssClass: col-sm-12
+            trigger:
+                action: show
+                field: news_type
+                condition: value[trailer]
         cover:
             label: Изображение
             mode: image
@@ -49,6 +61,7 @@ secondaryTabs:
             tab: Информация
             span: storm
             cssClass: col-sm-12
+
         description:
             tab: Новость
             size: large
