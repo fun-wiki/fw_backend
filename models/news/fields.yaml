@@ -23,11 +23,25 @@ secondaryTabs:
     paneCssClass:
         Информация: paddingTabs
     fields:
+
+        status:
+            tab: Информация
+            label: Статус
+            required: true
+            type: balloon-selector
+            options:
+                1: Опубликовано
+                2: Скрыт
+                3: Черновик
+            span: storm
+            default: 1
+            cssClass: col-sm-4
+
         news_type:
             tab: Информация
             label: 'Тип новости'
             span: storm
-            cssClass: col-sm-6
+            cssClass: col-sm-4
             type: dropdown
             options:
                 news: Новость
@@ -36,9 +50,10 @@ secondaryTabs:
             tab: Информация
             label: Вселенная
             span: storm
-            cssClass: col-sm-6
+            cssClass: col-sm-4
             type: recordfinder
             list: ~/plugins/fw/backend/models/universe/columns.yaml
+        
         link:
             label: Ссылка на видео
             tab: Информация

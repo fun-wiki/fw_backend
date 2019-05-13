@@ -1,10 +1,9 @@
 plugin:
-    name: 'fw.backend::lang.plugin.name'
+    name: 'fun-wiki.ru backend'
     description: 'fun-wiki backend'
     author: fun-wiki
     icon: oc-icon-database
-    iconSvg: plugins/fw/backend/assets/images/plugin-logo.svg
-    homepage: ''
+    homepage: 'http://fun-wiki.ru'
 navigation:
     fw-menu:
         label: Энциклопедия

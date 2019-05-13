@@ -28,4 +28,12 @@ class News extends Controller
         $this->bodyClass = 'compact-container';
         return $this->asExtension('FormController')->update($recordId);
     }
+
+    /**
+    *  Связываем новость с пользователем перед созданием новости
+    */
+    public function formBeforeCreate($model)
+    {
+        $model->user_id = $this->user->id;
+    }
 }
