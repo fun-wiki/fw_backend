@@ -383,3 +383,6 @@
     - builder_table_update_fw_backend_news_8.php
 1.0.130:
     - 'add composer packages'
+1.0.131:
+    - 'Updated table fw_backend_news'
+    - builder_table_update_fw_backend_news_9.php
