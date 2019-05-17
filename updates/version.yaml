@@ -381,3 +381,5 @@
 1.0.129:
     - 'Updated table fw_backend_news'
     - builder_table_update_fw_backend_news_8.php
+1.0.2:
+    - 'add composer packages'
