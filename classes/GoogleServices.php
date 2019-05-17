@@ -22,7 +22,7 @@ class GoogleServices
         $analytics = self::initializeAnalytics();
 
         $data = $analytics->data_ga->get(
-            'ga:183243648', '2009-01-01', date('Y-m-d'), 'ga:visitors', array(
+            'ga:183243648', '2009-01-01', date('Y-m-d'), 'ga:pageviews', array(
             'dimensions' => 'ga:pagePath',
             'filters' => 'ga:pagePath=='.$page,
         ));
