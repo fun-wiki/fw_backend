@@ -3,7 +3,7 @@
 use \Fw\Backend\Models\Person;
 use \Fw\Backend\Models\Universe;
 use \Fw\Backend\Models\News;
-use \Fw\Backend\Classes\GoogleServices;
+// use \Fw\Backend\Classes\GoogleServices;
 
 Route::get('sitemap.xml', function()
     {
