@@ -1,4 +1,6 @@
 {
+    "name": "fw/Backend",
+    "description": "October CMS",
     "require": {
         "google/apiclient": "^2.0"
     }
