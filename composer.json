@@ -1,5 +1,6 @@
 {
     "require": {
-        "spatie/laravel-query-builder": "^1.13"
+        "spatie/laravel-query-builder": "^1.13",
+        "google/apiclient": "^2.0"
     }
 }
