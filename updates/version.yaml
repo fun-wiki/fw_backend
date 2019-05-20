@@ -386,3 +386,15 @@
 1.0.131:
     - 'Updated table fw_backend_news'
     - builder_table_update_fw_backend_news_9.php
+1.0.132:
+    - 'Created table fw_backend_videogame'
+    - builder_table_create_fw_backend_videogame.php
+1.0.133:
+    - 'Updated table fw_backend_videogame'
+    - builder_table_update_fw_backend_videogame.php
+1.0.134:
+    - 'Updated table fw_backend_videogame'
+    - builder_table_update_fw_backend_videogame_2.php
+1.0.135:
+    - 'Updated table fw_backend_videogame'
+    - builder_table_update_fw_backend_videogames.php

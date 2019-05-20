@@ -1,0 +1,10 @@
+name: Videogame
+form: $/fw/backend/models/videogame/fields.yaml
+modelClass: fw\Backend\Models\Videogame
+defaultRedirect: fw/backend/videogame
+create:
+    redirect: 'fw/backend/videogame/update/:id'
+    redirectClose: fw/backend/videogame
+update:
+    redirect: fw/backend/videogame
+    redirectClose: fw/backend/videogame

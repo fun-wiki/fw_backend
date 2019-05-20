@@ -31,6 +31,10 @@ navigation:
                 label: Книги
                 url: fw/backend/bookedition
                 icon: icon-book
+            videogame:
+                label: Видеоигры
+                url: fw/backend/videogame
+                icon: icon-gamepad
     fw-menu-add:
         label: Справочники
         url: fw/backend/genre

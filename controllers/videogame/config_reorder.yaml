@@ -1,0 +1,4 @@
+title: Videogame
+modelClass: fw\Backend\Models\Videogame
+toolbar:
+    buttons: reorder_toolbar
