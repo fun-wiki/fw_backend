@@ -3,14 +3,18 @@
 use Model;
 use Illuminate\Support\Carbon;
 
+
 /**
  * Model
  */
 class News extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \Fw\Backend\Traits\Permalink;
     
     public $table = 'fw_backend_news';
+
+    protected $permalink = 'news/:slug';
 
     public $rules = [
     ];
