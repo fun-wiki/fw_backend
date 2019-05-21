@@ -1,0 +1,19 @@
+columns:
+    permalink_id:
+        label: permalink_id
+        type: text
+    model:
+        label: model
+        type: text
+    model_id:
+        label: model_id
+        type: number
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime

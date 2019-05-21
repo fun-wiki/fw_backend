@@ -1,0 +1,10 @@
+name: Permalink
+form: $/fw/backend/models/permalink/fields.yaml
+modelClass: fw\Backend\Models\Permalink
+defaultRedirect: fw/backend/permalink
+create:
+    redirect: 'fw/backend/permalink/update/:id'
+    redirectClose: fw/backend/permalink
+update:
+    redirect: fw/backend/permalink
+    redirectClose: fw/backend/permalink

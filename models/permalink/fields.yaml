@@ -1,0 +1,5 @@
+fields:
+    permalink:
+        label: Permalink
+        span: full
+        type: text

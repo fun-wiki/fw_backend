@@ -398,3 +398,21 @@
 1.0.135:
     - 'Updated table fw_backend_videogame'
     - builder_table_update_fw_backend_videogames.php
+1.0.136:
+    - 'Created table fw_backend_permalinks'
+    - builder_table_create_fw_backend_permalinks.php
+1.0.137:
+    - 'Updated table fw_backend_permalinks'
+    - builder_table_update_fw_backend_permalinks.php
+1.0.138:
+    - 'Updated table fw_backend_permalinks'
+    - builder_table_update_fw_backend_permalinks_2.php
+1.0.139:
+    - 'Updated table fw_backend_permalinks'
+    - builder_table_update_fw_backend_permalinks_3.php
+1.0.140:
+    - 'Updated table fw_backend_permalinks'
+    - builder_table_update_fw_backend_permalinks_4.php
+1.0.141:
+    - 'Updated table fw_backend_permalinks'
+    - builder_table_update_fw_backend_permalinks_5.php

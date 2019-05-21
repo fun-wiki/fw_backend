@@ -1,6 +1,7 @@
 <?php namespace Fw\Backend\Traits;
 
 use Exception;
+use Fw\Backend\Models\Permalink as Permalinks;
 
 trait Permalink
 {
@@ -18,7 +19,9 @@ trait Permalink
             ));
         }
 
+
         static::extend(function($model) {
+            $model->morphOne['permalinked'] = ['Fw\Backend\Models\Permalink', 'name' => 'permalinks'];
             $model->bindEvent('model.afterSave', function() use ($model) {
                 $model->createPermalink();
             });
@@ -52,7 +55,12 @@ trait Permalink
             $fulllink = $fulllink.'/'.$param;
         }
         
-        trace_log($fulllink);
+        //trace_log($fulllink);
+        $model_name = get_class($this);
+
+        //trace_log($model_name);
+
+        //trace_log(new Permalinks->$this);
     }
 }
 

@@ -60,3 +60,7 @@ navigation:
                 label: 'Книжные серии'
                 url: fw/backend/bookseries
                 icon: icon-book
+            permalinks:
+                label: 'Постоянные ссылки'
+                url: fw/backend/permalink
+                icon: icon-sitemap
