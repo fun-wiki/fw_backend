@@ -33,13 +33,11 @@ class News extends Model
     ];
 
     public $morphOne = [
-        'contentable' => ['Fw\Backend\Models\Content', 'name' => 'content']
+        'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
     ];
 
-    public function afterSave()
+    public function beforeCreate()
     {
-        trace_log($this->contentable);
-
         if (!isset($this->user_id) || empty($this->user_id)) {
             $this->user_id = 0;
         }

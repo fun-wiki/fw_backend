@@ -30,7 +30,7 @@ class Content extends Model
     ];
 
     public $morphTo = [
-        'content' => []
+        'contentable' => []
     ];
 
     public function beforeSave()

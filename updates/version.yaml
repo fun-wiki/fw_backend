@@ -425,3 +425,15 @@
 1.0.144:
     - 'Updated table fw_backend_content'
     - builder_table_update_fw_backend_content_2.php
+1.0.145:
+    - 'Updated table fw_backend_news'
+    - builder_table_update_fw_backend_news_10.php
+1.0.146:
+    - 'Created table fw_backend_test'
+    - builder_table_create_fw_backend_test_2.php
+1.0.147:
+    - 'Updated table fw_backend_content'
+    - builder_table_update_fw_backend_content_3.php
+1.0.148:
+    - 'Updated table fw_backend_content'
+    - builder_table_update_fw_backend_content_4.php

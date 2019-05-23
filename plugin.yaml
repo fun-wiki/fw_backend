@@ -68,3 +68,8 @@ navigation:
         label: Контент
         url: fw/backend/content
         icon: icon-archive
+        sideMenu:
+            test:
+                label: test
+                url: fw/backend/test
+                icon: icon-sitemap

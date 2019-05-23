@@ -2,6 +2,7 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use fw\Backend\Models\Content;
 
 class News extends Controller
 {
@@ -20,6 +21,7 @@ class News extends Controller
     public function create()
     {
         $this->bodyClass = 'compact-container';
+
         return $this->asExtension('FormController')->create();
     }
 
@@ -42,16 +44,16 @@ class News extends Controller
         $config = $this->makeConfig('$/fw/backend/models/content/fields.yaml');
 
         foreach ($config->fields as $field => $options) {
-            $form->addTabFields([
-                'contentable['.$field.']' => $options + ['tab' => 'Meta']
+            $form->addFields([
+                'content['.$field.']' => $options
             ]);
         }
     }
 
     public function formExtendModel($model)
     {
-        if (!$model->contentable) {
-            $model->contentable = new \Fw\Backend\Models\Content;
+        if (!$model->content) {
+            $model->content = new Content;
         }
 
         return $model;

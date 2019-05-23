@@ -11,8 +11,8 @@ columns:
     status:
         label: status
         type: number
-    content_type:
-        label: content_type
+    contentable_type:
+        label: contentable_type
         type: text
     created_at:
         label: created_at
@@ -26,3 +26,9 @@ columns:
     deleted_at:
         label: deleted_at
         type: datetime
+    author_id:
+        label: author_id
+        type: number
+    contentable_id:
+        label: contentable_id
+        type: number

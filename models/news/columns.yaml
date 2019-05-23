@@ -2,12 +2,14 @@ columns:
     id:
         label: id
         type: number
-    title:
+    content:
         label: title
-        type: text
-    slug:
+        relation: content
+        select: title
+    permalink:
         label: slug
-        type: text
+        relation: content
+        select: permalink
     news_type:
         label: news_type
         type: text

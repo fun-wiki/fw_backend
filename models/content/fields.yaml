@@ -1,12 +1,20 @@
 fields:
     title:
         label: Название
-        span: full
-        dependsOn:
-            - title
-        defaultFrom: title
+        span: auto
         type: text
     permalink:
         label: Постоянная ссылка
-        span: full
+        span: auto
+        dependsOn:
+            - title
+        defaultFrom: title
+        preset:
+            field: title
+            type: slug
         type: text
+    toolbar:
+        type: partial
+        path: post_toolbar
+        cssClass: collapse-visible
+        span: left
