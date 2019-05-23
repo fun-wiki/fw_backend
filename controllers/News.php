@@ -36,4 +36,24 @@ class News extends Controller
     {
         $model->user_id = $this->user->id;
     }
+
+    public function formExtendFields($form)
+    {
+        $config = $this->makeConfig('$/fw/backend/models/content/fields.yaml');
+
+        foreach ($config->fields as $field => $options) {
+            $form->addTabFields([
+                'contentable['.$field.']' => $options + ['tab' => 'Meta']
+            ]);
+        }
+    }
+
+    public function formExtendModel($model)
+    {
+        if (!$model->contentable) {
+            $model->contentable = new \Fw\Backend\Models\Content;
+        }
+
+        return $model;
+    }
 }

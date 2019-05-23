@@ -1,0 +1,4 @@
+title: Content
+modelClass: fw\Backend\Models\Content
+toolbar:
+    buttons: reorder_toolbar

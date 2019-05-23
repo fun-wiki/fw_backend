@@ -64,3 +64,7 @@ navigation:
                 label: 'Постоянные ссылки'
                 url: fw/backend/permalink
                 icon: icon-sitemap
+    Content:
+        label: Контент
+        url: fw/backend/content
+        icon: icon-archive

@@ -1,0 +1,12 @@
+fields:
+    title:
+        label: Название
+        span: full
+        dependsOn:
+            - title
+        defaultFrom: title
+        type: text
+    permalink:
+        label: Постоянная ссылка
+        span: full
+        type: text

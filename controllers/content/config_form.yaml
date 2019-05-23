@@ -1,0 +1,10 @@
+name: Content
+form: $/fw/backend/models/content/fields.yaml
+modelClass: fw\Backend\Models\Content
+defaultRedirect: fw/backend/content
+create:
+    redirect: 'fw/backend/content/update/:id'
+    redirectClose: fw/backend/content
+update:
+    redirect: fw/backend/content
+    redirectClose: fw/backend/content

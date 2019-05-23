@@ -23,7 +23,6 @@ secondaryTabs:
     paneCssClass:
         Информация: paddingTabs
     fields:
-
         status:
             tab: Информация
             label: Статус

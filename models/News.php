@@ -32,8 +32,14 @@ class News extends Model
         'cover' => 'System\Models\File'
     ];
 
-    public function beforeSave()
+    public $morphOne = [
+        'contentable' => ['Fw\Backend\Models\Content', 'name' => 'content']
+    ];
+
+    public function afterSave()
     {
+        trace_log($this->contentable);
+
         if (!isset($this->user_id) || empty($this->user_id)) {
             $this->user_id = 0;
         }

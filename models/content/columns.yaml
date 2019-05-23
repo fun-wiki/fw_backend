@@ -1,0 +1,28 @@
+columns:
+    id:
+        label: id
+        type: number
+    title:
+        label: title
+        type: text
+    permalink:
+        label: permalink
+        type: text
+    status:
+        label: status
+        type: number
+    content_type:
+        label: content_type
+        type: text
+    created_at:
+        label: created_at
+        type: datetime
+    updated_at:
+        label: updated_at
+        type: datetime
+    published_at:
+        label: published_at
+        type: datetime
+    deleted_at:
+        label: deleted_at
+        type: datetime
