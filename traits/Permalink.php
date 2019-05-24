@@ -2,6 +2,7 @@
 
 use Exception;
 use Fw\Backend\Models\Permalink as Permalinks;
+use Str;
 
 trait Permalink
 {
@@ -21,16 +22,17 @@ trait Permalink
 
 
         static::extend(function($model) {
-            $model->morphOne['permalinked'] = ['Fw\Backend\Models\Permalink', 'name' => 'permalinks'];
-            $model->bindEvent('model.afterSave', function() use ($model) {
-                $model->createPermalink();
-            });
+            // $model->morphOne['permalinked'] = ['Fw\Backend\Models\Permalink', 'name' => 'permalinks'];
+            // $model->bindEvent('model.afterSave', function() use ($model) {
+            //     $model->createPermalink();
+            // });
         });
     }
 
-    public function createPermalink() 
+    public static function createPermalink($model) 
     {
-        $parts = explode('/', $this->permalink);
+        // trace_log($model->permalink);
+        $parts = explode('/', $model->permalink);
 
         $fulllink = '';
 
@@ -40,23 +42,23 @@ trait Permalink
             {
                 $result = preg_split ('/[\s:.]+/', $part);
                 if (isset($result[2])) {
-                    trace_log($result[1]);
-                    trace_log($result[2]);
+                    // trace_log($result[1]);
+                    // trace_log($result[2]);
                     $res = $result[1];
                     $res2 = $result[2];
-                    $param = $this->$res[$res2];
+                    $param = $model->$res[$res2];
                 } else {
-                     $param = $this->{$result[1]};
+                     $param = $model->{$result[1]};
                 }
             } else {
                 $param = $part;
             }
             
-            $fulllink = $fulllink.'/'.$param;
+            $fulllink = $fulllink.'/'.Str::slug($param);
         }
         
-        //trace_log($fulllink);
-        $model_name = get_class($this);
+        // trace_log($fulllink);
+        return $fulllink;
 
         //trace_log($model_name);
 

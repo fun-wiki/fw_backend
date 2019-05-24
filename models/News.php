@@ -2,7 +2,7 @@
 
 use Model;
 use Illuminate\Support\Carbon;
-
+use Event;
 
 /**
  * Model
@@ -12,9 +12,10 @@ class News extends Model
     use \October\Rain\Database\Traits\Validation;
     use \Fw\Backend\Traits\Permalink;
     
+    
     public $table = 'fw_backend_news';
 
-    protected $permalink = 'news/:slug';
+    public $permalink = 'news/:universe.name/:content.title';
 
     public $rules = [
     ];
@@ -45,5 +46,28 @@ class News extends Model
         if ($this->status == 1 && empty($this->published_at)) {
             $this->published_at = Carbon::now();
         }
+    }
+
+    public function beforeSave()
+    {
+        if (!$this->content) {
+            $content = new Content;
+        } else {
+            $content = $this->content;
+        }
+        
+        $content->permalink = \Fw\Backend\Traits\Permalink::createPermalink($this);
+        $content->contentable_id = $this->id;
+
+        $this->content()->add($content);
+    }
+
+    public function filterFields($fields, $context = null)
+    {
+        $fields->{'content[permalink]'}->value = $this->content->permalink;
+    }
+
+    public function afterSave() 
+    {
     }
 }

@@ -39,4 +39,5 @@ class Content extends Model
             $this->author_id = 1;
         }
     }
+
 }
