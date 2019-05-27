@@ -1,7 +1,7 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
-use Spatie\QueryBuilder\QueryBuilder;
+
 
 /**
  * Model
@@ -9,6 +9,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 class Person extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+    use \Fw\Backend\Traits\Contentable;
 
     public $timestamps = true;
 
@@ -18,6 +19,8 @@ class Person extends Model
     protected $fillable = [
         'title'
     ];
+
+    public $contentable=[];
 
     public $table = 'fw_backend_person';
 

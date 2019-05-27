@@ -5,6 +5,8 @@ use BackendMenu;
 
 class Person extends Controller
 {
+    use \Fw\Backend\Traits\Contentable;
+
     public $implement = [
         'Backend\Behaviors\ListController',
         'Backend\Behaviors\FormController',
@@ -20,6 +22,10 @@ class Person extends Controller
     public $formConfig = 'config_form.yaml';
     public $reorderConfig = 'config_reorder.yaml';
     public $relationConfig = 'config_relation.yaml';
+
+    public $contentable = [];
+
+    public $permalink = 'person/:content.title';
 
     public function __construct()
     {
@@ -38,6 +44,7 @@ class Person extends Controller
 
     public function update($recordId)
     {
+        dump($this);
         $this->bodyClass = 'compact-container';
         //$this->addCss('/plugins/rainlab/blog/assets/css/rainlab.blog-preview.css');
         //$this->addJs('/plugins/rainlab/blog/assets/js/post-form.js');
