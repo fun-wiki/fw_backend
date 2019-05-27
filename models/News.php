@@ -1,32 +1,27 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
-use Illuminate\Support\Carbon;
-use Event;
+use Fw\Backend\Traits\Permalink;
 
-/**
- * Model
- */
 class News extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    use \Fw\Backend\Traits\Permalink;
-    
     
     public $table = 'fw_backend_news';
 
-    public $permalink = 'news/:universe.name/:content.title';
+    public $permalink = 'news/:content.title';
 
     public $rules = [
     ];
 
     protected $fillable = [
-        'title', 'slug', 'description'
+        'title',
+        'slug', 
+        'description'
     ];
 
     public $belongsTo = [
         'universe' => ['fw\Backend\Models\Universe'],
-        'user' => ['Backend\Models\User'] 
     ];
 
     public $attachOne = [
@@ -37,17 +32,6 @@ class News extends Model
         'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
     ];
 
-    public function beforeCreate()
-    {
-        if (!isset($this->user_id) || empty($this->user_id)) {
-            $this->user_id = 0;
-        }
-
-        if ($this->status == 1 && empty($this->published_at)) {
-            $this->published_at = Carbon::now();
-        }
-    }
-
     public function beforeSave()
     {
         if (!$this->content) {
@@ -55,19 +39,8 @@ class News extends Model
         } else {
             $content = $this->content;
         }
-        
-        $content->permalink = \Fw\Backend\Traits\Permalink::createPermalink($this);
+        $content->permalink = Permalink::createPermalink($this);
         $content->contentable_id = $this->id;
-
         $this->content()->add($content);
-    }
-
-    public function filterFields($fields, $context = null)
-    {
-        $fields->{'content[permalink]'}->value = $this->content->permalink;
-    }
-
-    public function afterSave() 
-    {
     }
 }

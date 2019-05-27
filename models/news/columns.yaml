@@ -6,7 +6,7 @@ columns:
         label: title
         relation: content
         select: title
-    permalink:
+    permalinked:
         label: slug
         relation: content
         select: permalink
@@ -17,9 +17,25 @@ columns:
         label: universe
         relation: universe
         select: name
+    status:
+        label: status
+        relation: content
+        select: status
     created_at:
         label: created_at
+        relation: content
+        select: created_at
         type: datetime
+        format: d.m.Y -- h:i:s
     updated_at:
         label: updated_at
+        relation: content
+        select: updated_at
         type: datetime
+        format: d.m.Y -- h:i:s
+    published_at:
+        label: published_at
+        relation: content
+        select: published_at
+        type: datetime
+        format: d.m.Y -- h:i:s

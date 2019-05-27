@@ -3,12 +3,19 @@ fields:
         label: Название
         span: auto
         type: text
+        required: true
     permalink:
         label: 'Постоянная ссылка'
         span: auto
         type: text
+    status:
+        label: Статус
+        span: auto
+        type: balloon-selector
+        required: true
+        default: 'draft'
     toolbar:
         type: partial
         path: post_toolbar
         cssClass: collapse-visible
-        span: left
+        span: auto

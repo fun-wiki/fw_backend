@@ -2,6 +2,7 @@ columns:
     id:
         label: id
         type: number
+        width: 5%
     title:
         label: title
         type: text
@@ -14,22 +15,26 @@ columns:
     contentable_type:
         label: contentable_type
         type: text
+    contentable_id:
+        label: contentable_id
+        type: number
     created_at:
         label: created_at
         type: datetime
+        format: d.m.Y -- h:i:s
     updated_at:
         label: updated_at
         type: datetime
+        format: d.m.Y -- h:i:s
     published_at:
         label: published_at
         type: datetime
+        format: d.m.Y -- h:i:s
     deleted_at:
         label: deleted_at
         type: datetime
+        format: d.m.Y -- h:i:s
     author_id:
         label: Автор
         relation: author
         select: login
-    contentable_id:
-        label: contentable_id
-        type: number

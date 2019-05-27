@@ -1,6 +1,29 @@
 .form-control.select2-hidden-accessible {
     width: 0px !important;
-    border: 0 !important
+    border: 0 !important;
+}
+
+.fancy-layout .form-tabless-fields input[type=text] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.control-balloon-selector  {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.fancy-layout .form-buttons {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .cover-image {

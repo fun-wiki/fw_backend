@@ -50,12 +50,16 @@ Route::get('content-news', function () {
             
             if (!$current->content) {
                 $content = new fw\Backend\Models\Content;
+                $content->title = $current->title;
             } else {
                 $content = $current->content;
             }
 
-            $content->title = $current->title;
             $content->permalink = \Fw\Backend\Traits\Permalink::createPermalink($current);
+            $content->status = 'published';
+            $content->created_at = $current->created_at;
+            $content->updated_at = $current->updated_at;
+            $content->published_at = $current->created_at;
             $content->contentable_id = $current->id;
             //$content->save();
 
