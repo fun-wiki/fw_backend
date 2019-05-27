@@ -68,5 +68,30 @@ Route::get('content-news', function () {
     }
     return "News  updated!";
 });
+Route::get('content-universe', function () {
+    
+    $all_old_content = fw\Backend\Models\Universe::all();
 
+    foreach ($all_old_content as $old_content) {
+        $current = fw\Backend\Models\Universe::find($old_content->id);
+
+        if (!$current->content) {
+            $content = new fw\Backend\Models\Content;
+        } else {
+            $content = $current->content;
+        }
+
+        $content->title = $current->name;
+        $content->permalink = \Fw\Backend\Traits\Permalink::createPermalink($current);
+        $content->status = 'published';
+        if ($current->created_at == null) {
+            $current->created_at = $current->updated_at;
+        }
+        $content->created_at = $current->created_at;
+        $content->updated_at = $current->updated_at;
+        $content->contentable_id = $current->id;
+        $current->content()->add($content);
+    }
+    return "Universe updated!";
+});
 ?>

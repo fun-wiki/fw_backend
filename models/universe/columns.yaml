@@ -6,7 +6,16 @@ columns:
         align: center
     name:
         label: Название
-        type: text
+        relation: content
+        select: title
+    permalinked:
+        label: slug
+        relation: content
+        select: permalink
+    status:
+        label: slug
+        relation: content
+        select: status
     complete:
         label: Заполненность
         type: partial

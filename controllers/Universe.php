@@ -2,6 +2,7 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use fw\Backend\Models\Content;
 
 class Universe extends Controller
 {
@@ -37,5 +38,32 @@ class Universe extends Controller
         //$this->addJs('/plugins/rainlab/blog/assets/js/post-form.js');
 
         return $this->asExtension('FormController')->update($recordId);
+    }
+
+        /**
+    *  Связываем новость с пользователем перед созданием новости
+    */
+    public function formBeforeCreate($model)
+    {
+        $model->user_id = $this->user->id;
+    }
+
+    public function formExtendFields($form)
+    {
+        $config = $this->makeConfig('$/fw/backend/models/content/fields.yaml');
+
+        foreach ($config->fields as $field => $options) {
+            $form->addFields([
+                'content['.$field.']' => $options
+            ]);
+        }
+    }
+
+    public function formExtendModel($model)
+    {
+        if (!$model->content) {
+            $model->content = new Content;
+        }
+        return $model;
     }
 }

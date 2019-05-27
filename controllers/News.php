@@ -55,7 +55,6 @@ class News extends Controller
         if (!$model->content) {
             $model->content = new Content;
         }
-
         return $model;
     }
 }
