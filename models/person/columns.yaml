@@ -7,6 +7,16 @@ columns:
     title:
         label: title
         type: text
+        relation: content
+        select: title
+    tag:
+        label: tag
+        type: text
+    permalinks:
+        label: permalink
+        type: text
+        relation: content
+        select: permalink
     is_pseudo:
         label: pseudo
         type: switch

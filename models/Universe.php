@@ -33,6 +33,10 @@ class Universe extends Model
         'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
     ];
 
+    public function getPersonsOptions() {
+        dump ($this);
+    }
+
     public function beforeSave()
     {
         if (!$this->content) {
@@ -42,6 +46,7 @@ class Universe extends Model
         }
         $content->permalink = Permalink::createPermalink($this);
         $content->contentable_id = $this->id;
+        $this->title = $content->title;
         $this->content()->add($content);
     }
 }

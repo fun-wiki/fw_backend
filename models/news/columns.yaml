@@ -6,6 +6,8 @@ columns:
         label: title
         relation: content
         select: title
+    title:
+        label: title
     permalinked:
         label: slug
         relation: content
@@ -16,7 +18,7 @@ columns:
     universe:
         label: universe
         relation: universe
-        select: name
+        select: title
     status:
         label: status
         relation: content

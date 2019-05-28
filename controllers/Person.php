@@ -47,11 +47,6 @@ class Person extends Controller
         return $this->asExtension('FormController')->update($recordId);
     }
 
-    public function formBeforeCreate($model)
-    {
-        $model->user_id = $this->user->id;
-    }
-
     public function formExtendFields($form)
     {
         $config = $this->makeConfig('$/fw/backend/models/content/fields.yaml');

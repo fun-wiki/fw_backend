@@ -170,4 +170,41 @@ Route::get('sitemap.xml', function()
 //     return "Published updated!";
 // });
 
+Route::get('news-title', function () {
+    
+    $all_old_content = fw\Backend\Models\News::all();
+
+    foreach ($all_old_content as $old_content) {
+        $current = fw\Backend\Models\News::find($old_content->id);
+
+        if (!$current->content) {
+            $content = new fw\Backend\Models\Content;
+        } else {
+            $content = $current->content;
+        }
+
+        $current->title = $content->title;
+        $current->save();
+    }
+    return "News title updated!";
+});
+
+Route::get('universe-title', function () {
+    
+    $all_old_content = fw\Backend\Models\Universe::all();
+
+    foreach ($all_old_content as $old_content) {
+        $current = fw\Backend\Models\Universe::find($old_content->id);
+
+        if (!$current->content) {
+            $content = new fw\Backend\Models\Content;
+        } else {
+            $content = $current->content;
+        }
+
+        $current->title = $content->title;
+        $current->save();
+    }
+    return "Universe title updated!";
+});
 ?>

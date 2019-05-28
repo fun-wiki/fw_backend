@@ -43,6 +43,7 @@ class News extends Model
         }
         $content->permalink = Permalink::createPermalink($this);
         $content->contentable_id = $this->id;
+        $this->title = $content->title;
         $this->content()->add($content);
     }
 }

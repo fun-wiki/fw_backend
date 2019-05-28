@@ -446,3 +446,18 @@
 1.0.151:
     - 'Updated table fw_backend_universes'
     - builder_table_update_fw_backend_universes_8.php
+1.0.152:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_13.php
+1.0.153:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_14.php
+1.0.154:
+    - 'Updated table fw_backend_news'
+    - builder_table_update_fw_backend_news_12.php
+1.0.155:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_9.php
+1.0.156:
+    - 'Updated table fw_backend_person'
+    - builder_table_update_fw_backend_person_15.php
