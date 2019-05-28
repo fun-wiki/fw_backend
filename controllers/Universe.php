@@ -43,11 +43,6 @@ class Universe extends Controller
         /**
     *  Связываем новость с пользователем перед созданием новости
     */
-    public function formBeforeCreate($model)
-    {
-        $model->user_id = $this->user->id;
-    }
-
     public function formExtendFields($form)
     {
         $config = $this->makeConfig('$/fw/backend/models/content/fields.yaml');

@@ -10,7 +10,7 @@ class Universe extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
-    public $timestamps = true;
+    public $timestamps = false;
 
     public $rules = [];
 

@@ -443,3 +443,6 @@
 1.0.150:
     - 'Updated table fw_backend_news'
     - builder_table_update_fw_backend_news_11.php
+1.0.151:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_8.php
