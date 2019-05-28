@@ -14,6 +14,8 @@ class News extends Model
     public $rules = [
     ];
 
+    public $timestamps = false;
+
     protected $fillable = [
         'title',
         'slug', 

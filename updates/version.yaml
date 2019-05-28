@@ -440,3 +440,6 @@
 1.0.149:
     - 'Updated table fw_backend_content'
     - builder_table_update_fw_backend_content_5.php
+1.0.150:
+    - 'Updated table fw_backend_news'
+    - builder_table_update_fw_backend_news_11.php

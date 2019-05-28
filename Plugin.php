@@ -4,6 +4,7 @@ use System\Classes\PluginBase;
 use Carbon\Carbon;
 use Event;
 use Backend\Models\User;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 class Plugin extends PluginBase
 {
@@ -61,6 +62,10 @@ class Plugin extends PluginBase
             '$/fw/backend/assets/css/style.css',
         ]);
     });
+
+    Relation::morphMap([
+        'news' => 'Fw\Backend\Models\News'
+    ]);
 
     /**
     * Расширяем модель Пользователей для связи с новостями
