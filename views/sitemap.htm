@@ -49,5 +49,16 @@
     </url>
     {% endfor %}
 
+    {% for record in content %}
+    <url>
+        <loc>{{ record.permalink }}</loc>
+        {% if record.status=='published' %}
+        <lastmod>{{ record.published_at|date('c') }}</lastmod>
+        {% endif %}
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    {% endfor %}
+
 
 </urlset>
