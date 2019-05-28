@@ -1,7 +1,7 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
-
+use Fw\Backend\Traits\Permalink;
 
 /**
  * Model
@@ -9,7 +9,6 @@ use Model;
 class Person extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    use \Fw\Backend\Traits\Contentable;
 
     public $timestamps = true;
 
@@ -20,7 +19,7 @@ class Person extends Model
         'title'
     ];
 
-    public $contentable=[];
+    public $permalink='persons/:content.title';
 
     public $table = 'fw_backend_person';
 
@@ -30,6 +29,10 @@ class Person extends Model
         'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_persons_genres'],
         'universes' => ['fw\Backend\Models\Universe', 'table' => 'fw_backend_universes_persons'],
         'personroles' => ['fw\Backend\Models\PersonRole', 'table' => 'fw_backend_persons_persons_roles']
+    ];
+
+    public $morphOne = [
+        'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
     ];
 
     public function scopeAuthors($query)
@@ -45,6 +48,18 @@ class Person extends Model
     public function scopeNoPseudo($query)
     {
         return $query->where('is_pseudo', '=', '0')->get();
+    }
+
+    public function beforeSave()
+    {
+        if (!$this->content) {
+            $content = new Content;
+        } else {
+            $content = $this->content;
+        }
+        $content->permalink = Permalink::createPermalink($this);
+        $content->contentable_id = $this->id;
+        $this->content()->add($content);
     }
 
 }

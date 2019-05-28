@@ -1,29 +1,3 @@
-fields:
-    title:
-        label: Запись
-        type: text
-        span: left
-    slug:
-        label: Slug
-        defaultFrom: title
-        preset:
-            field: title
-            type: slug
-        dependsOn:
-            - title
-        type: text
-        span: right
-    toolbar:
-        type: partial
-        path: post_toolbar
-        cssClass: collapse-visible
-        span: left
-    is_pseudo:
-        label: Псевдоним
-        type: switch
-        span: auto
-        cssClass: isPseudo
-
 secondaryTabs:
     stretch: true
     paneCssClass:
@@ -64,6 +38,12 @@ secondaryTabs:
                 action: hide
                 field: is_pseudo
                 condition: checked
+        is_pseudo:
+            label: Псевдоним
+            tab: Информация
+            type: switch
+            span: storm
+            cssClass: col-sm-10
         birthdate:
             label: 'Дата рождения'
             tab: Информация
@@ -110,7 +90,7 @@ secondaryTabs:
 
         pseudos:
             label: 'Настоящее имя'
-            tab: Псевдоним
+            tab: Информация
             span: storm
             cssClass: col-sm-12
             trigger:

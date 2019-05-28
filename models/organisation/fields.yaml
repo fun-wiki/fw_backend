@@ -1,25 +1,3 @@
-fields:
-    title:
-        label: Заголовок
-        span: left
-        preset:
-            field: name
-            type: ''
-        type: text
-    slug:
-        label: Slug
-        span: right
-        defaultFrom: name
-        preset:
-            field: name
-            type: slug
-        type: text
-    toolbar:
-        type: partial
-        path: post_toolbar
-        cssClass: collapse-visible
-        span: left
-
 secondaryTabs:
     stretch: true
     paneCssClass:

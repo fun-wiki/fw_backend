@@ -94,4 +94,60 @@ Route::get('content-universe', function () {
     }
     return "Universe updated!";
 });
+
+Route::get('content-person', function () {
+    
+    $all_old_content = fw\Backend\Models\Person::all();
+
+    foreach ($all_old_content as $old_content) {
+        $current = fw\Backend\Models\Person::find($old_content->id);
+
+        if (!$current->content) {
+            $content = new fw\Backend\Models\Content;
+        } else {
+            $content = $current->content;
+        }
+
+        $content->title = $current->title;
+        $content->permalink = \Fw\Backend\Traits\Permalink::createPermalink($current);
+        $content->status = 'published';
+        if ($current->created_at == null) {
+            $current->created_at = $current->updated_at;
+        }
+        $content->created_at = $current->created_at;
+        $content->updated_at = $current->updated_at;
+        $content->published_at = $current->created_at;
+        $content->contentable_id = $current->id;
+        $current->content()->add($content);
+    }
+    return "Person updated!";
+});
+
+Route::get('content-organisation', function () {
+    
+    $all_old_content = fw\Backend\Models\Organisation::all();
+
+    foreach ($all_old_content as $old_content) {
+        $current = fw\Backend\Models\Organisation::find($old_content->id);
+
+        if (!$current->content) {
+            $content = new fw\Backend\Models\Content;
+        } else {
+            $content = $current->content;
+        }
+
+        $content->title = $current->title;
+        $content->permalink = \Fw\Backend\Traits\Permalink::createPermalink($current);
+        $content->status = 'published';
+        if ($current->created_at == null) {
+            $current->created_at = $current->updated_at;
+        }
+        $content->created_at = $current->created_at;
+        $content->updated_at = $current->updated_at;
+        $content->published_at = $current->created_at;
+        $content->contentable_id = $current->id;
+        $current->content()->add($content);
+    }
+    return "Organisation updated!";
+});
 ?>

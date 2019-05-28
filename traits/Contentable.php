@@ -12,6 +12,8 @@ trait Contentable
      * protected $contentable = [];
      */
 
+    protected $model;
+
     public static function bootContentable()
     {
         if (!property_exists(get_called_class(), 'contentable')) {
@@ -34,22 +36,10 @@ trait Contentable
                 $content->contentable_id = $model->id;
                 $model->content()->add($content);
             });
-            $model->bindEvent('page.init', function() use ($controller){
-                $model->user_id = $controller->user->id;
-            })
-        });
-
-        static::extend(function($controller) {
-            trace_log('controller contentable!');
-            $controller->morphOne['content'] = ['Fw\Backend\Models\Content', 'name' => 'contentable'];
-            // dump($controller);
-            //$controller->formBeforeCreate($model);
-            //$controller->formExtendFields($form);
-            //$controller->formExtendModel($model);
         });
     }
 
-    private function formBeforeCreate($model)
+    public function formBeforeCreate($model)
     {
         $model->user_id = $this->user->id;
     }
