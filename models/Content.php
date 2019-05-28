@@ -52,11 +52,11 @@ class Content extends Model
             $this->author_id = 1;
         }
 
-        if ($this->status == 'published') {
-            $this->published_at = Carbon::now();
-        } else {
-            $this->published_at = null;
-        }
+        // if ($this->status == 'published') {
+        //     $this->published_at = Carbon::now();
+        // } else {
+        //     $this->published_at = null;
+        // }
     }
 
 }
