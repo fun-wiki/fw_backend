@@ -150,4 +150,22 @@ Route::get('content-organisation', function () {
     }
     return "Organisation updated!";
 });
+
+Route::get('content-publish', function () {
+    
+    $contents = fw\Backend\Models\Content::all();
+
+    foreach ($contents as $content) {
+        
+        if ($content->status == 'published') {
+            $content->published_at = $content->created_at;
+        } else {
+            $content->published_at = null;
+        };
+
+        $content->save();
+    }
+    return "Published updated!";
+});
+
 ?>
