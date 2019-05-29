@@ -2,22 +2,26 @@ columns:
     id:
         label: id
         type: number
-        width: 5%
+        width: 1%
         align: center
     name:
         label: Название
         relation: content
         select: title
     permalinked:
-        label: slug
+        label: Постоянная ссылка
         relation: content
         select: permalink
+        width: 15%
     status:
-        label: slug
+        label: Статус
         relation: content
         select: status
+        width: 10%
+        align: center
     complete:
         label: Заполненность
         type: partial
         width: 5%
+        align: center
         path: ~/plugins/fw/backend/models/universe/partials/_complete.htm

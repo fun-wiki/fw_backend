@@ -2,42 +2,46 @@ columns:
     id:
         label: id
         type: number
-    content:
-        label: title
+        width: 1%
+        align: center
+    title:
+        label: Заголовок
         relation: content
         select: title
-    title:
-        label: title
-    permalinked:
-        label: slug
-        relation: content
-        select: permalink
     news_type:
-        label: news_type
+        label: Тип новости
         type: text
+        width: 5%
+        align: center
     universe:
-        label: universe
+        label: Вселенная
         relation: universe
         select: title
+        width: 10%
+        align: center
     status:
-        label: status
+        label: Статус
         relation: content
         select: status
+        width: 5%
+        align: center
     created_at:
         label: created_at
         relation: content
         select: created_at
         type: datetime
-        format: d.m.Y -- h:i:s
-    updated_at:
-        label: updated_at
-        relation: content
-        select: updated_at
-        type: datetime
-        format: d.m.Y -- h:i:s
+        format: d.m.Y
+        width: 5%
+        align: center
     published_at:
         label: published_at
         relation: content
         select: published_at
         type: datetime
-        format: d.m.Y -- h:i:s
+        format: d.m.Y
+        width: 5%
+        align: center
+    author:
+        label: Автор
+        width: 5%
+        align: center

@@ -9,26 +9,26 @@ columns:
         type: text
         relation: content
         select: title
-    title:
-        label: title
+    name:
+        label: Полное имя
         type: text
-    permalinks:
-        label: permalink
+    name_translate:
+        label: Полное имя (оригинал)
         type: text
-        relation: content
-        select: permalink
     is_pseudo:
         label: pseudo
         type: switch
         width: 5%
+        align: center
     personroles:
         label: roles
         relation: personroles
         select: title
-        width: 20%
+        width: 15%
     complete:
         label: Заполненность
         type: partial
         width: 5%
+        align: center
         path: ~/plugins/fw/backend/models/person/partials/_complete.htm
 
