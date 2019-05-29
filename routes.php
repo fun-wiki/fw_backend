@@ -1,21 +1,11 @@
 <?php
 
-// use \Fw\Backend\Models\Person;
-// use \Fw\Backend\Models\Universe;
-// use \Fw\Backend\Models\News;
 use \Fw\Backend\Models\Content;
 
 Route::get('sitemap.xml', function()
     {
-        // $persons = Person::all();
-        // $universes = Universe::all();
-        // $bookEdition = \fw\Backend\Models\BookEdition::all();
-        // $news = News::all();
         $content = Content::all();
         return Response::view('fw.backend::sitemap', [
-            // 'persons' => $persons, 
-            // 'universes' => $universes,
-            // 'book_edition' => $bookEdition,
             'content' => $content
         ])->header('Content-Type', 'text/xml');
     }
@@ -153,77 +143,77 @@ Route::get('sitemap.xml', function()
 //     return "Organisation updated!";
 // });
 
-Route::get('content-publish', function () {
+// Route::get('content-publish', function () {
     
-    $contents = fw\Backend\Models\Content::all();
+//     $contents = fw\Backend\Models\Content::all();
 
-    foreach ($contents as $content) {
+//     foreach ($contents as $content) {
         
-        if ($content->status == 'published') {
-            $content->published_at = $content->created_at;
-        } else {
-            $content->published_at = null;
-        };
+//         if ($content->status == 'published') {
+//             $content->published_at = $content->created_at;
+//         } else {
+//             $content->published_at = null;
+//         };
 
-        $content->save();
-    }
-    return "Published updated!";
-});
+//         $content->save();
+//     }
+//     return "Published updated!";
+// });
 
-Route::get('news-title', function () {
+// Route::get('news-title', function () {
     
-    $all_old_content = fw\Backend\Models\News::all();
+//     $all_old_content = fw\Backend\Models\News::all();
 
-    foreach ($all_old_content as $old_content) {
-        $current = fw\Backend\Models\News::find($old_content->id);
+//     foreach ($all_old_content as $old_content) {
+//         $current = fw\Backend\Models\News::find($old_content->id);
 
-        if (!$current->content) {
-            $content = new fw\Backend\Models\Content;
-        } else {
-            $content = $current->content;
-        }
+//         if (!$current->content) {
+//             $content = new fw\Backend\Models\Content;
+//         } else {
+//             $content = $current->content;
+//         }
 
-        $current->title = $content->title;
-        $current->save();
-    }
-    return "News title updated!";
-});
+//         $current->title = $content->title;
+//         $current->save();
+//     }
+//     return "News title updated!";
+// });
 
-Route::get('universe-title', function () {
+// Route::get('universe-title', function () {
     
-    $all_old_content = fw\Backend\Models\Universe::all();
+//     $all_old_content = fw\Backend\Models\Universe::all();
 
-    foreach ($all_old_content as $old_content) {
-        $current = fw\Backend\Models\Universe::find($old_content->id);
+//     foreach ($all_old_content as $old_content) {
+//         $current = fw\Backend\Models\Universe::find($old_content->id);
 
-        if (!$current->content) {
-            $content = new fw\Backend\Models\Content;
-        } else {
-            $content = $current->content;
-        }
+//         if (!$current->content) {
+//             $content = new fw\Backend\Models\Content;
+//         } else {
+//             $content = $current->content;
+//         }
 
-        $current->title = $content->title;
-        $current->save();
-    }
-    return "Universe title updated!";
-});
+//         $current->title = $content->title;
+//         $current->save();
+//     }
+//     return "Universe title updated!";
+// });
 
-Route::get('person-title', function () {
+// Route::get('person-title', function () {
     
-    $all_old_content = fw\Backend\Models\Person::all();
+//     $all_old_content = fw\Backend\Models\Person::all();
 
-    foreach ($all_old_content as $old_content) {
-        $current = fw\Backend\Models\Person::find($old_content->id);
+//     foreach ($all_old_content as $old_content) {
+//         $current = fw\Backend\Models\Person::find($old_content->id);
 
-        if (!$current->content) {
-            $content = new fw\Backend\Models\Content;
-        } else {
-            $content = $current->content;
-        }
+//         if (!$current->content) {
+//             $content = new fw\Backend\Models\Content;
+//         } else {
+//             $content = $current->content;
+//         }
 
-        $current->title = $content->title;
-        $current->save();
-    }
-    return "Person title updated!";
-});
+//         $current->title = $content->title;
+//         $current->save();
+//     }
+//     return "Person title updated!";
+// });
 ?>
