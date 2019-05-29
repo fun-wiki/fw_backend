@@ -3,12 +3,21 @@ columns:
         label: id
         type: number
         width: 5%
-    title:
-        label: Название
+        align: center
+    title_content:
+        label: title
         type: text
-        width: 70%
+        relation: content
+        select: title
+    name:
+        label: Полное имя
+        type: text
+    name_translate:
+        label: Полное имя (оригинал)
+        type: text
     complete:
         label: Заполненность
         type: partial
         width: 5%
-        path: ~/plugins/fw/backend/models/organisation/partials/_complete.htm
+        align: center
+        path: ~/plugins/fw/backend/models/person/partials/_complete.htm
