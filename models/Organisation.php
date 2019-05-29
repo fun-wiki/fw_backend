@@ -14,7 +14,7 @@ class Organisation extends Model
 
     public $rules = [];
 
-    public $timestamps = true;
+    public $timestamps = false;
 
     public $permalink='company/:content.title';
 

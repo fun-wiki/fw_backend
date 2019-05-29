@@ -461,3 +461,6 @@
 1.0.156:
     - 'Updated table fw_backend_person'
     - builder_table_update_fw_backend_person_15.php
+1.0.157:
+    - 'Updated table fw_backend_organisations'
+    - builder_table_update_fw_backend_organisations_4.php
