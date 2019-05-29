@@ -207,4 +207,23 @@ Route::get('universe-title', function () {
     }
     return "Universe title updated!";
 });
+
+Route::get('person-title', function () {
+    
+    $all_old_content = fw\Backend\Models\Person::all();
+
+    foreach ($all_old_content as $old_content) {
+        $current = fw\Backend\Models\Person::find($old_content->id);
+
+        if (!$current->content) {
+            $content = new fw\Backend\Models\Content;
+        } else {
+            $content = $current->content;
+        }
+
+        $current->title = $content->title;
+        $current->save();
+    }
+    return "Person title updated!";
+});
 ?>
