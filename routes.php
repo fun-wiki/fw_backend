@@ -153,22 +153,22 @@ Route::get('sitemap.xml', function()
 //     return "Organisation updated!";
 // });
 
-// Route::get('content-publish', function () {
+Route::get('content-publish', function () {
     
-//     $contents = fw\Backend\Models\Content::all();
+    $contents = fw\Backend\Models\Content::all();
 
-//     foreach ($contents as $content) {
+    foreach ($contents as $content) {
         
-//         if ($content->status == 'published') {
-//             $content->published_at = $content->created_at;
-//         } else {
-//             $content->published_at = null;
-//         };
+        if ($content->status == 'published') {
+            $content->published_at = $content->created_at;
+        } else {
+            $content->published_at = null;
+        };
 
-//         $content->save();
-//     }
-//     return "Published updated!";
-// });
+        $content->save();
+    }
+    return "Published updated!";
+});
 
 Route::get('news-title', function () {
     

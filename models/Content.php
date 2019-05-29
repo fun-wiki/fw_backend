@@ -53,7 +53,9 @@ class Content extends Model
         }
 
         if ($this->status == 'published') {
-            $this->published_at = Carbon::now();
+            if ($this->published_at == null) {
+                $this->published_at = Carbon::now();
+            }
         } else {
             $this->published_at = null;
         }
