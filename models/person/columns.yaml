@@ -25,10 +25,17 @@ columns:
         relation: personroles
         select: title
         width: 15%
+    status:
+        label: Статус
+        relation: content
+        select: status
+        width: 5%
+        align: center
     complete:
         label: Заполненность
         type: partial
         width: 5%
         align: center
         path: ~/plugins/fw/backend/models/person/partials/_complete.htm
+
 
