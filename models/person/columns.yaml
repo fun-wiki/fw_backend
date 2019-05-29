@@ -4,13 +4,13 @@ columns:
         type: number
         width: 5%
         align: center
-    title:
+    title_content:
         label: title
         type: text
         relation: content
         select: title
-    tag:
-        label: tag
+    title:
+        label: title
         type: text
     permalinks:
         label: permalink
