@@ -21,7 +21,9 @@ class Videogame extends Model
     ];
 
     public $belongsTo = [
-        'universe' => 'fw\Backend\Models\Universe'
+        'universe'  => ['fw\Backend\Models\Universe'],
+        'developer' => ['fw\Backend\Models\Organisation'],
+        'publisher' => ['fw\Backend\Models\Organisation']
     ];
 
     public $belongsToMany = [
@@ -70,11 +72,7 @@ class Videogame extends Model
 
     public function afterSave()
     {
-        if (!$this->content) {
-            $content = new Content;
-        } else {
-            $content = $this->content;
-        }
+        $content = $this->content;
         $content->permalink = Permalink::createPermalink($this);
         $this->content()->add($content);
     }

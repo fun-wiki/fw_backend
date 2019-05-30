@@ -51,6 +51,23 @@ secondaryTabs:
             cssClass: 'col-sm-12 col-lg-12'
             customTags: true
             required: 1
+        developer:
+            tab: Информация
+            label: Разработчик
+            span: storm
+            cssClass: col-sm-2
+            type: recordfinder
+            list: ~/plugins/fw/backend/models/organisation/columns.yaml
+            nameFrom: title
+        publisher:
+            tab: Информация
+            label: Издатель
+            span: storm
+            cssClass: col-sm-2
+            type: recordfinder
+            list: ~/plugins/fw/backend/models/organisation/columns.yaml
+            nameFrom: title
+
         created_data:
             tab: Информация
             label: 'Год (Дата) создания'

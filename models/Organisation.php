@@ -16,7 +16,8 @@ class Organisation extends Model
     public $permalink='company/:content.title';
 
     protected $fillable = [
-        'title'
+        'title',
+        'complete'
     ];
 
     public $belongsToMany = [
@@ -27,6 +28,23 @@ class Organisation extends Model
         'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
     ];
 
+    public $hasMany = [
+        'videogames' => 'Fw\Backend\Models\Videogames'
+    ];
+
+    public function beforeSave() {
+
+        if (!$this->content) {
+            $content = new Content;
+        } else {
+            $content = $this->content;
+        }
+
+        if ($content->title) {
+            $this->title = $content->title;
+        }
+    }
+    
     public function afterSave()
     {
         if (!$this->content) {

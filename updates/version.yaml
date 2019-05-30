@@ -502,3 +502,12 @@
 1.0.170:
     - 'Updated table fw_backend_game_types'
     - builder_table_update_fw_backend_game_types_3.php
+1.0.171:
+    - 'Updated table fw_backend_videogames'
+    - builder_table_update_fw_backend_videogames_6.php
+1.0.172:
+    - 'Updated table fw_backend_organisations'
+    - builder_table_update_fw_backend_organisations_5.php
+1.0.173:
+    - 'Updated table fw_backend_videogames'
+    - builder_table_update_fw_backend_videogames_7.php
