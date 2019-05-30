@@ -5,6 +5,7 @@ use Carbon\Carbon;
 use Event;
 use Backend\Models\User;
 use Illuminate\Database\Eloquent\Relations\Relation;
+use buzzingpixel\twigswitch\SwitchTwigExtension;
 
 class Plugin extends PluginBase
 {
@@ -61,6 +62,11 @@ class Plugin extends PluginBase
         $controlLibrary->AddCss([
             '$/fw/backend/assets/css/style.css',
         ]);
+    });
+
+    Event::listen('cms.page.beforeRenderPage', function($controller, $page) {
+        $twig = $controller->getTwig();
+        $twig->addExtension(new SwitchTwigExtension());
     });
 
     Relation::morphMap([

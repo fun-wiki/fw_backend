@@ -2,6 +2,7 @@
     "name": "fw/Backend",
     "description": "October CMS",
     "require": {
-        "google/apiclient": "^2.0"
+        "google/apiclient": "^2.0",
+        "buzzingpixel/twig-switch": "^1.0"
     }
 }
