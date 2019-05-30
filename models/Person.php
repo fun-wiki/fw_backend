@@ -3,17 +3,13 @@
 use Model;
 use Fw\Backend\Traits\Permalink;
 
-/**
- * Model
- */
 class Person extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
     public $timestamps = false;
 
-    public $rules = [
-    ];
+    public $rules = [];
 
     protected $fillable = [
         'title'
@@ -61,8 +57,8 @@ class Person extends Model
         if ($content->title) {
             $this->title = $content->title;
         }
-
     }
+
     public function afterSave()
     {
         
@@ -77,5 +73,4 @@ class Person extends Model
         
         $this->content()->add($content);
     }
-
 }

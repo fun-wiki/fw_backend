@@ -1,0 +1,10 @@
+name: GameType
+form: $/fw/backend/models/gametype/fields.yaml
+modelClass: fw\Backend\Models\GameType
+defaultRedirect: fw/backend/gametype
+create:
+    redirect: 'fw/backend/gametype/update/:id'
+    redirectClose: fw/backend/gametype
+update:
+    redirect: fw/backend/gametype
+    redirectClose: fw/backend/gametype

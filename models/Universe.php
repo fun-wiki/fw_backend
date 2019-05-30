@@ -3,9 +3,6 @@
 use Model;
 use Fw\Backend\Traits\Permalink;
 
-/**
- * Model
- */
 class Universe extends Model
 {
     use \October\Rain\Database\Traits\Validation;
@@ -26,7 +23,7 @@ class Universe extends Model
     public $belongsToMany = [
         'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_universes_genres', 'foreignKey' => 'genre_id'],
         'persons' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_universes_persons'],
-        'organisations' => ['fw\Backend\Models\Organisation', 'table' => 'fw_backend_universes_organisations']
+        'company' => ['fw\Backend\Models\Organisation', 'table' => 'fw_backend_universes_organisations']
     ];
 
     public $morphOne = [
@@ -37,7 +34,7 @@ class Universe extends Model
         dump ($this);
     }
 
-    public function beforeSave()
+    public function afterSave()
     {
         if (!$this->content) {
             $content = new Content;

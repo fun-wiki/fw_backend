@@ -18,7 +18,6 @@ class News extends Model
 
     protected $fillable = [
         'title',
-        'slug', 
         'description'
     ];
 
@@ -34,7 +33,7 @@ class News extends Model
         'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
     ];
 
-    public function beforeSave()
+    public function afterSave()
     {
         if (!$this->content) {
             $content = new Content;

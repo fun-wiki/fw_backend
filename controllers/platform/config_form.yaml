@@ -1,0 +1,10 @@
+name: Platform
+form: $/fw/backend/models/platform/fields.yaml
+modelClass: fw\Backend\Models\Platform
+defaultRedirect: fw/backend/platform
+create:
+    redirect: 'fw/backend/platform/update/:id'
+    redirectClose: fw/backend/platform
+update:
+    redirect: fw/backend/platform
+    redirectClose: fw/backend/platform

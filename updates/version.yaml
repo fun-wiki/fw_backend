@@ -466,3 +466,39 @@
     - builder_table_update_fw_backend_organisations_4.php
 1.0.158:
     - 'Updated switch'
+1.0.159:
+    - 'Updated table fw_backend_videogames'
+    - builder_table_update_fw_backend_videogames_2.php
+1.0.160:
+    - 'Updated table fw_backend_videogames'
+    - builder_table_update_fw_backend_videogames_3.php
+1.0.161:
+    - 'Updated table fw_backend_videogames'
+    - builder_table_update_fw_backend_videogames_4.php
+1.0.162:
+    - 'Created table fw_backend_platform'
+    - builder_table_create_fw_backend_platform.php
+1.0.163:
+    - 'Created table fw_backend_relation_videogames_platforms'
+    - builder_table_create_fw_backend_relation_videogames_platforms.php
+1.0.164:
+    - 'Updated table fw_backend_platform'
+    - builder_table_update_fw_backend_platforms.php
+1.0.165:
+    - 'Updated table fw_backend_videogames'
+    - builder_table_update_fw_backend_videogames_5.php
+1.0.166:
+    - 'Created table fw_backend_game_types'
+    - builder_table_create_fw_backend_game_types.php
+1.0.167:
+    - 'Created table fw_backend_relation_videogames_gametypes'
+    - builder_table_create_fw_backend_relation_videogames_gametypes.php
+1.0.168:
+    - 'Updated table fw_backend_game_types'
+    - builder_table_update_fw_backend_game_types.php
+1.0.169:
+    - 'Updated table fw_backend_game_types'
+    - builder_table_update_fw_backend_game_types_2.php
+1.0.170:
+    - 'Updated table fw_backend_game_types'
+    - builder_table_update_fw_backend_game_types_3.php

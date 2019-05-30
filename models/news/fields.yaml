@@ -19,6 +19,7 @@ secondaryTabs:
             cssClass: col-sm-4
             type: recordfinder
             list: ~/plugins/fw/backend/models/universe/columns.yaml
+            nameFrom: title
         
         link:
             label: Ссылка на видео

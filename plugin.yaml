@@ -60,10 +60,14 @@ navigation:
                 label: 'Книжные серии'
                 url: fw/backend/bookseries
                 icon: icon-book
-            permalinks:
-                label: 'Постоянные ссылки'
-                url: fw/backend/permalink
-                icon: icon-sitemap
+            platform:
+                label: 'Игровые платформы'
+                url: fw/backend/platform
+                icon: icon-windows
+            game-types:
+                label: 'Игровые жанры'
+                url: fw/backend/gametype
+                icon: icon-gamepad
     Content:
         label: Контент
         url: fw/backend/content

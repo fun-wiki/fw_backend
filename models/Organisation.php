@@ -2,14 +2,11 @@
 
 use Model;
 use Fw\Backend\Traits\Permalink;
-/**
- * Model
- */
+
 class Organisation extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
-
     public $table = 'fw_backend_organisations';
 
     public $rules = [];
@@ -30,7 +27,7 @@ class Organisation extends Model
         'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
     ];
 
-    public function beforeSave()
+    public function afterSave()
     {
         if (!$this->content) {
             $content = new Content;

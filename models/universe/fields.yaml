@@ -52,7 +52,7 @@ secondaryTabs:
             nameFrom: title
             span: storm
             cssClass: 'col-sm-6 col-lg-6'
-        organisations:
+        company:
             tab: Информация
             label: Организации
             type: taglist
