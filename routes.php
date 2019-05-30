@@ -216,4 +216,63 @@ Route::get('sitemap.xml', function()
 //     }
 //     return "Person title updated!";
 // });
+
+Route::get('contentable-update', function () {
+    
+    $content = fw\Backend\Models\Content::all();
+
+    foreach ($content as $new_content) {
+        $current = fw\Backend\Models\Content::find($new_content->id);
+
+        if ($current->contentable_type == 'fw\Backend\Models\News') {
+            $current->contentable_type = 'news';
+        } 
+
+        if ($current->contentable_type == 'fw\Backend\Models\Person') {
+            $current->contentable_type = 'person';
+        } 
+
+        if ($current->contentable_type == 'fw\Backend\Models\Organisation') {
+            $current->contentable_type = 'company';
+        } 
+
+        if ($current->contentable_type == 'fw\Backend\Models\Universe') {
+            $current->contentable_type = 'universe';
+        } 
+
+        $current->save();
+    }
+
+   return "Content type updated!";
+});
+
+Route::get('attachment-update', function () {
+    
+    $content = System\Models\File::all();
+
+    foreach ($content as $new_content) {
+        $current = System\Models\File::find($new_content->id);
+
+        if ($current->attachment_type == 'fw\Backend\Models\News') {
+            $current->attachment_type = 'news';
+        } 
+
+        if ($current->attachment_type == 'fw\Backend\Models\Person') {
+            $current->attachment_type = 'person';
+        } 
+
+        if ($current->attachment_type == 'fw\Backend\Models\Organisations') {
+            $current->attachment_type = 'company';
+        } 
+
+        if ($current->attachment_type == 'fw\Backend\Models\Universe') {
+            $current->attachment_type = 'universe';
+        } 
+
+        $current->save();
+    }
+
+   return "Attachment updated!";
+});
+
 ?>
