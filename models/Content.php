@@ -15,7 +15,8 @@ class Content extends Model
     public $rules = [];
 
     public $belongsTo = [
-        'author' => ['Backend\Models\User'] 
+        'author'    => ['Backend\Models\User'],
+        'category'  => ['fw\Backend\Models\Category']
     ];
 
     public $morphTo = [

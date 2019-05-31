@@ -40,6 +40,35 @@ class News extends Model
         } else {
             $content = $this->content;
         }
+
+        if (!$this->universe) {
+
+        }
+
+        // trace_log($this->universe->content->category->id);
+
+        $category_isset = \fw\Backend\Models\Category::where([['parent_id', $this->universe->content->category->id], ['title', 'news']])->get();
+
+        // trace_log($category_isset[0]->id);
+
+        $category = $this->content->category;
+
+        if (!$category)  {
+            if (!isset($category_isset[0]->id)) {
+                $category = new \fw\Backend\Models\Category;
+                $category->title = 'news';
+                $category->parent_id = $this->universe->content->category->id;
+                $category->save();
+            } else {
+                $category = $category_isset[0];
+            }
+        } else {
+            $category = $category_isset[0];
+        }
+
+        // trace_log($category);
+
+        $content->category_id = $category->id;
         $content->permalink = Permalink::createPermalink($this);
         $content->contentable_id = $this->id;
         $this->title = $content->title;

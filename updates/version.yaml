@@ -511,3 +511,24 @@
 1.0.173:
     - 'Updated table fw_backend_videogames'
     - builder_table_update_fw_backend_videogames_7.php
+1.0.174:
+    - 'Created table fw_backend_category'
+    - builder_table_create_fw_backend_category.php
+1.0.175:
+    - 'Updated table fw_backend_category'
+    - builder_table_update_fw_backend_category.php
+1.0.176:
+    - 'Updated table fw_backend_content'
+    - builder_table_update_fw_backend_content_6.php
+1.0.177:
+    - 'Updated table fw_backend_content'
+    - builder_table_update_fw_backend_content_7.php
+1.0.178:
+    - 'Updated table fw_backend_category'
+    - builder_table_update_fw_backend_category_2.php
+1.0.179:
+    - 'Updated table fw_backend_category'
+    - builder_table_update_fw_backend_category_3.php
+1.0.180:
+    - 'Updated table fw_backend_category'
+    - builder_table_update_fw_backend_category_4.php

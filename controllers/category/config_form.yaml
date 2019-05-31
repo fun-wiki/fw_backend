@@ -1,0 +1,10 @@
+name: Category
+form: $/fw/backend/models/category/fields.yaml
+modelClass: fw\Backend\Models\Category
+defaultRedirect: fw/backend/category
+create:
+    redirect: 'fw/backend/category/update/:id'
+    redirectClose: fw/backend/category
+update:
+    redirect: fw/backend/category
+    redirectClose: fw/backend/category

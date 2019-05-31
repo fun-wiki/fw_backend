@@ -19,7 +19,7 @@ class Universe extends Model
         'literature' => ['fw\Backend\Models\Literature'],
         'bookseries' => ['fw\Backend\Models\BookSeries']
     ];
-    
+
     public $belongsToMany = [
         'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_universes_genres', 'foreignKey' => 'genre_id'],
         'persons' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_universes_persons'],
@@ -34,15 +34,26 @@ class Universe extends Model
         dump ($this);
     }
 
-    public function afterSave()
+    public function beforeSave() 
     {
         if (!$this->content) {
-            $content = new Content;
-        } else {
-            $content = $this->content;
+            $this->content = new Content;
         }
+    }
+
+    public function afterSave()
+    {
+        $category = $this->content->category;
+        if (!$category) {
+            $category = new \fw\Backend\Models\Category;
+        }
+        $category->title = $this->content->title;
+        $category->save();
+
+        $content = $this->content;
         $content->permalink = Permalink::createPermalink($this);
         $content->contentable_id = $this->id;
+        $content->category = $category;
         $this->title = $content->title;
         $this->content()->add($content);
     }

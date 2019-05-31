@@ -25,3 +25,5 @@ columns:
         width: 5%
         align: center
         path: ~/plugins/fw/backend/models/universe/partials/_complete.htm
+    category:
+        label: category

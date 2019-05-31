@@ -1,0 +1,19 @@
+list: $/fw/backend/models/category/columns.yaml
+modelClass: fw\Backend\Models\Category
+title: Category
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'fw/backend/category/update/:id'
+
+# Show tree
+showTree: true
+treeExpanded: false
+
+# Custom view path
+customViewPath: $/fw/backend/controllers/category/list

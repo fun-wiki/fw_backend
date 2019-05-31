@@ -1,0 +1,4 @@
+title: Category
+modelClass: fw\Backend\Models\Category
+toolbar:
+    buttons: reorder_toolbar
