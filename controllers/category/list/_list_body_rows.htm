@@ -1,0 +1,6 @@
+<?php foreach ($records as $record): ?>
+    <?= $this->makePartial('list_body_row', ['record' => $record, 'treeLevel' => $treeLevel]) ?>
+    <?php foreach (\fw\Backend\Models\Content::where('category_id', $record->id)->get() as $content): ?>
+        <?= $this->makePartial('list_body_row_content', ['record' => $content, 'treeLevel' => $treeLevel, 'showTree' => false]) ?>
+    <?php endforeach ?>
+<?php endforeach ?>
