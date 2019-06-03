@@ -4,6 +4,8 @@ columns:
         type: number
         width: 1%
         align: center
+    title:
+        label: title
     name:
         label: Название
         relation: content

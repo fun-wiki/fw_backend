@@ -56,18 +56,19 @@ secondaryTabs:
             label: Разработчик
             span: storm
             cssClass: col-sm-2
-            type: recordfinder
-            list: ~/plugins/fw/backend/models/organisation/columns.yaml
+            type: taglist
             nameFrom: title
+            mode: relation
+            customTags: true
         publisher:
             tab: Информация
             label: Издатель
             span: storm
             cssClass: col-sm-2
-            type: recordfinder
-            list: ~/plugins/fw/backend/models/organisation/columns.yaml
+            type: taglist
             nameFrom: title
-
+            mode: relation
+            customTags: true
         created_data:
             tab: Информация
             label: 'Год (Дата) создания'

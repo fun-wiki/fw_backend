@@ -532,3 +532,9 @@
 1.0.180:
     - 'Updated table fw_backend_category'
     - builder_table_update_fw_backend_category_4.php
+1.0.181:
+    - 'Created table fw_backend_relation_videogames_developer'
+    - builder_table_create_fw_backend_relation_videogames_developer.php
+1.0.182:
+    - 'Created table fw_backend_relation_videogames_publisher'
+    - builder_table_create_fw_backend_relation_videogames_publisher.php

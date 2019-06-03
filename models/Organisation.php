@@ -7,6 +7,7 @@ class Organisation extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     
+
     public $table = 'fw_backend_organisations';
 
     public $rules = [];
@@ -32,19 +33,6 @@ class Organisation extends Model
         'videogames' => 'Fw\Backend\Models\Videogames'
     ];
 
-    public function beforeSave() {
-
-        if (!$this->content) {
-            $content = new Content;
-        } else {
-            $content = $this->content;
-        }
-
-        if ($content->title) {
-            $this->title = $content->title;
-        }
-    }
-    
     public function afterSave()
     {
         if (!$this->content) {
@@ -52,8 +40,11 @@ class Organisation extends Model
         } else {
             $content = $this->content;
         }
-        $content->permalink = Permalink::createPermalink($this);
+
+        $content->title = $this->title;
         $content->contentable_id = $this->id;
+        $this->content()->add($content);
+        $content->permalink = Permalink::createPermalink($this);
         $this->content()->add($content);
     }
 }

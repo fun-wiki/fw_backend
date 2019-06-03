@@ -1,8 +1,6 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
-use fw\Backend\Models\Content;
-use Fw\Backend\Traits\Permalink;
 
 class Videogame extends Model
 {
@@ -21,9 +19,7 @@ class Videogame extends Model
     ];
 
     public $belongsTo = [
-        'universe'  => ['fw\Backend\Models\Universe'],
-        'developer' => ['fw\Backend\Models\Organisation'],
-        'publisher' => ['fw\Backend\Models\Organisation']
+        'universe'  => ['fw\Backend\Models\Universe']
     ];
 
     public $belongsToMany = [
@@ -39,6 +35,18 @@ class Videogame extends Model
             'key'      => 'videogame_id',
             'otherKey' => 'gametype_id'
         ],
+        'developer' => [
+            'fw\Backend\Models\Organisation',
+            'table'    => 'fw_backend_relation_videogames_developer',
+            'key'      => 'videogame_id',
+            'otherKey' => 'developer_id'
+        ],
+        'publisher' => [
+            'fw\Backend\Models\Organisation',
+            'table'    => 'fw_backend_relation_videogames_publisher',
+            'key'      => 'videogame_id',
+            'otherKey' => 'publisher_id'
+        ]
     ];
 
     public $attachOne = [
@@ -55,25 +63,13 @@ class Videogame extends Model
 
 
 
-    public function beforeSave() {
-
-        if (!$this->content) {
-            $content = new Content;
-        } else {
-            $content = $this->content;
-        }
-
-        if ($content->title) {
-            $this->title = $content->title;
-        } else {
-            $content->title = $this->title;
-        }
+    public function beforeSave() 
+    {
+        \fw\Backend\Classes\Content::createContent($this);
     }
 
     public function afterSave()
     {
-        $content = $this->content;
-        $content->permalink = Permalink::createPermalink($this);
-        $this->content()->add($content);
+        \fw\Backend\Classes\Content::saveContentWithCategory($this, 'videogames');
     }
 }
