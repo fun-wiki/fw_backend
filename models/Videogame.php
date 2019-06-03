@@ -65,7 +65,7 @@ class Videogame extends Model
 
     public function beforeSave() 
     {
-        \fw\Backend\Classes\Content::createContent($this);
+        \fw\Backend\Classes\Content::bindContent($this);
     }
 
     public function afterSave()

@@ -7,8 +7,15 @@ use fw\Backend\Models\Content as ContentModel;
 class Content
 {
 
-    public static function saveContent(Model $model) {
+    public function __construct()
+    {
+        parent::boot();
+    }
 
+    public static function saveContent($model) {
+        $content = $model->content;
+        $content->permalink = Permalink::createPermalink($model);
+        $model->content()->add($content);
     }
 
     public static function saveContentWithCategory($model, $type) {
@@ -31,12 +38,11 @@ class Content
 
         $content = $model->content;
         $content->category_id = $category->id;
-        $model->content()->add($content);
         $content->permalink = Permalink::createPermalink($model);
         $model->content()->add($content);
     }
 
-    public static function createContent($model) 
+    public static function bindContent($model) 
     {
         if (!$model->content) {
             $content = new ContentModel;
@@ -49,5 +55,7 @@ class Content
         } else {
             $content->title = $model->title;
         }
+
+        $model->content()->add($content);
     }
 }

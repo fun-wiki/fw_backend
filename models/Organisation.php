@@ -33,18 +33,13 @@ class Organisation extends Model
         'videogames' => 'Fw\Backend\Models\Videogames'
     ];
 
+    public function beforeSave() 
+    {
+        \fw\Backend\Classes\Content::bindContent($this);
+    }
+
     public function afterSave()
     {
-        if (!$this->content) {
-            $content = new Content;
-        } else {
-            $content = $this->content;
-        }
-
-        $content->title = $this->title;
-        $content->contentable_id = $this->id;
-        $this->content()->add($content);
-        $content->permalink = Permalink::createPermalink($this);
-        $this->content()->add($content);
+        \fw\Backend\Classes\Content::saveContent($this);
     }
 }
