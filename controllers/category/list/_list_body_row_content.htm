@@ -6,6 +6,13 @@
         <?= $this->makePartial('list_body_checkbox', ['record' => $record]) ?>
     <?php endif ?>
 
+    <?= $this->makePartial('list_body_tree', [
+            'record' => $record,
+            'expanded' => true,
+            'childCount' => null,
+            'content' => true
+    ]) ?>
+
     <?php $index = $url = 0; foreach ($columns as $key => $column): ?>
         <?php $index++; ?>
         <td class="list-cell-index-<?= $index ?> list-cell-name-<?= $column->getName() ?> list-cell-type-<?= $column->type ?> <?= $column->clickable ? '' : 'nolink' ?> <?= $column->getAlignClass() ?> <?= $column->cssClass ?>">
