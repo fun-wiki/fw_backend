@@ -1,7 +1,6 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
-use Fw\Backend\Traits\Permalink;
 
 class Universe extends Model
 {
@@ -36,25 +35,21 @@ class Universe extends Model
 
     public function beforeSave() 
     {
-        if (!$this->content) {
-            $this->content = new Content;
-        }
+        \fw\Backend\Classes\Content::bindContent($this);
     }
 
     public function afterSave()
     {
         $category = $this->content->category;
+        
         if (!$category) {
             $category = new \fw\Backend\Models\Category;
         }
         $category->title = $this->content->title;
         $category->save();
 
-        $content = $this->content;
-        $content->permalink = Permalink::createPermalink($this);
-        $content->contentable_id = $this->id;
-        $content->category = $category;
-        $this->title = $content->title;
-        $this->content()->add($content);
+        $this->content->category_id = $category->id;
+
+        \fw\Backend\Classes\Content::saveContent($this);
     }
 }
