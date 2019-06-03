@@ -46,31 +46,14 @@ class Person extends Model
         return $query->where('is_pseudo', '=', '0')->get();
     }
 
-    public function beforeSave() {
 
-        if (!$this->content) {
-            $content = new Content;
-        } else {
-            $content = $this->content;
-        }
-
-        if ($content->title) {
-            $this->title = $content->title;
-        }
+    public function beforeSave() 
+    {
+        \fw\Backend\Classes\Content::bindContent($this);
     }
 
     public function afterSave()
     {
-        
-        if (!$this->content) {
-            $content = new Content;
-        } else {
-            $content = $this->content;
-        }
-
-        $content->permalink = Permalink::createPermalink($this);
-        $content->contentable_id = $this->id;
-        
-        $this->content()->add($content);
+        \fw\Backend\Classes\Content::saveContent($this);
     }
 }
