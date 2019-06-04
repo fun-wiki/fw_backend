@@ -75,6 +75,13 @@ secondaryTabs:
             span: storm
             cssClass: col-sm-6 col-lg-6
             type: udatepicker
+        series_id:
+            tab: Информация
+            label: series
+            span: storm
+            cssClass: col-sm-6 col-lg-6
+            type: dropinput
+            options: Series
 
         cover:
             label: Изображение

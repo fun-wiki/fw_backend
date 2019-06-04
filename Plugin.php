@@ -19,12 +19,17 @@ class Plugin extends PluginBase
 
   public function registerFormWidgets()
   {
-      return [
-          'Fw\Backend\FormWidgets\Multiselect' => [
-              'label' => 'Multiselect field',
-              'code'  => 'multiselect'
-          ]    
-      ];
+    return 
+    [
+        'Fw\Backend\FormWidgets\Multiselect' => [
+            'label' => 'Multiselect field',
+            'code'  => 'multiselect'
+        ],
+        'Fw\Backend\FormWidgets\DropdownInput' => [
+            'label' => 'Dropdown Input field',
+            'code'  => 'dropinput'
+        ]        
+    ];
   }
 
   public function registerMarkupTags()

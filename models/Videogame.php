@@ -72,4 +72,17 @@ class Videogame extends Model
     {
         \fw\Backend\Classes\Content::saveContentWithCategory($this, 'videogames');
     }
+
+    public static function getSeries($model)
+    {
+        $category = $model->model->content->category_id;
+        // trace_log($category);
+        $series = \fw\Backend\Models\Category::find($category)->children();
+        return $series;
+    }
+
+    public static function setSeries()
+    {
+        return 'ok';
+    }
 }
