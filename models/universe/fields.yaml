@@ -31,12 +31,12 @@ secondaryTabs:
             cssClass: 'col-sm-6 col-lg-6'
             type: text
             tab: Информация
-        created_year:
-            tab: Информация
+        created_at_date:
             label: 'Год (Дата) создания'
             span: storm
             cssClass: 'col-sm-6 col-lg-6'
             type: udatepicker
+            tab: Информация
         persons:
             label: Люди
             tab: Информация
