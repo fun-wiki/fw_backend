@@ -77,7 +77,7 @@ class Plugin extends PluginBase
     Relation::morphMap([
         'news' => 'fw\Backend\Models\News',
         'person' => 'fw\Backend\Models\Person',
-        'company' => 'fw\Backend\Models\Organisations',
+        'company' => 'fw\Backend\Models\Organisation',
         'universe' => 'fw\Backend\Models\Universe',
         'videogame' => 'fw\Backend\Models\Videogame'
     ]);
