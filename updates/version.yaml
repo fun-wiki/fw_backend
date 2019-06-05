@@ -541,3 +541,9 @@
 1.0.183:
     - 'Updated table fw_backend_videogames'
     - builder_table_update_fw_backend_videogames_8.php
+1.0.184:
+    - 'Updated table fw_backend_news'
+    - builder_table_update_fw_backend_news_13.php
+1.0.185:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_10.php
