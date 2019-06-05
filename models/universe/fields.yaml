@@ -1,13 +1,9 @@
 secondaryTabs:
-    stretch: true
-    paneCssClass:
-        Информация: paddingTabs
     fields:
-
         _images_block_start:
             tab: Обложка
             type: wrapstart
-            cssClass: wrap row
+            cssClass: 'wrap row'
         cover:
             tab: Обложка
             mode: image
@@ -28,21 +24,18 @@ secondaryTabs:
         _images_block_end:
             type: wrapend
             tab: Обложка
-            cssClass: wrap row
-
-        
-        name_translate:
-            tab: Информация
+            cssClass: 'wrap row'
+        title_ru:
             label: 'Название вселенной (перевод)'
-            type: text
             span: storm
             cssClass: 'col-sm-6 col-lg-6'
-
+            type: text
+            tab: Информация
         created_year:
             tab: Информация
             label: 'Год (Дата) создания'
             span: storm
-            cssClass: col-sm-6 col-lg-6
+            cssClass: 'col-sm-6 col-lg-6'
             type: udatepicker
         persons:
             label: Люди
@@ -69,7 +62,6 @@ secondaryTabs:
             span: storm
             cssClass: 'col-sm-12 col-lg-12'
             customTags: false
-
         description:
             tab: Описание
             span: full
