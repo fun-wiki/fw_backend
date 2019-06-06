@@ -1,0 +1,8 @@
+<?
+
+$id = $vars['record']->attributes['id'];
+$collection = Backend\Models\User::find($vars['record']->content->author_id);
+
+echo $collection->login;
+    
+?>

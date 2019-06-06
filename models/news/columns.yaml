@@ -41,7 +41,7 @@ columns:
         format: d.m.Y
         width: 5%
         align: center
-    author:
+    authors:
         label: Автор
-        width: 5%
-        align: center
+        type: partial
+        path: ~/plugins/fw/backend/models/news/partials/_authors.htm
