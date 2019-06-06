@@ -13,7 +13,7 @@ navigation:
         sideMenu:
             news:
                 label: Новости
-                url: fw/backend/news
+                url: /fw/backend/news
                 icon: icon-newspaper-o
             universes:
                 label: Вселенные

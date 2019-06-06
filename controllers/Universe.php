@@ -40,6 +40,11 @@ class Universe extends Controller
         return $this->asExtension('FormController')->update($recordId);
     }
 
+    public function index() {
+        //dump($this);
+        $this-> makeLists();
+    }
+
         /**
     *  Связываем новость с пользователем перед созданием новости
     */

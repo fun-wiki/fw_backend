@@ -1,12 +1,12 @@
-list: $/fw/backend/models/news/columns.yaml
-modelClass: fw\Backend\Models\News
 title: News
+modelClass: \fw\Backend\Models\News
+list: $/fw/backend/models/news/columns.yaml
+recordUrl: 'fw/backend/news/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
+recordsPerPage: 20
 showSetup: true
 showCheckboxes: true
-recordsPerPage: 20
 toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'fw/backend/news/update/:id'

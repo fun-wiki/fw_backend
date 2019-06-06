@@ -6,7 +6,11 @@ use fw\Backend\Models\Content;
 
 class News extends Controller
 {
-    public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController',        'Backend\Behaviors\ReorderController'    ];
+    public $implement = [
+        'Backend\Behaviors\ListController', 
+        'Backend\Behaviors\FormController',
+        'Backend\Behaviors\ReorderController'
+    ];
     
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
@@ -21,7 +25,6 @@ class News extends Controller
     public function create()
     {
         $this->bodyClass = 'compact-container';
-
         return $this->asExtension('FormController')->create();
     }
 
@@ -30,7 +33,7 @@ class News extends Controller
         $this->bodyClass = 'compact-container';
         return $this->asExtension('FormController')->update($recordId);
     }
-
+    
     /**
     *  Связываем новость с пользователем перед созданием новости
     */

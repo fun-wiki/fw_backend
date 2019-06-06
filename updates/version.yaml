@@ -547,3 +547,6 @@
 1.0.185:
     - 'Updated table fw_backend_universes'
     - builder_table_update_fw_backend_universes_10.php
+1.0.186:
+    - 'Updated table fw_backend_news'
+    - builder_table_update_fw_backend_news_14.php

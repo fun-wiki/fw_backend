@@ -19,18 +19,29 @@ class Content
     }
 
     public static function saveContentWithCategory($model, $type) {
-        
-        $category = Category::where([['parent_id', $model->universe->content->category_id], ['title', $type]])->get();
+        // trace_log($model);
+        if (!$model->universe_id) {
+            $parent_id = null;
+        } else {
+            $category_id = $model->universe->content->category_id;
+            $parent_id = $model->universe->content->category_id;
 
-        if ($category->isEmpty()) {
-            $category = new Category;
-            $category->title = $type;
-            $category->parent_id = $model->universe->content->category_id;
-            $category->save();
+            trace_log('category'.$category_id.'  parent_id'.$parent_id);
+
+            $category = Category::where([['parent_id', $category_id], ['title', $type]])->get();
+
+            if ($category->isEmpty()) {
+                $category = new Category;
+                $category->title = $type;
+                $category->parent_id = $parent_id;
+                $category->save();
+
+                $model->content->category_id = $category->id;
+            } else {
+                $model->content->category_id = $category[0]->id;
+            }
         }
-
-        $model->content->category_id = $category->id;
-
+        
         $content = $model->content;
         $content->permalink = Permalink::createPermalink($model);
         $model->content()->add($content);
