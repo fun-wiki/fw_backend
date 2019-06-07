@@ -80,8 +80,10 @@ secondaryTabs:
             label: series
             span: storm
             cssClass: col-sm-6 col-lg-6
-            type: dropinput
+            type: selectize
             options: Series
+            dependsOn:
+                - universe
 
         cover:
             label: Изображение

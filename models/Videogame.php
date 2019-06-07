@@ -66,23 +66,70 @@ class Videogame extends Model
     public function beforeSave() 
     {
         \fw\Backend\Classes\Content::bindContent($this);
+        \fw\Backend\Classes\Content::bindCategory($this, 'videogames');
     }
 
     public function afterSave()
     {
-        \fw\Backend\Classes\Content::saveContentWithCategory($this, 'videogames');
+        $content = \fw\Backend\Classes\Content::hasSeries($this);
+        \fw\Backend\Classes\Content::saveContent($content);
     }
 
     public static function getSeries($model)
     {
-        $category = $model->model->content->category_id;
-        // trace_log($category);
-        $series = \fw\Backend\Models\Category::find($category)->children();
+        //trace_log ($model->config);
+
+        $universe_id = $model->config->parentForm->getField('universe')->value;
+        if ($universe_id) {
+            $category_id = Universe::find($universe_id)->content->category_id;
+            $category = Category::where([['title', 'videogames'], ['parent_id', $category_id]])->first()->id;
+            // trace_log ('cat+un_id'.$category);
+        } else {
+            $category = false;
+        }
+
+        // $category = $model->model->content->category_id;
+        // trace_log ('cat_id'.$category);
+        
+        if ($category) {
+            $series = Category::find($category)->children;
+        } else {
+            $series = [];
+        }
+        
         return $series;
     }
 
-    public static function setSeries()
+    public static function setSeries($model, $value)
     {
-        return 'ok';
+        $result = Category::find($value);
+
+        trace_log ($value);
+
+        $universe_id = $model->config->parentForm->getField('universe')->value;
+        if ($universe_id) {
+            $category_id = Universe::find($universe_id)->content->category_id;
+            $parent_category = Category::where([['title', 'videogames'], ['parent_id', $category_id]])->first()->id;
+            // trace_log ('cat+un_id'.$category);
+        } else {
+            $parent_category = null;
+        }
+
+        if (!isset($value[0])) {
+            return;
+        }
+
+        if ($result->isEmpty()) {
+            $category = new Category;
+            $category->title = $value[0];
+            $category->parent_id = $parent_category;
+            $category->save();
+
+            $result = $category->id;
+        } else {
+            $result = $value[0];
+        }
+
+        return $result;
     }
 }

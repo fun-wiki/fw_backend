@@ -25,9 +25,9 @@ class Plugin extends PluginBase
             'label' => 'Multiselect field',
             'code'  => 'multiselect'
         ],
-        'Fw\Backend\FormWidgets\DropdownInput' => [
+        'Fw\Backend\FormWidgets\Selectize' => [
             'label' => 'Dropdown Input field',
-            'code'  => 'dropinput'
+            'code'  => 'selectize'
         ]        
     ];
   }

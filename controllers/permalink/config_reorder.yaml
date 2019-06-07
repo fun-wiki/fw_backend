@@ -1,4 +1,0 @@
-title: Permalink
-modelClass: fw\Backend\Models\Permalink
-toolbar:
-    buttons: reorder_toolbar

@@ -5,17 +5,17 @@ use Backend\Classes\FormWidgetBase;
 
 //use Fw\Backend\Models\PersonRole;
 
-class DropdownInput extends FormWidgetBase
+class Selectize extends FormWidgetBase
 {
     
-    protected $defaultAlias = 'dropinput';
+    protected $defaultAlias = 'selectize';
 
     public $options = '';
 
     public function widgetDetails()
     {
         return [
-            'name' => 'Dropinput',
+            'name' => 'Selectize',
             'description' => 'Field for Input with Dropdown'
         ];
     }
@@ -30,13 +30,13 @@ class DropdownInput extends FormWidgetBase
 
     public function loadAssets()
     {
-        // $this->addCss('css/picker.css');
-        // $this->addJs('js/picker.min.js');
+        $this->addCss('css/selectize.default.css');
+        $this->addJs('js/standalone/selectize.min.js');
     }
 
     public function render(){
         $this->prepareVars();
-        //dump($this->vars['selectedValues']);
+        trace_log('updated');
         return $this->makePartial('widget');
     }
 
@@ -48,19 +48,30 @@ class DropdownInput extends FormWidgetBase
 
         $method = 'get'.$this->options;
         $model = get_class($this->model);
+
+        //trace_log ('op'.$method);
+        //trace_log ('model'.$model);
+
         $this->vars['method'] = $method;
+        //dump($this->config->parentForm->getField('universe')->value);
         $this->vars['options']  = $model::$method($this);
-        dump($this);
+        
         if(!empty($this->getLoadValue())){
-            $this->vars['selectedValues'] = $this->getLoadValue();
+            $this->vars['selectedValues'] = [$this->getLoadValue()];
         } else {
             $this->vars['selectedValues'] = [];
         }
+        // trace_log ($this->vars['options']);
+        // dd($this->vars['selectedValues']);
     }
 
     public function getSaveValue($value)
     {
-        //trace_log($value);
-        return; //$value;
+        $method = 'set'.$this->options;
+        $model = get_class($this->model);
+
+        $value = $model::$method($this, $value);
+        
+        return $value;
     }
 }

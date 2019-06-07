@@ -1,20 +1,19 @@
 <div class="control-list list-scrollable" data-control="listwidget">
 <?php 
-    foreach ($records as $record) {
+
+    function tree_node ($record) {
         echo '<ul><i class="icon-sitemap"></i> '.$record->title;
-        if ($record->children) {
-            foreach ($record->children as $children) {
-                echo '<ul><i class="icon-sitemap"></i> '.$children->title;
-                foreach (\fw\Backend\Models\Content::where('category_id', $children->id)->get() as $content) {
-                    echo '<ul><i class="icon-save"></i> '.$content->title."</ul>";
-                }
-                echo "</ul>";
-            }
+        foreach ($record->children as $children) {
+            tree_node ($children);
         }
         foreach (\fw\Backend\Models\Content::where('category_id', $record->id)->get() as $content) {
             echo '<ul><i class="icon-save"></i> '.$content->title."</ul>";
         }
         echo "</ul>";
+    }
+
+    foreach ($records as $record) {
+        tree_node ($record);
     }
 ?>
 </div>
