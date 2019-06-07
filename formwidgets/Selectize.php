@@ -30,43 +30,38 @@ class Selectize extends FormWidgetBase
 
     public function loadAssets()
     {
-        $this->addCss('css/selectize.default.css');
+        $this->addCss('css/selectize.css');
         $this->addJs('js/standalone/selectize.min.js');
     }
 
     public function render(){
         $this->prepareVars();
-        trace_log('updated');
+        // trace_log('updated');
         return $this->makePartial('widget');
     }
 
     public function prepareVars(){
-        $this->vars['id'] = $this->model->id;
-        $this->vars['name'] = $this->formField->getName().'[]';
-        $this->vars['options'] = $this->options;
-        $this->vars['value'] = $this->getLoadValue();
-
         $method = 'get'.$this->options;
         $model = get_class($this->model);
 
-        //trace_log ('op'.$method);
-        //trace_log ('model'.$model);
-
-        $this->vars['method'] = $method;
-        //dump($this->config->parentForm->getField('universe')->value);
+        $this->vars['id'] = isset($this->model->id) ? $this->model->id : md5($this->formField->getName());
+        $this->vars['name'] = $this->formField->getName();
         $this->vars['options']  = $model::$method($this);
+        $this->vars['value'] = $this->getLoadValue();
         
+
         if(!empty($this->getLoadValue())){
             $this->vars['selectedValues'] = [$this->getLoadValue()];
         } else {
             $this->vars['selectedValues'] = [];
         }
-        // trace_log ($this->vars['options']);
-        // dd($this->vars['selectedValues']);
+
+        // dump($this->config->parentForm->getField('universe'));
     }
 
     public function getSaveValue($value)
     {
+        
         $method = 'set'.$this->options;
         $model = get_class($this->model);
 
