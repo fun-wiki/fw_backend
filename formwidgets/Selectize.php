@@ -36,7 +36,6 @@ class Selectize extends FormWidgetBase
 
     public function render(){
         $this->prepareVars();
-        // trace_log('updated');
         return $this->makePartial('widget');
     }
 
@@ -62,11 +61,9 @@ class Selectize extends FormWidgetBase
     public function getSaveValue($value)
     {
         
-        $method = 'set'.$this->options;
-        $model = get_class($this->model);
-
-        $value = $model::$method($this, $value);
-        
+        // $method = 'set'.$this->options;
+        // $model = get_class($this->model);
+        // $value = $model::$method($this, $value);
         return $value;
     }
 }

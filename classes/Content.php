@@ -69,32 +69,53 @@ class Content
         if (!$model->universe_id) {
             $parent_id = null;
         } else {
-            $category_id = $model->universe->content->category_id;
             $parent_id = $model->universe->content->category_id;
-
-            trace_log('category'.$category_id.'  parent_id'.$parent_id);
-
-            $category = Category::where([['parent_id', $category_id], ['title', $type]])->get();
-
-            if ($category->isEmpty()) {
-                $category = new Category;
-                $category->title = $type;
-                $category->parent_id = $parent_id;
-                $category->save();
-
-                $model->content->category_id = $category->id;
-            } else {
-                $model->content->category_id = $category[0]->id;
-            }
         }
-        
+            // trace_log('category'.$category_id.'  parent_id'.$parent_id);
+
+        $check_category = Category::where([['parent_id', $parent_id], ['title', $type]])->get();
+
+        if ($check_category->isEmpty()) {
+            $category = new Category;
+            $category->title = $type;
+            $category->parent_id = $parent_id;
+            $category->save();
+
+            $model->content->category_id = $category->id;
+        } 
+
         $content = $model->content;
         $model->content()->add($content);
     }
 
     public static  function hasSeries($model) 
     {
-        $model->content->category_id = $model->series_id;
-        return $model;
+        $current_category = $model->content->category_id;
+        $series_category = $model->series_id;
+        // \Log::info(json_encode($model));
+
+        //trace_log(Category::find($current_category)->parent);
+        $check_value = Category::find($series_category);
+
+        if ($series_category !== "-1") {
+            if (!$check_value) {
+                $category = new Category;
+                $category->title = $series_category;
+                $category->parent_id = $current_category;
+                $category->save();
+                $current_category = $category->id;
+                $model->series_id = $category->id;                    
+            } else {
+                $current_category = $check_value->id;
+            }
+        } else {
+            if ($check_value) {
+                $current_category = Category::find($current_category)->parent->id;
+            } 
+        }
+
+        $model->content->category_id = $current_category;
+        $content = $model->content;
+        $model->content()->add($content);
     }
 }

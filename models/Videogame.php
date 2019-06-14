@@ -67,12 +67,12 @@ class Videogame extends Model
     {
         \fw\Backend\Classes\Content::bindContent($this);
         \fw\Backend\Classes\Content::bindCategory($this, 'videogames');
+        \fw\Backend\Classes\Content::hasSeries($this);
     }
 
     public function afterSave()
     {
-        $content = \fw\Backend\Classes\Content::hasSeries($this);
-        \fw\Backend\Classes\Content::saveContent($content);
+        \fw\Backend\Classes\Content::saveContent($this);
     }
 
     public static function getSeries($model)
@@ -81,7 +81,16 @@ class Videogame extends Model
 
         if ($universe_id) {
             $category_id = Universe::find($universe_id)->content->category_id;
-            $category = Category::where([['title', 'videogames'], ['parent_id', $category_id]])->first()->id;
+            $category = Category::where([['title', 'videogames'], ['parent_id', $category_id]])->first();
+            if (!$category) {
+                $new_category = new Category;
+                $new_category->title = 'videogames';
+                $new_category->parent_id = $category_id;
+                $new_category->save();
+                $category = $new_category->id;
+            } else {
+                $category = $category->id;
+            }
         } else {
             $category = false;
         }
@@ -97,25 +106,28 @@ class Videogame extends Model
 
     public static function setSeries($model, $value)
     {
-        $check_value = Category::find($value);
+        // if ($this->series_id !== null) {
+        //     $check_value = Category::find($this->series_id);
 
-        $universe_id = $model->config->parentForm->getField('universe')->value;
-        if ($universe_id) {
-            $category_id = Universe::find($universe_id)->content->category_id;
-            $parrent_category = Category::where([['title', 'videogames'], ['parent_id', $category_id]])->first()->id;
-        } else {
-            $parrent_category = null;
-        }
+        //     if ($check_value == null) {
+        //         $universe_id = $this->universe_id;
 
-        if ($check_value) {
-            return $value;
-        } else {
-            $category = new Category;
-            $category->title = $value;
-            $category->parent_id = $parrent_category;
-            $category->save();
-            return $category->id;
-        }
+        //         if ($universe_id) {
+        //             $category_id = Universe::find($universe_id)->content->category_id;
+        //             $parrent_category = Category::where([['title', 'videogames'], ['parent_id', $category_id]])->first()->id;
+                   
+        //             $category = new Category;
+        //             $category->title = $this->series_id;
+        //             $category->parent_id = $parrent_category;
+        //             $category->save();
+        //         } 
+        //     } 
+        // } else {
+            
+        // }
+        
+
+
         // $universe_id = $model->config->parentForm->getField('universe')->value;
         // trace_log('id'.$universe_id);
         // $category_id = Universe::find($universe_id)->content->category_id;

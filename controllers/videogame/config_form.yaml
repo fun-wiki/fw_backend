@@ -3,8 +3,10 @@ form: $/fw/backend/models/videogame/fields.yaml
 modelClass: fw\Backend\Models\Videogame
 defaultRedirect: fw/backend/videogame
 create:
-    redirect: 'fw/backend/videogame/update/:id'
+    redirect: fw/backend/videogame/update/:id
     redirectClose: fw/backend/videogame
 update:
-    redirect: fw/backend/videogame
+    redirect: fw/backend/videogame/update/:id
     redirectClose: fw/backend/videogame
+    flashSave: Post updated successfully!
+    flashDelete: Post has been deleted.
