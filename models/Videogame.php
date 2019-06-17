@@ -73,6 +73,7 @@ class Videogame extends Model
     public function afterSave()
     {
         \fw\Backend\Classes\Content::saveContent($this);
+        //trace_log($this->series_id);
     }
 
     public static function getSeries($model)

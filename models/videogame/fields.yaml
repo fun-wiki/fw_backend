@@ -1,21 +1,18 @@
 secondaryTabs:
-    stretch: true
-    paneCssClass:
-        Информация: paddingTabs
     fields:
         title:
             tab: Информация
-            label: 'Название'
+            label: Название
             type: text
             span: storm
-            cssClass: 'col-sm-5 col-lg-5'
+            cssClass: 'col-sm-5 col-lg-6'
             required: 1
         title_ru:
             tab: Информация
             label: 'Название (перевод)'
             type: text
             span: storm
-            cssClass: 'col-sm-5 col-lg-5'
+            cssClass: 'col-sm-5 col-lg-6'
         universe:
             tab: Информация
             label: Вселенная
@@ -25,12 +22,25 @@ secondaryTabs:
             list: ~/plugins/fw/backend/models/universe/columns.yaml
             nameFrom: title
             required: 1
-        description:
-            tab: Описание
-            span: full
-            size: huge
-            type: richeditor
-            stretch: true
+        series_id:
+            tab: Информация
+            label: series
+            span: storm
+            cssClass: 'col-sm-6 col-lg-8'
+            type: selectize
+            options: Series
+            dependsOn:
+                - universe
+        number_in_series:
+            label: 'Номер в серии'
+            span: storm
+            cssClass: 'col-sm-6 col-lg-2'
+            type: number
+            tab: Информация
+            trigger:
+                action: hidden
+                field: series_id
+                condition: value["-1"]
         platform:
             tab: Информация
             label: platform
@@ -43,7 +53,7 @@ secondaryTabs:
             required: 1
         genres:
             tab: Информация
-            label: Жанр игры
+            label: 'Жанр игры'
             type: taglist
             mode: relation
             nameFrom: title
@@ -73,17 +83,8 @@ secondaryTabs:
             tab: Информация
             label: 'Год (Дата) создания'
             span: storm
-            cssClass: col-sm-6 col-lg-6
+            cssClass: 'col-sm-6 col-lg-6'
             type: udatepicker
-        series_id:
-            tab: Информация
-            label: series
-            span: storm
-            cssClass: col-sm-6 col-lg-6
-            type: selectize
-            options: Series
-            dependsOn:
-                - universe
 
         cover:
             label: Изображение
@@ -98,7 +99,6 @@ secondaryTabs:
             tab: Информация
             span: storm
             cssClass: col-sm-12
-
         screenshots:
             label: Скриншоты
             mode: image
@@ -112,3 +112,9 @@ secondaryTabs:
             tab: Информация
             span: storm
             cssClass: col-sm-12
+        description:
+            tab: Описание
+            span: full
+            size: huge
+            type: richeditor
+            stretch: true
