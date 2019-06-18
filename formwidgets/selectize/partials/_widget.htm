@@ -1,4 +1,4 @@
-<select name="<?php echo $name ?>" id="<?php echo $id ?>" class="demo-default" placeholder="Без категории..." value=>
+<select name="<?= $field->getName() ?>" id="<?= $field->getId() ?>" class="demo-default" placeholder="Без категории..." >
     <option value="-1">Без категории...</option>
 	<?php foreach($options as $key => $value): ?>
         <option 
@@ -11,7 +11,7 @@
 
 <script>
     $(document).ready(function () {
-        $('#<?php echo $id; ?>').selectize({
+        $('#<?php echo $field->getId(); ?>').selectize({
 		    create: true,
 			sortField: {
 				field: 'text',

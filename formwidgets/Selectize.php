@@ -47,6 +47,7 @@ class Selectize extends FormWidgetBase
         $this->vars['name'] = $this->formField->getName();
         $this->vars['options']  = $model::$method($this);
         $this->vars['value'] = $this->getLoadValue();
+        $this->vars['field'] = $this->formField; 
         
 
         if(!empty($this->getLoadValue())){
@@ -58,12 +59,4 @@ class Selectize extends FormWidgetBase
         // dump($this->config->parentForm->getField('universe'));
     }
 
-    public function getSaveValue($value)
-    {
-        
-        // $method = 'set'.$this->options;
-        // $model = get_class($this->model);
-        // $value = $model::$method($this, $value);
-        return $value;
-    }
 }

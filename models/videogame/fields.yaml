@@ -1,18 +1,33 @@
 secondaryTabs:
+    stretch: true
+    paneCssClass:
+        Информация: paddingTabs
+        Галерея: paddingTabs
     fields:
+        cover:
+            label: Обложка
+            tab: Информация
+            mode: image
+            span: storm
+            cssClass: col-sm-2 cover
+            type: mediafinder
+            trigger:
+                action: hide
+                field: is_pseudo
+                condition: checked
         title:
             tab: Информация
             label: Название
             type: text
             span: storm
-            cssClass: 'col-sm-5 col-lg-6'
+            cssClass: 'col-sm-5 col-lg-5'
             required: 1
         title_ru:
             tab: Информация
             label: 'Название (перевод)'
             type: text
             span: storm
-            cssClass: 'col-sm-5 col-lg-6'
+            cssClass: 'col-sm-5 col-lg-5'
         universe:
             tab: Информация
             label: Вселенная
@@ -26,7 +41,7 @@ secondaryTabs:
             tab: Информация
             label: series
             span: storm
-            cssClass: 'col-sm-6 col-lg-8'
+            cssClass: 'col-sm-6 col-lg-6'
             type: selectize
             options: Series
             dependsOn:
@@ -38,9 +53,9 @@ secondaryTabs:
             type: number
             tab: Информация
             trigger:
-                action: hidden
+                action: disable
                 field: series_id
-                condition: value["-1"]
+                condition: value[-1]
         platform:
             tab: Информация
             label: platform
@@ -48,7 +63,7 @@ secondaryTabs:
             mode: relation
             nameFrom: title
             span: storm
-            cssClass: 'col-sm-12 col-lg-12'
+            cssClass: 'col-sm-5 col-lg-5'
             customTags: true
             required: 1
         genres:
@@ -58,14 +73,14 @@ secondaryTabs:
             mode: relation
             nameFrom: title
             span: storm
-            cssClass: 'col-sm-12 col-lg-12'
+            cssClass: 'col-sm-5 col-lg-5'
             customTags: true
             required: 1
         developer:
             tab: Информация
             label: Разработчик
             span: storm
-            cssClass: col-sm-2
+            cssClass: col-sm-3
             type: taglist
             nameFrom: title
             mode: relation
@@ -74,7 +89,7 @@ secondaryTabs:
             tab: Информация
             label: Издатель
             span: storm
-            cssClass: col-sm-2
+            cssClass: col-sm-3
             type: taglist
             nameFrom: title
             mode: relation
@@ -83,22 +98,16 @@ secondaryTabs:
             tab: Информация
             label: 'Год (Дата) создания'
             span: storm
-            cssClass: 'col-sm-6 col-lg-6'
+            cssClass: 'col-sm-2 col-lg-4'
             type: udatepicker
 
-        cover:
-            label: Изображение
-            mode: image
-            useCaption: true
-            thumbOptions:
-                mode: crop
-                extension: auto
-            imageWidth: '320'
-            imageHeight: '180'
-            type: fileupload
-            tab: Информация
-            span: storm
-            cssClass: col-sm-12
+
+        description:
+            tab: Описание
+            span: full
+            size: huge
+            type: richeditor
+            stretch: true
         screenshots:
             label: Скриншоты
             mode: image
@@ -109,12 +118,7 @@ secondaryTabs:
             imageWidth: '320'
             imageHeight: '180'
             type: fileupload
-            tab: Информация
+            tab: Галерея
             span: storm
             cssClass: col-sm-12
-        description:
-            tab: Описание
-            span: full
-            size: huge
-            type: richeditor
-            stretch: true
+

@@ -125,11 +125,23 @@
     height: 300px
 }
 
-.personPhoto>.field-mediafinder.style-image-single .find-button {
+.personPhoto > .field-mediafinder .style-image-single .find-button {
     display: block;
     border: 2px dotted rgba(0, 0, 0, 0.1);
     position: relative;
     outline: none;
     min-height: 300px;
+    width: 100%;
+}
+
+.cover {
+    height: 300px
+}
+
+.cover > .field-mediafinder .style-image-single .find-button {
+    display: block;
+    border: 2px dotted rgba(0, 0, 0, 0.1);
+    position: relative;
+    outline: none;
     width: 100%;
 }
