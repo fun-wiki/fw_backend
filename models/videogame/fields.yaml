@@ -10,11 +10,12 @@ secondaryTabs:
             mode: image
             span: storm
             cssClass: col-sm-2 cover
-            type: mediafinder
-            trigger:
-                action: hide
-                field: is_pseudo
-                condition: checked
+            type: fileupload
+            thumbOptions:
+                mode: crop
+                extension: auto
+            imageWidth: '200'
+            imageHeight: '300'
         title:
             tab: Информация
             label: Название
