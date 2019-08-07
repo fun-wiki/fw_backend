@@ -15,13 +15,10 @@ columns:
     contentable_type:
         label: contentable_type
         type: text
-    contentable_id:
-        label: contentable_id
-        type: number
     created_at:
         label: created_at
         type: datetime
-        format: d.m.Y -- h:i:s
+        format: d.m.Y
     updated_at:
         label: updated_at
         type: datetime
@@ -40,3 +37,5 @@ columns:
         select: login
     category:
         label: category
+        relation: category
+        select: title
