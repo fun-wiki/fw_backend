@@ -79,7 +79,8 @@ class Plugin extends PluginBase
         'person' => 'fw\Backend\Models\Person',
         'company' => 'fw\Backend\Models\Organisation',
         'universe' => 'fw\Backend\Models\Universe',
-        'videogame' => 'fw\Backend\Models\Videogame'
+        'videogame' => 'fw\Backend\Models\Videogame',
+        'book' => 'fw\Backend\Models\Book'
     ]);
 
     /**

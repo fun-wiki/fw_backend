@@ -553,3 +553,6 @@
 1.0.187:
     - 'Updated table fw_backend_videogames'
     - builder_table_update_fw_backend_videogames_9.php
+1.0.188:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_14.php

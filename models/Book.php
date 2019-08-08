@@ -1,11 +1,7 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
-use Spatie\QueryBuilder\QueryBuilder;
 
-/**
- * Model
- */
 class Book extends Model
 {
     use \October\Rain\Database\Traits\Validation;
@@ -16,29 +12,24 @@ class Book extends Model
 
     public $rules = [];
 
-    public $jsonable = [
-        'editions'
-    ];
+    public $permalink = ':universe.title/book/:content.title';
 
-    public function getBookTypeOptions()
-    {
-        return 'fw\Backend\Models\BookType'::all()->lists('title', 'id');
-    }
+    protected $fillable = [
+        'title'
+    ];
 
     public $belongsTo = [
-        'book_type' =>['fw\Backend\Models\BookType'],
-        'literature_type' =>['fw\Backend\Models\LiteratureType'],
-        'universe' => ['fw\Backend\Models\Universe'],
-        'book_series' => ['fw\Backend\Models\BookSeries']
+        'universe'  => ['fw\Backend\Models\Universe']
     ];
 
-    public $belongsToMany = [
-        'authors' => ['fw\Backend\Models\Person' , 'table' => 'fw_backend_relation_book_person'],
-        //'publisher' => ['fw\Backend\Models\Organisation' , 'table' => 'fw_backend_relation_book_person'],
-        //'pseudos' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_relation_persons_pseudos', 'key' => 'person_id', 'otherKey' => 'pseudo_id',],
-        'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_relation_book_genres'],
-        'book_editions' => ['fw\Backend\Models\BookEdition', 'table' => 'fw_backend_relation_book_bookeditions', 'key' => 'book_edition_id', 'otherKey' => 'book_id']
+    public $attachOne = [
+        'cover' => 'System\Models\File'
     ];
+
+    public $morphOne = [
+        'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
+    ];
+
 
     public function listSeries($fieldName, $value, $formData)
     {

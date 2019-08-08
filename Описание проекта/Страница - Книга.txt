@@ -6,7 +6,7 @@ slug: /universes/:universe_name/books/:book_series/:book_title
 
 not 2 вариант
 
-slug: /universes/:universe_name/books/:book_series если нет серии редирект на :book_title
+slug: /:universe_name/books/:book_series если нет серии редирект на :book_title
                                      /:book_title
 
 
