@@ -22,14 +22,14 @@ secondaryTabs:
             tab: Информация
             label: Вселенная
             span: storm
-            cssClass: col-sm-2
+            cssClass: col-sm-4
             type: recordfinder
             list: ~/plugins/fw/backend/models/universe/columns.yaml
             nameFrom: title
             required: 1
         series_id:
             tab: Информация
-            label: series
+            label: Серия
             span: storm
             cssClass: 'col-sm-6 col-lg-6'
             type: selectize
@@ -52,3 +52,6 @@ secondaryTabs:
             size: huge
             type: textarea
             stretch: true
+        book_content:
+            type: partial
+            path: $/fw/backend/models/book/_book_content.htm

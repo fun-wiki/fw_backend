@@ -2,3 +2,12 @@
 #  Relation Behavior Config
 # ===================================
 
+book_content:
+    label: Содержание
+    view:
+        list:  ~/plugins/fw/backend/models/work/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form:  ~/plugins/fw/backend/models/work/fields.yaml
+        list:  ~/plugins/fw/backend/models/work/columns.yaml
+        showSearch: true

@@ -22,6 +22,15 @@ class Book extends Model
         'universe'  => ['fw\Backend\Models\Universe']
     ];
 
+    public $belongsToMany = [
+        'book_content' => [
+            'fw\Backend\Models\Work',
+            'table'    => 'fw_backend_relation_books_works',
+            'key'      => 'book_id',
+            'otherKey' => 'work_id'
+        ],
+    ];
+
     public $attachOne = [
         'cover' => 'System\Models\File'
     ];
@@ -33,7 +42,6 @@ class Book extends Model
     public function beforeSave() 
     {
         \fw\Backend\Classes\Content::bindContent($this);
-        \fw\Backend\Classes\Content::bindCategory($this, 'books');
         \fw\Backend\Classes\Content::hasSeries($this, 'books');
     }
 
