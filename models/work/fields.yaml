@@ -1,0 +1,37 @@
+fields:
+    title:
+        label: Название
+        span: auto
+        type: text
+    title_ru:
+        label: 'Название (Перевод)'
+        span: auto
+        type: text
+    author:
+        label: Автор
+        type: taglist
+        separator: comma
+        nameFrom: title
+        mode: relation
+        customTags: true
+    genres:
+        label: Жанр произведения
+        type: taglist
+        separator: comma
+        nameFrom: title
+        mode: relation
+    work_type:
+        label: 'Тип произведения'
+        showSearch: true
+        type: dropdown
+        span: left
+    create_date:
+        label: Дата создания
+        type: udatepicker
+        mode: year
+        span: right
+    annotation:
+        label: Аннотация
+        type: textarea
+        span: full
+

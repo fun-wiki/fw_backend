@@ -1,0 +1,31 @@
+columns:
+    id:
+        label: ID
+        type: number
+        sortable: true
+        width: 5%
+        align: center
+    title:
+        label: Название
+        type: text
+        searchable: true
+        sortable: true
+    title_ru:
+        label: Название (Перевод)
+        type: text
+        searchable: true
+        sortable: true
+    work_type:
+        label: Вид произведения
+        type: text
+        width: 5%
+    author: 
+        label: Автор
+        relation: author
+        select: title
+        width: 15%
+    create_date: 
+        label: Дата создания
+        width: 5%
+
+    

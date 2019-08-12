@@ -88,20 +88,19 @@ class Content
         $model->content()->add($content);
     }
 
-    public static  function hasSeries($model) 
+    public static  function hasSeries($model, $type) 
     {
-        $current_category = $model->content->category_id;
-        $series_category = $model->series_id;
-        // \Log::info(json_encode($model));
+        $universe_category_id = $model->universe->content->category_id;
+        $parent_series_category_id = Category::where([['parent_id', $universe_category_id], ['title', $type]])->first();
 
-        //trace_log(Category::find($current_category)->parent);
-        $check_value = Category::find($series_category);
+        $series_category = $model->series_id;
+        $check_value = Category::find($series_category); // проверяем есть ли раздел
 
         if ($series_category !== "-1") {
             if (!$check_value) {
                 $category = new Category;
                 $category->title = $series_category;
-                $category->parent_id = $current_category;
+                $category->parent_id = $parent_series_category_id->id;
                 $category->save();
                 $current_category = $category->id;
                 $model->series_id = $category->id;                    
@@ -109,9 +108,7 @@ class Content
                 $current_category = $check_value->id;
             }
         } else {
-            if ($check_value) {
-                $current_category = Category::find($current_category)->parent->id;
-            } 
+            $current_category = $parent_series_category_id->id;
         }
 
         $model->content->category_id = $current_category;

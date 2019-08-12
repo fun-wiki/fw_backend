@@ -65,13 +65,13 @@ class Videogame extends Model
 
     public function beforeSave() 
     {
+        \fw\Backend\Classes\Content::bindContent($this);
+        \fw\Backend\Classes\Content::bindCategory($this, 'videogames');
+        \fw\Backend\Classes\Content::hasSeries($this, 'videogames');
     }
 
     public function afterSave()
     {
-        \fw\Backend\Classes\Content::bindContent($this);
-        \fw\Backend\Classes\Content::bindCategory($this, 'videogames');
-        \fw\Backend\Classes\Content::hasSeries($this);
         \fw\Backend\Classes\Content::saveContent($this);
     }
 

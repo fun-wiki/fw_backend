@@ -1,0 +1,13 @@
+name: Произведение
+form: $/fw/backend/models/work/fields.yaml
+modelClass: fw\Backend\Models\Work
+defaultRedirect: fw/backend/work
+
+create:
+    redirect: 'fw/backend/work/update/:id'
+    redirectClose: fw/backend/work
+    flashSave: Произведение сохранено
+update:
+    redirect: fw/backend/work
+    redirectClose: fw/backend/work
+    flashSave: Произведение обновлено

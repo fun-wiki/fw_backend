@@ -556,3 +556,42 @@
 1.0.188:
     - 'Updated table fw_backend_books'
     - builder_table_update_fw_backend_books_14.php
+1.0.189:
+    - 'Created table fw_backend_works'
+    - builder_table_create_fw_backend_works.php
+1.0.190:
+    - 'Updated table fw_backend_works'
+    - builder_table_update_fw_backend_works.php
+1.0.191:
+    - 'Created table fw_backend_relation_works_persons'
+    - builder_table_create_fw_backend_relation_works_persons.php
+1.0.192:
+    - 'Updated table fw_backend_works'
+    - builder_table_update_fw_backend_works_2.php
+1.0.193:
+    - 'Updated table fw_backend_works'
+    - builder_table_update_fw_backend_works_3.php
+1.0.194:
+    - 'Created table fw_backend_relation_works_genres'
+    - builder_table_create_fw_backend_relation_works_genres.php
+1.0.195:
+    - 'Updated table fw_backend_works'
+    - builder_table_update_fw_backend_works_4.php
+1.0.196:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_15.php
+1.0.197:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_16.php
+1.0.198:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_17.php
+1.0.199:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_18.php
+1.0.200:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_19.php
+1.0.201:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_20.php

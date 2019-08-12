@@ -1,5 +1,0 @@
-fields:
-    literature:
-      label: Добавьте произведение
-      type: relation
-      nameFrom: title

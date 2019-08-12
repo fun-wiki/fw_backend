@@ -5,22 +5,5 @@ columns:
     title:
         label: Название
         type: text
-    persons:
-        label: Автор
-        relation: authors
-        select: title
-        width: 15%
-    universe:
-        label: Вселенная
-        relation: universe
-        select: name
-        width: 15%
-    book_series:
-        label: Серия
-        relation: book_series
-        select: title
-        width: 15%
-    number_in_series:
-        label: Номер в серии
-        width: 5%
+
 
