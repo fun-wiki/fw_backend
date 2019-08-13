@@ -7,8 +7,8 @@ columns:
         type: text
     author:
         label: Автор
-        type: partial
-        path: ~/plugins/fw/backend/models/book/_author_column.htm
+        relation: author
+        select: title
     book_type:
         label: Тип книги
         type: partial

@@ -30,6 +30,18 @@ class Book extends Model
             'key'      => 'book_id',
             'otherKey' => 'work_id'
         ],
+        'author'       => [
+            'fw\Backend\Models\Person',
+            'table'    => 'fw_backend_relation_books_authors',
+            'key'      => 'book_id',
+            'otherKey' => 'person_id'
+        ],
+        'publisher'     => [
+            'fw\Backend\Models\Organisation',
+            'table'    => 'fw_backend_relation_books_publishers',
+            'key'      => 'book_id',
+            'otherKey' => 'organisation_id'
+        ]
     ];
 
     public $attachOne = [

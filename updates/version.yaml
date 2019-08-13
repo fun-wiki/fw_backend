@@ -601,3 +601,15 @@
 1.0.203:
     - 'Updated table fw_backend_books'
     - builder_table_update_fw_backend_books_21.php
+1.0.204:
+    - 'Created table fw_backend_relation_books_authors'
+    - builder_table_create_fw_backend_relation_books_authors.php
+1.0.205:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_22.php
+1.0.206:
+    - 'Created table fw_backend_relation_books_publishers'
+    - builder_table_create_fw_backend_relation_books_publishers.php
+1.0.207:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_23.php

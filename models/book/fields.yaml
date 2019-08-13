@@ -23,12 +23,12 @@ secondaryTabs:
             showSearch: true
             type: dropdown
             span: storm
-            cssClass: 'col-sm-12 col-lg-12'
+            cssClass: 'col-sm-3 col-lg-3'
         universe:
             tab: Информация
             label: Вселенная
             span: storm
-            cssClass: col-sm-4
+            cssClass: col-sm-3
             type: recordfinder
             list: ~/plugins/fw/backend/models/universe/columns.yaml
             nameFrom: title
@@ -37,7 +37,7 @@ secondaryTabs:
             tab: Информация
             label: Серия
             span: storm
-            cssClass: 'col-sm-6 col-lg-6'
+            cssClass: 'col-sm-5 col-lg-5'
             type: selectize
             options: Series
             dependsOn:
@@ -45,13 +45,48 @@ secondaryTabs:
         number_in_series:
             label: 'Номер в серии'
             span: storm
-            cssClass: 'col-sm-6 col-lg-2'
+            cssClass: 'col-sm-1 col-lg-1'
             type: number
             tab: Информация
             trigger:
                 action: disable
                 field: series_id
                 condition: value[-1]
+        author:
+            label: Автор (составитель)
+            tab: Информация
+            type: taglist
+            separator: comma
+            nameFrom: title
+            mode: relation
+            customTags: true
+            span: storm
+            cssClass: 'col-sm-9 col-lg-9'
+        isbn:
+            label: ISBN
+            type: text
+            tab: Информация
+            span: storm
+            cssClass: 'col-sm-3 col-lg-3'
+        publisher:
+            label: Издатель
+            tab: Информация
+            type: taglist
+            separator: comma
+            nameFrom: title
+            mode: relation
+            customTags: true
+            span: storm
+            cssClass: 'col-sm-6 col-lg-6'
+        publish_date:
+            label: Дата издания
+            type: udatepicker
+            mode: year
+            span: right
+            tab: Информация
+            span: storm
+            cssClass: 'col-sm-1 col-lg-1'
+
         description:
             tab: Описание
             span: full

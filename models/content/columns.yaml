@@ -35,3 +35,7 @@ columns:
         label: Автор
         relation: author
         select: login
+    category:
+        label: cat
+        relation: category
+        select: title
