@@ -598,3 +598,6 @@
 1.0.202:
     - 'Created table fw_backend_relation_books_works'
     - builder_table_create_fw_backend_relation_books_works.php
+1.0.203:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_21.php

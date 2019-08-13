@@ -1,0 +1,13 @@
+<?php 
+    $book_content = $record->book_content;
+    $resultstr = array();
+
+    foreach ($book_content as $record) {
+        foreach ($record->author as $author) {
+            $resultstr[] = $author->title;
+        }
+    }
+
+    echo implode(", ",$resultstr);
+?>
+

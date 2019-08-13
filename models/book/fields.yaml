@@ -2,7 +2,7 @@ secondaryTabs:
     stretch: true
     paneCssClass:
         Информация: paddingTabs
-        Галерея: paddingTabs
+        Содержание: paddingTabs
     fields:
         title:
             tab: Информация
@@ -17,7 +17,13 @@ secondaryTabs:
             type: text
             span: storm
             cssClass: 'col-sm-5 col-lg-6'
-
+        book_type:
+            tab: Информация
+            label: 'Тип книги'
+            showSearch: true
+            type: dropdown
+            span: storm
+            cssClass: 'col-sm-12 col-lg-12'
         universe:
             tab: Информация
             label: Вселенная
@@ -53,5 +59,8 @@ secondaryTabs:
             type: textarea
             stretch: true
         book_content:
+            tab: Содержание
+            span: storm
+            cssClass: 'col-sm-12 col-lg-12'
             type: partial
             path: $/fw/backend/models/book/_book_content.htm

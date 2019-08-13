@@ -5,5 +5,28 @@ columns:
     title:
         label: Название
         type: text
+    author:
+        label: Автор
+        type: partial
+        path: ~/plugins/fw/backend/models/book/_author_column.htm
+    book_type:
+        label: Тип книги
+        type: partial
+        path: ~/plugins/fw/backend/models/book/_book_type_column.htm
+    universe:
+        label: Вселенная
+        relation: universe
+        select: title
+    series:
+        label: Серия
+        relation: series
+        select: title
+    number_in_series:
+        label: Номер в серии
+        type: text
+        width: 5%
+        align: center
+
+
 
 

@@ -19,7 +19,8 @@ class Book extends Model
     ];
 
     public $belongsTo = [
-        'universe'  => ['fw\Backend\Models\Universe']
+        'universe'  => ['fw\Backend\Models\Universe'],
+        'series' => ['fw\Backend\Models\Category']
     ];
 
     public $belongsToMany = [
@@ -38,6 +39,21 @@ class Book extends Model
     public $morphOne = [
         'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
     ];
+
+    public function getBookTypeOptions()
+    {
+        $status = [
+            "novel" => "Художественная книга",
+            "anthology" => "Антология",
+            "omnibus" => "Омнибус",
+            "comic" => "Комикс",
+            "artbook" => "Артбук",
+            "wiki" => "Энциклопедия",
+            "doc" => "Документальная книга"
+        ];
+
+        return $status;
+    }
 
     public function beforeSave() 
     {

@@ -17,8 +17,8 @@ columns:
         sortable: true
     work_type:
         label: Вид произведения
-        type: text
-        width: 5%
+        type: partial
+        path: ~/plugins/fw/backend/models/work/_work_type_column.htm
     author: 
         label: Автор
         relation: author
