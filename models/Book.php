@@ -12,15 +12,10 @@ class Book extends Model
 
     public $rules = [];
 
-    public $permalink = ':universe.title/bookedition/:content.title';
+    public $permalink = 'book/:content.title';
 
     protected $fillable = [
         'title'
-    ];
-
-    public $belongsTo = [
-        // 'universe'  => ['fw\Backend\Models\Universe'],
-        // 'series' => ['fw\Backend\Models\Category']
     ];
 
     public $belongsToMany = [
@@ -70,42 +65,10 @@ class Book extends Model
     public function beforeSave() 
     {
         \fw\Backend\Classes\Content::bindContent($this);
-        // \fw\Backend\Classes\Content::hasSeries($this, 'books');
     }
 
     public function afterSave()
     {
         \fw\Backend\Classes\Content::saveContent($this);
-    }
-
-    public static function getSeries($model)
-    {
-        $universe_id = $model->config->parentForm->getField('universe')->value;
-
-        dump($universe_id);
-
-        if ($universe_id) {
-            $category_id = Universe::find($universe_id)->content->category_id;
-            $category = Category::where([['title', 'books'], ['parent_id', $category_id]])->first();
-            if (!$category) {
-                $new_category = new Category;
-                $new_category->title = 'books';
-                $new_category->parent_id = $category_id;
-                $new_category->save();
-                $category = $new_category->id;
-            } else {
-                $category = $category->id;
-            }
-        } else {
-            $category = false;
-        }
-
-        if ($category) {
-            $series = Category::find($category)->children;
-        } else {
-            return [];
-        }
-        
-        return $series;
     }
 }

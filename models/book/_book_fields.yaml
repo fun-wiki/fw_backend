@@ -1,10 +1,10 @@
-fields:
-    title[content]:
+fields[content]:
+    title:
         label: Название
         span: auto
         type: text
         required: true
-    permalink[content]:
+    permalink:
         label: 'Постоянная ссылка'
         span: auto
         type: text
@@ -53,6 +53,23 @@ secondaryTabs:
             tab: Информация
             span: storm
             cssClass: col-lg-2
+
+        cover: 
+            label: Обложка
+            tab: Информация
+            type: fileupload
+            mode: image
+            imageHeight: 300
+            imageWidth: 500
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
 
         description:
             tab: Описание
