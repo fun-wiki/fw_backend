@@ -1,0 +1,54 @@
+fields:
+    title:
+        label: Название
+        tab: Информация
+        span: storm
+        cssClass: col-lg-6
+        type: text
+    title_ru:
+        label: 'Название (Перевод)'
+        tab: Информация
+        span: storm
+        cssClass: col-lg-6
+        type: text
+    work_type:
+        label: 'Тип произведения'
+        tab: Информация
+        showSearch: true
+        type: dropdown
+        span: storm
+        cssClass: col-lg-6
+    universe_id:
+        hidden: true
+        defaultFrom: ^universe_id
+    genres:
+        label: Жанр произведения
+        tab: Информация
+        type: taglist
+        separator: comma
+        nameFrom: title
+        mode: relation
+        span: storm
+        cssClass: col-lg-6
+    author:
+        label: Автор
+        tab: Информация
+        type: taglist
+        separator: comma
+        nameFrom: title
+        mode: relation
+        customTags: true
+        span: storm
+        cssClass: col-lg-12
+    create_date:
+        label: Дата создания
+        tab: Информация
+        type: text
+        span: storm
+        cssClass: col-lg-6
+    description:
+        label: Аннотация
+        tab: Информация
+        type: textarea
+        span: storm
+        cssClass: col-lg-12

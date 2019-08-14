@@ -80,7 +80,8 @@ class Plugin extends PluginBase
         'company' => 'fw\Backend\Models\Organisation',
         'universe' => 'fw\Backend\Models\Universe',
         'videogame' => 'fw\Backend\Models\Videogame',
-        'book' => 'fw\Backend\Models\Book'
+        'book' => 'fw\Backend\Models\Book',
+        'work' => 'fw\Backend\Models\Work'
     ]);
 
     /**

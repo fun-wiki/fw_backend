@@ -613,3 +613,30 @@
 1.0.207:
     - 'Updated table fw_backend_books'
     - builder_table_update_fw_backend_books_23.php
+1.0.208:
+    - 'Updated table fw_backend_works'
+    - builder_table_update_fw_backend_works_5.php
+1.0.209:
+    - 'Updated table fw_backend_relation_works_persons'
+    - builder_table_update_fw_backend_relation_works_authors.php
+1.0.210:
+    - 'Created table fw_backend_relation_works_illustrators'
+    - builder_table_create_fw_backend_relation_works_illustrators.php
+1.0.211:
+    - 'Created table fw_backend_relation_works_works'
+    - builder_table_create_fw_backend_relation_works_works.php
+1.0.212:
+    - 'Updated table fw_backend_works'
+    - builder_table_update_fw_backend_works_6.php
+1.0.213:
+    - 'Updated table fw_backend_works'
+    - builder_table_update_fw_backend_works_7.php
+1.0.214:
+    - 'Updated table fw_backend_works'
+    - builder_table_update_fw_backend_works_8.php
+1.0.215:
+    - 'Updated table fw_backend_works'
+    - builder_table_update_fw_backend_works_9.php
+1.0.216:
+    - 'Updated table fw_backend_works'
+    - builder_table_update_fw_backend_works_10.php

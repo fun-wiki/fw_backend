@@ -15,6 +15,7 @@ class Work extends Model
      */
     public $timestamps = false;
 
+    public $permalink = ':universe.title/book/:content.title';
 
     /**
      * @var string The database table used by the model.
@@ -37,10 +38,35 @@ class Work extends Model
         return $status;
     }
 
+    public function getBookTypeOptions()
+    {
+        $status = [
+            "novel" => "Художественное произведение",
+            "anthology" => "Антология",
+            "comic" => "Комикс",
+            "artbook" => "Артбук",
+            "wiki" => "Энциклопедия",
+            "doc" => "Документальная книга"
+        ];
+
+        return $status;
+    }
+
+    public $belongsTo = [
+        'universe'  => ['fw\Backend\Models\Universe'],
+        'series' => ['fw\Backend\Models\Category']
+    ];
+
     public $belongsToMany = [
         'author' => [
             'fw\Backend\Models\Person',
-            'table'    => 'fw_backend_relation_works_persons',
+            'table'    => 'fw_backend_relation_works_authors',
+            'key'      => 'work_id',
+            'otherKey' => 'person_id'
+        ],
+        'illustrator' => [
+            'fw\Backend\Models\Person',
+            'table'    => 'fw_backend_relation_works_illustrators',
             'key'      => 'work_id',
             'otherKey' => 'person_id'
         ],
@@ -50,16 +76,79 @@ class Work extends Model
             'key'      => 'work_id',
             'otherKey' => 'genre_id'
         ],
+        'books' => [
+            'fw\Backend\Models\Book',
+            'table'    => 'fw_backend_relation_books_works',
+            'key'      => 'book_id',
+            'otherKey' => 'work_id'
+        ],
+        'book_content' => [
+            'fw\Backend\Models\Work',
+            'table'    => 'fw_backend_relation_works_works',
+            'key'      => 'parent_work_id',
+            'otherKey' => 'work_id'
+        ],
     ];
+    
+    public $morphOne = [
+        'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
+    ];
+    
+    public function beforeSave()
+    {
+        $universe_id = $this->universe_id;
+
+        if ($this->book_type == 'novel') {
+            $this->book_content = [];
+        }
+
+        if ($this->book_type == 'anthology') {
+            foreach ($this->book_content as $content) {
+                $work = Work::find($content->id);
+                $work->universe_id = $universe_id;
+                $work->series_id = $this->series_id;
+                $work->number_in_series = $this->number_in_series;
+                $work->in_anthology = true;
+                $work->save();
+            }
+            // trace_log(json_decode($this->book_content));
+        }
+
+        \fw\Backend\Classes\Content::bindContent($this);
+        \fw\Backend\Classes\Content::hasSeries($this, 'books');
+    }
 
     public function afterSave()
     {
-        foreach ($this->author as $author) {
-            if ($author->personroles->firstWhere('id', 1) == null) {
-                $person = Person::find($author->id);
-                $person->personroles()->add(PersonRole::find(1));
-            };
-        }
+        \fw\Backend\Classes\Content::saveContent($this);
     }
 
+    public static function getSeries($model)
+    {
+        $universe_id = $model->config->parentForm->getField('universe')->value;
+
+        if ($universe_id) {
+            $category_id = Universe::find($universe_id)->content->category_id;
+            $category = Category::where([['title', 'books'], ['parent_id', $category_id]])->first();
+            if (!$category) {
+                $new_category = new Category;
+                $new_category->title = 'books';
+                $new_category->parent_id = $category_id;
+                $new_category->save();
+                $category = $new_category->id;
+            } else {
+                $category = $category->id;
+            }
+        } else {
+            $category = false;
+        }
+
+        if ($category) {
+            $series = Category::find($category)->children;
+        } else {
+            return [];
+        }
+        
+        return $series;
+    }
 }

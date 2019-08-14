@@ -1,0 +1,4 @@
+title: Book
+modelClass: fw\Backend\Models\Book
+toolbar:
+    buttons: reorder_toolbar
