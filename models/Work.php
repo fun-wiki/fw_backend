@@ -88,6 +88,12 @@ class Work extends Model
             'key'      => 'parent_work_id',
             'otherKey' => 'work_id'
         ],
+        'book_edition' => [
+            'fw\Backend\Models\Book',
+            'table'    => 'fw_backend_relation_books_works',
+            'key'      => 'work_id',
+            'otherKey' => 'book_id'
+        ]
     ];
     
     public $morphOne = [

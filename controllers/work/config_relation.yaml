@@ -11,3 +11,13 @@ book_content:
         form:  ~/plugins/fw/backend/models/work/_add_field.yaml
         list:  ~/plugins/fw/backend/models/work/_add_column.yaml
         showSearch: true
+
+book_edition:
+    label: Издания
+    view:
+        list:  ~/plugins/fw/backend/models/book/_book_columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form:  ~/plugins/fw/backend/models/book/_book_fields.yaml
+        list:  ~/plugins/fw/backend/models/book/_book_columns.yaml
+        showSearch: true

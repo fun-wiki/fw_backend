@@ -12,15 +12,15 @@ class Book extends Model
 
     public $rules = [];
 
-    public $permalink = ':universe.title/book/:content.title';
+    public $permalink = ':universe.title/bookedition/:content.title';
 
     protected $fillable = [
         'title'
     ];
 
     public $belongsTo = [
-        'universe'  => ['fw\Backend\Models\Universe'],
-        'series' => ['fw\Backend\Models\Category']
+        // 'universe'  => ['fw\Backend\Models\Universe'],
+        // 'series' => ['fw\Backend\Models\Category']
     ];
 
     public $belongsToMany = [
@@ -70,7 +70,7 @@ class Book extends Model
     public function beforeSave() 
     {
         \fw\Backend\Classes\Content::bindContent($this);
-        \fw\Backend\Classes\Content::hasSeries($this, 'books');
+        // \fw\Backend\Classes\Content::hasSeries($this, 'books');
     }
 
     public function afterSave()
@@ -81,6 +81,8 @@ class Book extends Model
     public static function getSeries($model)
     {
         $universe_id = $model->config->parentForm->getField('universe')->value;
+
+        dump($universe_id);
 
         if ($universe_id) {
             $category_id = Universe::find($universe_id)->content->category_id;

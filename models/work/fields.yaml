@@ -2,7 +2,7 @@ secondaryTabs:
     stretch: true
     paneCssClass:
         Информация: paddingTabs
-        Галерея: paddingTabs
+        Издания: paddingTabs
     fields:
         title:
             label: Название
@@ -86,7 +86,7 @@ secondaryTabs:
             tab: Информация
             label: Серия
             span: storm
-            cssClass: col-lg-3
+            cssClass: col-sm-12 col-lg-3
             type: selectize
             options: Series
             dependsOn:
@@ -104,7 +104,7 @@ secondaryTabs:
         create_date:
             label: Дата создания
             tab: Информация
-            type: udatepicker
+            type: text
             mode: year
             span: storm
             cssClass: col-lg-6
@@ -128,3 +128,10 @@ secondaryTabs:
             span: storm
             cssClass: col-lg-12
 
+        book_edition:
+            tab: Издания
+            span: storm
+            cssClass: 'col-sm-12 col-lg-12'
+            type: partial
+            path: $/fw/backend/models/work/_editions.htm
+            dependsOn:

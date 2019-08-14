@@ -640,3 +640,9 @@
 1.0.216:
     - 'Updated table fw_backend_works'
     - builder_table_update_fw_backend_works_10.php
+1.0.217:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_24.php
+1.0.218:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_25.php
