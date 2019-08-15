@@ -68,6 +68,11 @@ class Videogame extends Model
         \fw\Backend\Classes\Content::bindContent($this);
         \fw\Backend\Classes\Content::bindCategory($this, 'videogames');
         \fw\Backend\Classes\Content::hasSeries($this, 'videogames');
+
+        $universe_id = $this->universe_id;
+        $add_books = \fw\Backend\Models\Universe::find($universe_id);
+        $add_books->videogame = 1;
+        $add_books->save();
     }
 
     public function afterSave()

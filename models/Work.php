@@ -15,7 +15,7 @@ class Work extends Model
      */
     public $timestamps = false;
 
-    public $permalink = ':universe.title/book/:content.title';
+    public $permalink = ':universe.title/books/:content.title';
 
     /**
      * @var string The database table used by the model.
@@ -102,6 +102,7 @@ class Work extends Model
     
     public function beforeSave()
     {
+        
         $universe_id = $this->universe_id;
 
         if ($this->book_type == 'novel') {
@@ -119,6 +120,10 @@ class Work extends Model
             }
             // trace_log(json_decode($this->book_content));
         }
+
+        $add_books = \fw\Backend\Models\Universe::find($universe_id);
+        $add_books->book = 1;
+        $add_books->save();
 
         \fw\Backend\Classes\Content::bindContent($this);
         \fw\Backend\Classes\Content::hasSeries($this, 'books');

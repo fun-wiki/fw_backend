@@ -646,3 +646,6 @@
 1.0.218:
     - 'Updated table fw_backend_books'
     - builder_table_update_fw_backend_books_25.php
+1.0.219:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_11.php
