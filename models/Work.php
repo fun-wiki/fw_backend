@@ -56,6 +56,10 @@ class Work extends Model
         'universe'  => ['fw\Backend\Models\Universe'],
         'series' => ['fw\Backend\Models\Category']
     ];
+    
+    public $attachOne = [
+        'cover' => 'System\Models\File'
+    ];
 
     public $belongsToMany = [
         'author' => [

@@ -3,6 +3,7 @@ secondaryTabs:
     paneCssClass:
         Информация: paddingTabs
         Издания: paddingTabs
+        Обложка: paddingTabs
     fields:
         title:
             label: Название
@@ -135,3 +136,20 @@ secondaryTabs:
             type: partial
             path: $/fw/backend/models/work/_editions.htm
             dependsOn:
+
+        cover: 
+            label: Обложка
+            tab: Обложка
+            type: fileupload
+            mode: image
+            imageHeight: 300
+            imageWidth: 500
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto
