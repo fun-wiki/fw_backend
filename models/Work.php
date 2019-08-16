@@ -32,7 +32,8 @@ class Work extends Model
     {
         $status = [
             'story' => "Рассказ",
-            'novel' => "Роман"
+            'novel' => "Роман",
+            'povest' => "Повесть"
         ];
 
         return $status;
