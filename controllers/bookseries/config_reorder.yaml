@@ -1,4 +1,0 @@
-title: BookSeries
-modelClass: fw\Backend\Models\BookSeries
-toolbar:
-    buttons: reorder_toolbar

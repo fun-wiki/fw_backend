@@ -649,3 +649,18 @@
 1.0.219:
     - 'Updated table fw_backend_universes'
     - builder_table_update_fw_backend_universes_11.php
+1.0.220:
+    - 'Drop table fw_backend_book_editions'
+    - builder_table_delete_fw_backend_book_editions.php
+1.0.221:
+    - 'Drop table fw_backend_book_editions'
+    - builder_table_delete_fw_backend_book_editions_2.php
+1.0.222:
+    - 'Drop table fw_backend_book_series'
+    - builder_table_delete_fw_backend_book_series.php
+1.0.223:
+    - 'Drop table fw_backend_book_types'
+    - builder_table_delete_fw_backend_book_types.php
+1.0.224:
+    - 'Drop table fw_backend_literature_type'
+    - builder_table_delete_fw_backend_literature_type_2.php
