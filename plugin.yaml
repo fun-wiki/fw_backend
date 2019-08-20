@@ -29,16 +29,12 @@ navigation:
                 icon: icon-sitemap
             book-editions:
                 label: Книги
-                url: fw/backend/book
+                url: fw/backend/work
                 icon: icon-book
             videogame:
                 label: Видеоигры
                 url: fw/backend/videogame
                 icon: icon-gamepad
-            work:
-                label: Произведения
-                url: fw/backend/work
-                icon: icon-book
     fw-menu-add:
         label: Справочники
         url: fw/backend/genre
