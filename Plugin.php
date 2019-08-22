@@ -77,6 +77,7 @@ class Plugin extends PluginBase
 
 
     Event::listen('cms.page.display', function ($controller, $url, $page, $result) {
+        if ($url = '404') return;
         $LastModified_unix = strtotime(date("D, d M Y H:i:s", filectime($_SERVER['SCRIPT_FILENAME'])));
         $LastModified = gmdate("D, d M Y H:i:s \G\M\T", $LastModified_unix);
         $IfModifiedSince = false;
