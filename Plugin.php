@@ -83,11 +83,9 @@ class Plugin extends PluginBase
             if (isset($_ENV['HTTP_IF_MODIFIED_SINCE'])) $IfModifiedSince = strtotime(substr($_ENV['HTTP_IF_MODIFIED_SINCE'], 5));
             if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])) $IfModifiedSince = strtotime(substr($_SERVER['HTTP_IF_MODIFIED_SINCE'],5));
             if ($IfModifiedSince && $IfModifiedSince >= $LastModified_unix) {
-                $headers = [ $_SERVER['SERVER_PROTOCOL'] => ' 304 Not Modified' ];
-            exit; 
+              return Response::make(null, 304);
         } 
-        $headers = [ 'Last - Modified: ' => $LastModified ];
-
+        $headers = [ 'Last-Modified' => $LastModified ];
         return Response::make($result, $controller->getStatusCode(), $headers);
     });
 
