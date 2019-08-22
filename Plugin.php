@@ -77,17 +77,17 @@ class Plugin extends PluginBase
 
 
     Event::listen('cms.page.display', function ($controller, $url, $page, $result) {
-        // if ($url = '404') return;
-        // $LastModified_unix = strtotime(date("D, d M Y H:i:s", filectime($_SERVER['SCRIPT_FILENAME'])));
-        // $LastModified = gmdate("D, d M Y H:i:s \G\M\T", $LastModified_unix);
-        // $IfModifiedSince = false;
-        //     if (isset($_ENV['HTTP_IF_MODIFIED_SINCE'])) $IfModifiedSince = strtotime(substr($_ENV['HTTP_IF_MODIFIED_SINCE'], 5));
-        //     if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])) $IfModifiedSince = strtotime(substr($_SERVER['HTTP_IF_MODIFIED_SINCE'],5));
-        //     if ($IfModifiedSince && $IfModifiedSince >= $LastModified_unix) {
-        //       return Response::make(null, 304);
-        // } 
-        // $headers = [ 'Last-Modified' => $LastModified ];
-        // return Response::make($result, $controller->getStatusCode(), $headers);
+        if ($url = '404') return;
+        $LastModified_unix = strtotime(date("D, d M Y H:i:s", filectime($_SERVER['SCRIPT_FILENAME'])));
+        $LastModified = gmdate("D, d M Y H:i:s \G\M\T", $LastModified_unix);
+        $IfModifiedSince = false;
+            if (isset($_ENV['HTTP_IF_MODIFIED_SINCE'])) $IfModifiedSince = strtotime(substr($_ENV['HTTP_IF_MODIFIED_SINCE'], 5));
+            if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE'])) $IfModifiedSince = strtotime(substr($_SERVER['HTTP_IF_MODIFIED_SINCE'],5));
+            if ($IfModifiedSince && $IfModifiedSince >= $LastModified_unix) {
+              return Response::make(null, 304);
+        } 
+        $headers = [ 'Last-Modified' => $LastModified ];
+        return Response::make($result, $controller->getStatusCode(), $headers);
     });
 
     Relation::morphMap([
