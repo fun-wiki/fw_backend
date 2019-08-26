@@ -5,9 +5,19 @@
 book_content:
     label: Содержание
     view:
-        list:  ~/plugins/fw/backend/models/work/columns.yaml
+        list:  ~/plugins/fw/backend/models/book/columns.yaml
         toolbarButtons: create|add|remove
     manage:
-        form:  ~/plugins/fw/backend/models/work/fields.yaml
-        list:  ~/plugins/fw/backend/models/work/columns.yaml
+        form:  ~/plugins/fw/backend/models/book/_add_field.yaml
+        list:  ~/plugins/fw/backend/models/book/_add_column.yaml
+        showSearch: true
+
+book_edition:
+    label: Издания
+    view:
+        list:  ~/plugins/fw/backend/models/bookedition/_book_columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form:  ~/plugins/fw/backend/models/bookedition/_book_fields.yaml
+        list:  ~/plugins/fw/backend/models/bookedition/_book_columns.yaml
         showSearch: true

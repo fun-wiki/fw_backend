@@ -1,6 +1,6 @@
 {
-    "name": "fw/Backend",
-    "description": "October CMS",
+    "name": "F.UN - Энциклопедия фантастических вселенных",
+    "description": "backend composer library",
     "require": {
         "google/apiclient": "^2.0",
         "buzzingpixel/twig-switch": "^1.0"

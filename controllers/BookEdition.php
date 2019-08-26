@@ -4,7 +4,7 @@ use Backend\Classes\Controller;
 use BackendMenu;
 use fw\Backend\Models\Content;
 
-class Work extends Controller
+class Book extends Controller
 {
     public $implement = [
         'Backend.Behaviors.ListController',
@@ -17,13 +17,14 @@ class Work extends Controller
     public $formConfig = 'config_form.yaml';
     public $reorderConfig = 'config_reorder.yaml';
     public $relationConfig = 'config_relation.yaml';
-    
+
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('fw.Backend', 'fw-menu', 'work');
+        BackendMenu::setContext('fw.Backend', 'fw-menu', 'book');
+        
     }
-
+    
     public function create()
     {
         $this->bodyClass = 'compact-container';
@@ -54,5 +55,4 @@ class Work extends Controller
         }
         return $model;
     }
-
 }

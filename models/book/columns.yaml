@@ -1,19 +1,48 @@
 columns:
     id:
-        label: id
+        label: ID
+        type: number
+        sortable: true
         width: 5%
+        align: center
     title:
         label: Название
         type: text
-    author:
+        searchable: true
+        sortable: true
+    title_ru:
+        label: Название (Перевод)
+        type: text
+        searchable: true
+        sortable: true
+    work_type:
+        label: Вид произведения
+        type: partial
+        path: ~/plugins/fw/backend/models/book/_work_type_column.htm
+    book_type:
+        label: book_type
+        type: text
+    in_anthology:
+        label: Входит в антологию
+        type: text
+    author: 
         label: Автор
         relation: author
         select: title
-    book_type:
-        label: Тип книги
-        type: partial
-        path: ~/plugins/fw/backend/models/book/_book_type_column.htm
+        width: 15%
+    universe_id:
+        label: Вселенная
+        relation: universe
+        select: title
+    series_id:
+        label: Цикл
+        relation: series
+        select: title
+    number_in_series:
+        label: Номер в серии
+        type: text
+    create_date: 
+        label: Дата создания
+        width: 5%
 
-
-
-
+    

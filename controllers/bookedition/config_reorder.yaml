@@ -1,4 +1,4 @@
 title: Book
-modelClass: fw\Backend\Models\Book
+modelClass: fw\Backend\Models\bookedition
 toolbar:
     buttons: reorder_toolbar

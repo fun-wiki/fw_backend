@@ -1,9 +1,9 @@
 plugin:
-    name: 'fun-wiki.ru backend'
-    description: 'fun-wiki backend'
-    author: fun-wiki
-    icon: oc-icon-database
-    homepage: 'http://fun-wiki.ru'
+    name: F.UN - Энциклопедия фантастических вселенных
+    description: fun-wiki backend
+    author: CRYDEsigN
+    icon: oc-icon-bookmark-o
+    homepage: https://fun-wiki.ru
 navigation:
     fw-menu:
         label: Энциклопедия
@@ -29,7 +29,7 @@ navigation:
                 icon: icon-sitemap
             book-editions:
                 label: Книги
-                url: fw/backend/work
+                url: fw/backend/book
                 icon: icon-book
             videogame:
                 label: Видеоигры
@@ -44,27 +44,27 @@ navigation:
                 label: Жанры
                 url: fw/backend/genre
                 icon: icon-sitemap
-            PersonRoles:
-                label: 'Person Roles'
+            personRoles:
+                label: Person Roles
                 url: fw/backend/personroles
                 icon: icon-sitemap
             literature_type:
-                label: 'Вид произведения'
+                label: Вид произведения
                 url: fw/backend/literaturetype
                 icon: icon-book
             book-series:
-                label: 'Книжные серии'
+                label: Книжные серии
                 url: fw/backend/bookseries
                 icon: icon-book
             platform:
-                label: 'Игровые платформы'
+                label: Игровые платформы
                 url: fw/backend/platform
                 icon: icon-windows
             game-types:
-                label: 'Игровые жанры'
+                label: Игровые жанры
                 url: fw/backend/gametype
                 icon: icon-gamepad
-    Content:
+    content:
         label: Контент
         url: fw/backend/content
         icon: icon-archive

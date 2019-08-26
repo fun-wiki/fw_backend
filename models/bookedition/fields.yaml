@@ -1,0 +1,67 @@
+secondaryTabs:
+    stretch: true
+    paneCssClass:
+        Информация: paddingTabs
+        Содержание: paddingTabs
+    fields:
+        title:
+            tab: Информация
+            label: Название
+            type: text
+            span: storm
+            cssClass: 'col-sm-5 col-lg-6'
+            required: 1
+        book_type:
+            tab: Информация
+            label: 'Тип книги'
+            showSearch: true
+            type: dropdown
+            span: storm
+            cssClass: 'col-sm-3 col-lg-3'
+        author:
+            label: Автор (составитель)
+            tab: Информация
+            type: taglist
+            separator: comma
+            nameFrom: title
+            mode: relation
+            customTags: true
+            span: storm
+            cssClass: 'col-sm-9 col-lg-9'
+        isbn:
+            label: ISBN
+            type: text
+            tab: Информация
+            span: storm
+            cssClass: 'col-sm-3 col-lg-3'
+        publisher:
+            label: Издатель
+            tab: Информация
+            type: taglist
+            separator: comma
+            nameFrom: title
+            mode: relation
+            customTags: true
+            span: storm
+            cssClass: 'col-sm-6 col-lg-6'
+        publish_date:
+            label: Дата издания
+            type: udatepicker
+            mode: year
+            span: right
+            tab: Информация
+            span: storm
+            cssClass: 'col-sm-1 col-lg-1'
+
+        description:
+            tab: Описание
+            span: full
+            size: huge
+            type: textarea
+            stretch: true
+        book_content:
+            tab: Содержание
+            span: storm
+            cssClass: 'col-sm-12 col-lg-12'
+            type: partial
+            path: $/fw/backend/models/book/_book_content.htm

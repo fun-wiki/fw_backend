@@ -1,0 +1,19 @@
+columns:
+    id:
+        label: id
+        width: 5%
+    title:
+        label: Название
+        type: text
+    author:
+        label: Автор
+        relation: author
+        select: title
+    book_type:
+        label: Тип книги
+        type: partial
+        path: ~/plugins/fw/backend/models/book/_book_type_column.htm
+
+
+
+

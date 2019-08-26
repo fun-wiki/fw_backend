@@ -1,4 +1,6 @@
-<?php namespace fw\Backend\Controllers;
+<?php
+
+namespace fw\Backend\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
@@ -12,7 +14,6 @@ class Book extends Controller
         'Backend.Behaviors.ReorderController',
         'Backend.Behaviors.RelationController',
     ];
-
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
     public $reorderConfig = 'config_reorder.yaml';
@@ -21,10 +22,9 @@ class Book extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('fw.Backend', 'fw-menu', 'book');
-        
+        BackendMenu::setContext('fw.Backend', 'fw-menu', 'work');
     }
-    
+
     public function create()
     {
         $this->bodyClass = 'compact-container';
@@ -40,10 +40,9 @@ class Book extends Controller
     public function formExtendFields($form)
     {
         $config = $this->makeConfig('$/fw/backend/models/content/fields.yaml');
-
         foreach ($config->fields as $field => $options) {
             $form->addFields([
-                'content['.$field.']' => $options
+                'content[' . $field . ']' => $options
             ]);
         }
     }

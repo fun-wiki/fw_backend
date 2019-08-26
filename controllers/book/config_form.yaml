@@ -1,10 +1,13 @@
-name: Book
+name: Произведение
 form: $/fw/backend/models/book/fields.yaml
 modelClass: fw\Backend\Models\Book
 defaultRedirect: fw/backend/book
+
 create:
     redirect: 'fw/backend/book/update/:id'
     redirectClose: fw/backend/book
+    flashSave: Произведение сохранено
 update:
     redirect: fw/backend/book
     redirectClose: fw/backend/book
+    flashSave: Произведение обновлено

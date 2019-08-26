@@ -2,24 +2,55 @@ secondaryTabs:
     stretch: true
     paneCssClass:
         Информация: paddingTabs
-        Содержание: paddingTabs
+        Издания: paddingTabs
+        Обложка: paddingTabs
     fields:
         title:
-            tab: Информация
             label: Название
-            type: text
-            span: storm
-            cssClass: 'col-sm-5 col-lg-6'
-            required: 1
-        book_type:
             tab: Информация
-            label: 'Тип книги'
+            span: storm
+            cssClass: col-lg-6
+            type: text
+        title_ru:
+            label: 'Название (Перевод)'
+            tab: Информация
+            span: storm
+            cssClass: col-lg-6
+            type: text
+        book_type:
+            label: 'Тип произведения'
+            tab: Информация
             showSearch: true
             type: dropdown
             span: storm
-            cssClass: 'col-sm-3 col-lg-3'
+            cssClass: col-lg-12
+        work_type:
+            label: 'Тип произведения'
+            tab: Информация
+            showSearch: true
+            type: dropdown
+            span: storm
+            cssClass: col-lg-6
+            trigger:
+                action: empty
+                action: hide
+                field: book_type
+                condition: value[anthology]
+        genres:
+            label: Жанр произведения
+            tab: Информация
+            type: taglist
+            separator: comma
+            nameFrom: title
+            mode: relation
+            span: storm
+            cssClass: col-lg-6
+            trigger:
+                action: hide
+                field: book_type
+                condition: value[anthology]
         author:
-            label: Автор (составитель)
+            label: Автор
             tab: Информация
             type: taglist
             separator: comma
@@ -27,15 +58,9 @@ secondaryTabs:
             mode: relation
             customTags: true
             span: storm
-            cssClass: 'col-sm-9 col-lg-9'
-        isbn:
-            label: ISBN
-            type: text
-            tab: Информация
-            span: storm
-            cssClass: 'col-sm-3 col-lg-3'
-        publisher:
-            label: Издатель
+            cssClass: col-lg-12
+        illustrator:
+            label: Иллюстратор
             tab: Информация
             type: taglist
             separator: comma
@@ -43,25 +68,88 @@ secondaryTabs:
             mode: relation
             customTags: true
             span: storm
-            cssClass: 'col-sm-6 col-lg-6'
-        publish_date:
-            label: Дата издания
-            type: udatepicker
-            mode: year
-            span: right
-            tab: Информация
-            span: storm
-            cssClass: 'col-sm-1 col-lg-1'
+            cssClass: col-lg-12
+            trigger:
+                action: show
+                field: book_type
+                condition: value[comic]
 
-        description:
-            tab: Описание
-            span: full
-            size: huge
-            type: textarea
-            stretch: true
+        universe:
+            tab: Информация
+            label: Вселенная
+            span: storm
+            cssClass: col-sm-2
+            type: recordfinder
+            list: ~/plugins/fw/backend/models/universe/columns.yaml
+            nameFrom: title
+            required: 1
+        series_id:
+            tab: Информация
+            label: Серия
+            span: storm
+            cssClass: col-sm-12 col-lg-3
+            type: selectize
+            options: Series
+            dependsOn:
+                - universe
+        number_in_series:
+            label: 'Номер в серии'
+            span: storm
+            cssClass: col-lg-1
+            type: number
+            tab: Информация
+            trigger:
+                action: disable
+                field: series_id
+                condition: value[-1]
+        create_date:
+            label: Дата создания
+            tab: Информация
+            type: text
+            mode: year
+            span: storm
+            cssClass: col-lg-6
         book_content:
-            tab: Содержание
+            tab: Информация
             span: storm
             cssClass: 'col-sm-12 col-lg-12'
             type: partial
-            path: $/fw/backend/models/book/_book_content.htm
+            path: $/fw/backend/models/book/_content.htm
+            dependsOn:
+                - universe
+            trigger:
+                action: show
+                field: book_type
+                condition: value[anthology]
+                
+        description:
+            label: Аннотация
+            tab: Информация
+            type: textarea
+            span: storm
+            cssClass: col-lg-12
+
+        book_edition:
+            tab: Издания
+            span: storm
+            cssClass: 'col-sm-12 col-lg-12'
+            type: partial
+            path: $/fw/backend/models/book/_editions.htm
+            dependsOn:
+
+        cover: 
+            label: Обложка
+            tab: Обложка
+            type: fileupload
+            mode: image
+            imageHeight: 300
+            imageWidth: 500
+            thumbOptions:
+                mode: crop
+                offset:
+                    - 0
+                    - 0
+                quality: 90
+                sharpen: 0
+                interlace: false
+                extension: auto

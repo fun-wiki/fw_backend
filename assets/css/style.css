@@ -3,12 +3,12 @@
     border: 0 !important;
 }
 
-.fancy-layout .form-tabless-fields input[type=text] {
+.fancy-layout .form-tabless-fields input[type="text"] {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.control-balloon-selector  {
+.control-balloon-selector {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 50px;
@@ -63,8 +63,7 @@
     width: 40%;
 }
 
-
-.cover-image>.field-mediafinder.style-image-single .find-object .info >h4 {
+.cover-image>.field-mediafinder.style-image-single .find-object .info>h4 {
     margin: 0;
 }
 
@@ -72,11 +71,11 @@
     position: absolute;
     margin-top: 30px;
     padding: 10px 15px;
-    background:rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.5);
     height: 40px;
 }
 
-.label-image>.field-mediafinder.style-image-single .find-object .info >h4 {
+.label-image>.field-mediafinder.style-image-single .find-object .info>h4 {
     margin: 0;
 }
 
@@ -102,15 +101,13 @@
     padding-top: 10px !important;
 }
 
-
-.fancy-layout .form-tabless-fields input[type=text] {
+.fancy-layout .form-tabless-fields input[type="text"] {
     padding-left: 10px;
     padding-right: 10px;
 }
 
-
 .field-mediafinder.style-image-single .find-object .icon-container {
-    border: 0 !important
+    border: 0 !important;
 }
 
 .field-mediafinder.style-image-single .find-object .icon-container img {
@@ -122,10 +119,10 @@
 }
 
 .personPhoto {
-    height: 300px
+    height: 300px;
 }
 
-.personPhoto > .field-mediafinder .style-image-single .find-button {
+.personPhoto>.field-mediafinder .style-image-single .find-button {
     display: block;
     border: 2px dotted rgba(0, 0, 0, 0.1);
     position: relative;
@@ -135,10 +132,10 @@
 }
 
 .cover {
-    height: 300px
+    height: 300px;
 }
 
-.cover > .field-mediafinder .style-image-single .find-button {
+.cover>.field-mediafinder .style-image-single .find-button {
     display: block;
     border: 2px dotted rgba(0, 0, 0, 0.1);
     position: relative;

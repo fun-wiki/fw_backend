@@ -664,3 +664,11 @@
 1.0.224:
     - 'Drop table fw_backend_literature_type'
     - builder_table_delete_fw_backend_literature_type_2.php
+1.1.0:
+    - 'Version 1.1.0'
+1.1.1:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_edition.php
+1.1.2:
+    - 'Updated table fw_backend_works'
+    - builder_table_update_fw_backend_books_26.php

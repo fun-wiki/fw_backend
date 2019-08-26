@@ -1,6 +1,6 @@
 list: $/fw/backend/models/book/columns.yaml
 modelClass: fw\Backend\Models\Book
-title: Книги
+title: Произведения
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true
