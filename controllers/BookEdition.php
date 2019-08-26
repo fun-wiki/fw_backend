@@ -4,7 +4,7 @@ use Backend\Classes\Controller;
 use BackendMenu;
 use fw\Backend\Models\Content;
 
-class Book extends Controller
+class BookEdition extends Controller
 {
     public $implement = [
         'Backend.Behaviors.ListController',

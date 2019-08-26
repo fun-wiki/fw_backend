@@ -64,4 +64,4 @@ secondaryTabs:
             span: storm
             cssClass: 'col-sm-12 col-lg-12'
             type: partial
-            path: $/fw/backend/models/book/_book_content.htm
+            path: $/fw/backend/models/bookedition/_book_content.htm

@@ -64,12 +64,6 @@ class Book extends Model
             'key'      => 'work_id',
             'otherKey' => 'genre_id'
         ],
-        'books' => [
-            'fw\Backend\Models\Book',
-            'table'    => 'fw_backend_relation_books_works',
-            'key'      => 'book_id',
-            'otherKey' => 'work_id'
-        ],
         'book_content' => [
             'fw\Backend\Models\Book',
             'table'    => 'fw_backend_relation_works_works',

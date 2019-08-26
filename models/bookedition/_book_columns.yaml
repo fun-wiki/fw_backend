@@ -12,7 +12,7 @@ columns:
     book_type:
         label: Тип книги
         type: partial
-        path: ~/plugins/fw/backend/models/book/_book_type_column.htm
+        path: ~/plugins/fw/backend/models/bookedition/_book_type_column.htm
 
 
 

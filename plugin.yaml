@@ -11,6 +11,10 @@ navigation:
         icon: icon-adn
         iconSvg: plugins/fw/backend/assets/images/plugin-logo.svg
         sideMenu:
+            dashboards:
+                label: Главная
+                url: fw/backend/dashboard
+                icon: oc-icon-dashboard
             news:
                 label: Новости
                 url: fw/backend/news

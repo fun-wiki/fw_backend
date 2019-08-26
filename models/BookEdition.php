@@ -2,7 +2,7 @@
 
 use Model;
 
-class Book extends Model
+class BookEdition extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
