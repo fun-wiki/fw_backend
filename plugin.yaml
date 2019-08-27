@@ -7,14 +7,14 @@ plugin:
 navigation:
     fw-menu:
         label: Энциклопедия
-        url: fw/backend/universe
+        url: fw/backend/dashboard
         icon: icon-adn
         iconSvg: plugins/fw/backend/assets/images/plugin-logo.svg
         sideMenu:
-            dashboards:
-                label: Главная
+            logo:
+                label: 
                 url: fw/backend/dashboard
-                icon: oc-icon-dashboard
+                iconSvg: plugins/fw/backend/assets/images/plugin-logo.svg
             news:
                 label: Новости
                 url: fw/backend/news
