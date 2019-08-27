@@ -18,27 +18,27 @@ navigation:
             news:
                 label: Новости
                 url: fw/backend/news
-                icon: icon-newspaper-o
+                iconSvg: plugins/fw/backend/assets/images/news.svg
             universes:
                 label: Вселенные
                 url: fw/backend/universe
-                iconSvg: plugins/fw/backend/assets/images/universes.svg
+                iconSvg: plugins/fw/backend/assets/images/universe.svg
             person:
                 label: Люди
                 url: fw/backend/person
-                iconSvg: plugins/fw/backend/assets/images/persons.svg
+                iconSvg: plugins/fw/backend/assets/images/person.svg
             organistions:
                 label: Организации
                 url: fw/backend/organisations
-                icon: icon-sitemap
+                iconSvg: plugins/fw/backend/assets/images/company.svg
             book-editions:
                 label: Книги
                 url: fw/backend/book
-                icon: icon-book
+                iconSvg: plugins/fw/backend/assets/images/book.svg
             videogame:
                 label: Видеоигры
                 url: fw/backend/videogame
-                icon: icon-gamepad
+                iconSvg: plugins/fw/backend/assets/images/videogame.svg
     fw-menu-add:
         label: Справочники
         url: fw/backend/genre

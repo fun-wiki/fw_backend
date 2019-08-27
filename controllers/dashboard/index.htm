@@ -2,3 +2,24 @@
     <div data-control="toolbar">
     </div>
 </div>
+
+<div class="lg-4 card bg-white w-sm p-a m-t m-b">
+    <div class="scoreboard-item title-value">
+        <img src="/plugins/fw/backend/assets/images/news.svg" >
+        <p class="svg-news">Новости</p>
+    </div>
+    <div class="scoreboard m-t">
+        <div data-control="toolbar">
+            <div class="scoreboard-item control-chart" data-control="chart-bar">
+                <ul>
+                    <li data-color="#95b753">Новости <span><?= \fw\Backend\Models\News::where('news_type', 'news')->count() ?></span></li>
+                    <li data-color="#e5a91a">Трейлер <span><?= \fw\Backend\Models\News::where('news_type', 'trailer')->count() ?></span></li>
+                </ul>
+            </div>
+            <div class="scoreboard-item title-value">
+                <h4>Всего новостей:</h4>
+                <p><?= \fw\Backend\Models\Content::where('contentable_type', 'news')->count() ?></p>
+            </div>
+        </div>
+    </div>
+</div>
