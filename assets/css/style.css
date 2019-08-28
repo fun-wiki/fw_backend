@@ -152,9 +152,7 @@
 .title-value p:before {
     color: #888;
 }
-.svg-news {
-    background-image: url('../fonts/icon/news.svg') no-repeat top left;
-    background-size: contain;
-    width: 20px;
-    height: 20px;
+
+.card_list {
+    display: flex;
 }
