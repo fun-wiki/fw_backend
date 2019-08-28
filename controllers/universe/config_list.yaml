@@ -4,7 +4,7 @@ modelClass: fw\Backend\Models\Universe
 recordUrl: 'fw/backend/universe/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
 showCheckboxes: true
-recordsPerPage: 20
+recordsPerPage: 15
 toolbar:
     buttons: list_toolbar
     search:

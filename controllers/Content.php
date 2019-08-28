@@ -1,6 +1,7 @@
 <?php namespace fw\Backend\Controllers;
 
 use Backend\Classes\Controller;
+use Fw\Backend\Models\Content as Model;
 use BackendMenu;
 
 class Content extends Controller
@@ -14,6 +15,12 @@ class Content extends Controller
     public function __construct()
     {
         parent::__construct();
+
+        Model::extend(function($model) {
+            $model->bindEvent('model.afterDelete', function () use ($model) {
+                \Log::info("{$model->id} was deleted");
+            });
+        });
     }
 
     public function formBeforeCreate($model)
