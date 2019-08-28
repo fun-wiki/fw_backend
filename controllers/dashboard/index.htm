@@ -84,8 +84,8 @@
             <div data-control="toolbar">
                 <div class="scoreboard-item control-chart" data-control="chart-bar">
                     <ul>
-                        <li data-color="#95b753">Заполненно <span><?= \fw\Backend\Models\Organisation::where('complete', '>', 70)->count() ?></span></li>
-                        <li data-color="#e5a91a">Не заполнено <span><?= \fw\Backend\Models\Organisation::where('complete', '<=', 70)->count() ?></span></li>
+                        <li data-color="#95b753">Заполненно <span><?= \fw\Backend\Models\Company::where('complete', '>', 70)->count() ?></span></li>
+                        <li data-color="#e5a91a">Не заполнено <span><?= \fw\Backend\Models\Company::where('complete', '<=', 70)->count() ?></span></li>
                     </ul>
                 </div>
                 <div class="scoreboard-item title-value">

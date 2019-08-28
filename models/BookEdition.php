@@ -32,7 +32,7 @@ class BookEdition extends Model
             'otherKey' => 'person_id'
         ],
         'publisher'     => [
-            'fw\Backend\Models\Organisation',
+            'fw\Backend\Models\Company',
             'table'    => 'fw_backend_relation_books_publishers',
             'key'      => 'book_id',
             'otherKey' => 'organisation_id'

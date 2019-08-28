@@ -3,7 +3,7 @@
 use Model;
 use Fw\Backend\Traits\Permalink;
 
-class Organisation extends Model
+class Company extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     

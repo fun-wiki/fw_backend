@@ -36,13 +36,13 @@ class Videogame extends Model
             'otherKey' => 'gametype_id'
         ],
         'developer' => [
-            'fw\Backend\Models\Organisation',
+            'fw\Backend\Models\Company',
             'table'    => 'fw_backend_relation_videogames_developer',
             'key'      => 'videogame_id',
             'otherKey' => 'developer_id'
         ],
         'publisher' => [
-            'fw\Backend\Models\Organisation',
+            'fw\Backend\Models\Company',
             'table'    => 'fw_backend_relation_videogames_publisher',
             'key'      => 'videogame_id',
             'otherKey' => 'publisher_id'
