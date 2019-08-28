@@ -1,4 +1,0 @@
-title: Universe
-modelClass: fw\Backend\Models\Universe
-toolbar:
-    buttons: reorder_toolbar

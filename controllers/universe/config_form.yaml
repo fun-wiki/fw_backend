@@ -1,10 +1,14 @@
-name: '> Вселенная'
+name: 'Вселенная'
 form: $/fw/backend/models/universe/fields.yaml
 modelClass: fw\Backend\Models\Universe
 defaultRedirect: fw/backend/universe
 create:
+    title: 'Создание вселенной'
     redirect: 'fw/backend/universe/update/:id'
     redirectClose: fw/backend/universe
+    flashSave: Вселенная создана
 update:
+    title: 'Редактировать вселенную'
     redirect: fw/backend/universe
     redirectClose: fw/backend/universe
+    flashSave: Вселенная отредактирована

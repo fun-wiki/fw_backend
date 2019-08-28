@@ -1,12 +1,12 @@
+title: Вселенные
 list: $/fw/backend/models/universe/columns.yaml
 modelClass: fw\Backend\Models\Universe
-title: Universe
+recordUrl: 'fw/backend/universe/update/:id'
 noRecordsMessage: 'backend::lang.list.no_records'
-showSetup: true
 showCheckboxes: true
 recordsPerPage: 20
 toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'fw/backend/universe/update/:id'
+
