@@ -28,7 +28,7 @@ navigation:
                 url: fw/backend/person
                 iconSvg: plugins/fw/backend/assets/images/person.svg
             organistions:
-                label: Организации
+                label: Компании
                 url: fw/backend/company
                 iconSvg: plugins/fw/backend/assets/images/company.svg
             book-editions:

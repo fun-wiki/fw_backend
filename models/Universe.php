@@ -22,7 +22,12 @@ class Universe extends Model
     public $belongsToMany = [
         'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_universes_genres', 'foreignKey' => 'genre_id'],
         'persons' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_universes_persons'],
-        'company' => ['fw\Backend\Models\Company', 'table' => 'fw_backend_universes_organisations']
+        'company' => [  
+            'fw\Backend\Models\Company', 
+            'table' => 'fw_backend_universes_organisations',
+            'key'      => 'universe_id',
+            'otherKey' => 'organisation_id' 
+        ]
     ];
 
     public $morphOne = [
