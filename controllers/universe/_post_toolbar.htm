@@ -11,9 +11,6 @@
         data-request="onSave"
         data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
         data-request-before-update="$el.trigger('unchange.oc.changeMonitor')"
-        <?php if (!$isCreate): ?>
-            data-request-data="redirect:0"
-        <?php endif ?>
         data-hotkey="ctrl+s, cmd+s">
         <?= e(trans('backend::lang.form.save')) ?>
     </a>
@@ -24,6 +21,7 @@
             href="javascript:;"
             data-request-before-update="$el.trigger('unchange.oc.changeMonitor')"
             data-request="onSave"
+            data-request-data="close:true"
             data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>">
             <?= e(trans('backend::lang.form.save_and_close')) ?>
         </a>

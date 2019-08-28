@@ -678,3 +678,6 @@
 1.1.4:
     - 'Updated table fw_backend_organisations'
     - builder_table_update_fw_backend_company.php
+1.1.5:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_12.php

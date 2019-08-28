@@ -25,6 +25,12 @@ secondaryTabs:
             type: wrapend
             tab: Обложка
             cssClass: 'wrap row'
+        title:
+            label: 'Название вселенной'
+            span: storm
+            cssClass: 'col-sm-6 col-lg-6'
+            type: text
+            tab: Информация
         title_ru:
             label: 'Название вселенной (перевод)'
             span: storm
@@ -34,7 +40,7 @@ secondaryTabs:
         created_at_date:
             label: 'Год (Дата) создания'
             span: storm
-            cssClass: 'col-sm-6 col-lg-6'
+            cssClass: col-lg-12
             type: udatepicker
             tab: Информация
         persons:

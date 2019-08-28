@@ -14,10 +14,25 @@ class Content
         parent::boot();
     }
 
-    public static function saveContent($model)
+    public static function asCategory($model) // used
+    {
+        $category = $model->content->category;
+
+        if (!$category) {
+            $category = new \fw\Backend\Models\Category;
+        }
+        $category->title = $model->content->title;
+        $category->save();
+
+        $model->content->category_id = $category->id;
+    }
+
+    public static function saveContent($model) // used
     {
         $content = $model->content;
-        $content->permalink = Permalink::createPermalink($model);
+        if ($content->permalink == '') {
+            $content->permalink = Permalink::createPermalink($model);
+        }
         $model->content()->add($content);
     }
 
@@ -46,7 +61,7 @@ class Content
         $model->content()->add($content);
     }
 
-    public static function bindContent($model)
+    public static function bindContent($model) // used
     {
         if (!$model->content) {
             $content = new ContentModel;
@@ -61,7 +76,7 @@ class Content
         $model->content()->add($content);
     }
 
-    public static function bindCategory($model, $type)
+    public static function bindCategory($model, $type) // used
     {
         if (!$model->universe_id) {
             $parent_id = null;

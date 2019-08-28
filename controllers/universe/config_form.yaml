@@ -9,6 +9,6 @@ create:
     flashSave: Вселенная создана
 update:
     title: 'Редактировать вселенную'
-    redirect: fw/backend/universe
+    redirect: fw/backend/universe/update/:id
     redirectClose: fw/backend/universe
     flashSave: Вселенная отредактирована
