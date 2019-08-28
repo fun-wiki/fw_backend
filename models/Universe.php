@@ -33,7 +33,7 @@ class Universe extends Model
     ];
 
     public $morphOne = [
-        'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
+        'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable', 'delete' => true],
     ];
 
     public function afterSave()

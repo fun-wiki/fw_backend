@@ -68,11 +68,13 @@ class Content
         } else {
             $content = $model->content;
         }
-        if ($content->title) {
+
+        if ($content->title) { // Определить откуда будет браться название, дать возможность разных имен
             $model->title = $content->title;
         } else {
             $content->title = $model->title;
         }
+        
         $model->content()->add($content);
     }
 
