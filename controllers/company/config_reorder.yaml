@@ -1,4 +1,4 @@
 title: Organisations
-modelClass: fw\Backend\Models\Organisation
+modelClass: fw\Backend\Models\company
 toolbar:
     buttons: reorder_toolbar

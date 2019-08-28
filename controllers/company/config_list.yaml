@@ -1,5 +1,5 @@
-list: $/fw/backend/models/organisation/columns.yaml
-modelClass: fw\Backend\Models\Organisation
+list: $/fw/backend/models/company/columns.yaml
+modelClass: fw\Backend\Models\company
 title: Organisations
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'fw/backend/organisations/update/:id'
+recordUrl: 'fw/backend/company/update/:id'
