@@ -8,7 +8,7 @@ class Company extends Model
     use \October\Rain\Database\Traits\Validation;
     
 
-    public $table = 'fw_backend_organisations';
+    public $table = 'fw_backend_company';
 
     public $rules = [];
 
