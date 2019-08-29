@@ -53,7 +53,6 @@ class Universe extends Controller
 
     public function formExtendModel($model)
     {
-        // Возможно здесь связывается модель
         if (!$model->content) {
             $model->content = new Content;
         }

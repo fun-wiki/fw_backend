@@ -1,15 +1,7 @@
+title: Контент
 list: $/fw/backend/models/content/columns.yaml
 modelClass: fw\Backend\Models\Content
-title: Content
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
-showCheckboxes: true
 recordsPerPage: 20
-toolbar:
-    buttons: list_toolbar
-    search:
-        prompt: 'backend::lang.list.search_prompt'
 recordUrl: 'fw/backend/:contentable_type/update/:contentable_id'
-
-# Custom view path
-customViewPath: $/fw/backend/controllers/content/list

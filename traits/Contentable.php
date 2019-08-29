@@ -24,7 +24,7 @@ trait Contentable
 
 
         static::extend(function($model) {
-            trace_log('model contentable!');
+            // trace_log('model contentable!');
             $model->morphOne['content'] = ['Fw\Backend\Models\Content', 'name' => 'contentable'];
             $model->bindEvent('model.beforeSave', function() use ($model) {
                 if (!$model->content) {

@@ -6,7 +6,7 @@ class Seeder113 extends Seeder
 {
     public function run()
     {
-        trace_log('seed');
+        // trace_log('seed');
         $all_content = \Fw\Backend\Models\Content::all();
 
         foreach ($all_content as $contents) {

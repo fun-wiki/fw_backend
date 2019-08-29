@@ -32,7 +32,7 @@ trait Permalink
     public static function createPermalink($model) 
     {
         // trace_log($model->permalink);
-        trace_log($model);
+        // trace_log($model);
         $parts = explode('/', $model->permalink);
 
         $fulllink = '';

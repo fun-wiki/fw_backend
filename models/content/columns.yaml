@@ -15,27 +15,28 @@ columns:
     contentable_type:
         label: contentable_type
         type: text
-    created_at:
-        label: created_at
-        type: datetime
-        format: d.m.Y
-    updated_at:
-        label: updated_at
-        type: datetime
-        format: d.m.Y -- h:i:s
-    published_at:
-        label: published_at
-        type: datetime
-        format: d.m.Y -- h:i:s
-    deleted_at:
-        label: deleted_at
-        type: datetime
-        format: d.m.Y -- h:i:s
     author_id:
         label: Автор
         relation: author
         select: login
-    category:
-        label: cat
-        relation: category
-        select: title
+    created_at:
+        label: created_at
+        type: datetime
+        format: d.m.Y
+        width: 5%
+    updated_at:
+        label: updated_at
+        type: datetime
+        format: d.m.Y
+        width: 5%
+    published_at:
+        label: published_at
+        type: datetime
+        format: d.m.Y
+        width: 5%
+    deleted_at:
+        label: deleted_at
+        type: datetime
+        format: d.m.Y
+        width: 5%
+
