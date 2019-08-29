@@ -14,13 +14,23 @@ secondaryTabs:
             label: Название вселенной (перевод)
             type: text
             span: storm
-            cssClass: 'col-sm-6 col-lg-6'
+            cssClass: col-lg-6
+        setting_type:
+            tab: Информация
+            label: Тип сеттинга
+            type: dropdown
+            options:
+                setting: Сеттинг
+                multiverse: Мультивселенная
+                crossover: Кроссовер
+            span: storm
+            cssClass: col-lg-6
         created_at_date:
             tab: Информация
             label: Год (Дата) создания
             type: udatepicker
             span: storm
-            cssClass: col-lg-12
+            cssClass: col-lg-6
         persons:
             tab: Информация
             label: Люди

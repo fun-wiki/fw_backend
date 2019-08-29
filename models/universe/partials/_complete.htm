@@ -41,7 +41,7 @@ if ($vars['record']->genres->toArray() != []) {
     $complete++;
 }
 
-$result = ceil($complete / ($num_fields-1) * 100);
+$result = ceil($complete / $num_fields * 100);
 
 \fw\Backend\Models\Universe::where('id', $vars['record']->id)->update(['complete' => $result]);
 

@@ -18,6 +18,11 @@ columns:
         label: Постоянная ссылка
         relation: content
         select: permalink
+    setting_type:
+        label: Тип сеттинга
+        width: 10%
+        type: partial
+        path: ~/plugins/fw/backend/models/universe/partials/_setting_type.htm
     status:
         label: Статус
         relation: content
