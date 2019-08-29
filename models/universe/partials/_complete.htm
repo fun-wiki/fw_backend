@@ -1,26 +1,12 @@
-<?
+<?php 
 $complete = 0;
 $num_fields = 0;
 
 
 $fields = $vars['record']->attributes;
 
-// dump($vars['record']->persons->toArray());
-
 foreach ($fields as $key => $value) {
     if ($key === "id") {
-        continue;
-    }
-
-    if ($key === "name") {
-        continue;
-    }
-
-    if ($key === "created_at") {
-        continue;
-    }
-
-    if ($key === "updated_at") {
         continue;
     }
 
@@ -28,10 +14,19 @@ foreach ($fields as $key => $value) {
         continue;
     }
 
-    if ($value != null or $value != '') {
-        $complete = $complete + 1;
+    if ($key === "_images_block_start" or $key === "_images_block_end") {
+        continue;
     }
+
+    if ($value != null or $value != '') {
+        $complete++;
+    }
+
     $num_fields++;
+}
+
+if ($vars['record']->cover != '' or $vars['record']->logo != '') {
+    $complete++;
 }
 
 if ($vars['record']->persons->toArray() != [] or $vars['record']->company->toArray() != []) {
@@ -42,12 +37,8 @@ if ($vars['record']->genres->toArray() != []) {
     $complete++;
 }
 
+$result = ceil($complete / ($num_fields-1) * 100);
 
+\fw\Backend\Models\Universe::where('id', $vars['record']->id)->update(['complete' => $result]);
 
-$result = ceil($complete/($num_fields+2)*100);
-
-\fw\Backend\Models\Universe::where('id', $vars['record']->id)
-    ->update(['complete' => $result])
-?>
-
-<? echo $result; ?>%
+echo ($result.'%');

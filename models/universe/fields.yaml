@@ -1,56 +1,34 @@
 secondaryTabs:
+    stretch: true
+    paneCssClass:
+        Информация: paddingTabs
     fields:
-        _images_block_start:
-            tab: Обложка
-            type: wrapstart
-            cssClass: 'wrap row'
-        cover:
-            tab: Обложка
-            mode: image
-            imageWidth: '1920'
-            imageHeight: '1080'
-            span: full
-            cssClass: cover-image
-            type: mediafinder
-        logo:
-            label: Логотип
-            tab: Обложка
-            mode: image
-            imageWidth: '300'
-            imageHeight: '200'
-            span: storm
-            cssClass: label-image
-            type: mediafinder
-        _images_block_end:
-            type: wrapend
-            tab: Обложка
-            cssClass: 'wrap row'
         title:
-            label: 'Название вселенной'
-            span: storm
-            cssClass: 'col-sm-6 col-lg-6'
-            type: text
             tab: Информация
+            label: Название вселенной
+            type: text
+            span: storm
+            cssClass: col-lg-6
         title_ru:
-            label: 'Название вселенной (перевод)'
+            tab: Информация
+            label: Название вселенной (перевод)
+            type: text
             span: storm
             cssClass: 'col-sm-6 col-lg-6'
-            type: text
-            tab: Информация
         created_at_date:
-            label: 'Год (Дата) создания'
+            tab: Информация
+            label: Год (Дата) создания
+            type: udatepicker
             span: storm
             cssClass: col-lg-12
-            type: udatepicker
-            tab: Информация
         persons:
-            label: Люди
             tab: Информация
+            label: Люди
             type: taglist
             mode: relation
             nameFrom: title
             span: storm
-            cssClass: 'col-sm-6 col-lg-6'
+            cssClass: col-lg-6
         company:
             tab: Информация
             label: Организации
@@ -58,7 +36,7 @@ secondaryTabs:
             mode: relation
             nameFrom: title
             span: storm
-            cssClass: 'col-sm-6 col-lg-6'
+            cssClass: col-lg-6
         genres:
             tab: Информация
             label: Жанр
@@ -66,11 +44,38 @@ secondaryTabs:
             mode: relation
             nameFrom: title
             span: storm
-            cssClass: 'col-sm-12 col-lg-12'
+            cssClass: col-lg-12
             customTags: false
+
+        _images_block_start:
+            tab: Обложка
+            type: wrapstart
+            cssClass: wrap row
+        cover:
+            tab: Обложка
+            mode: image
+            type: mediafinder
+            imageWidth: 1920
+            imageHeight: 1080
+            span: full
+            cssClass: cover-image
+        logo:
+            label: Логотип
+            tab: Обложка
+            type: mediafinder
+            mode: image
+            imageWidth: 300
+            imageHeight: 200
+            span: storm
+            cssClass: label-image
+        _images_block_end:
+            tab: Обложка
+            type: wrapend
+            cssClass: rap row
+
         description:
             tab: Описание
+            type: richeditor
             span: full
             size: huge
-            type: richeditor
             stretch: true
