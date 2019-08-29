@@ -25,6 +25,7 @@ class Universe extends Controller
     public function index()
     {
         $this->pageTitle = 'Вселенные';
+        $this->AddCss('/plugins/fw/backend/assets/css/style.css');
         $this->makeLists();
     }
 

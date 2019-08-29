@@ -681,3 +681,12 @@
 1.1.5:
     - 'Updated table fw_backend_universes'
     - builder_table_update_fw_backend_universes_12.php
+1.1.6:
+    - 'Updated table fw_backend_universes_genres'
+    - builder_table_update_fw_backend_relation_universes_genres.php
+1.1.7:
+    - 'Updated table fw_backend_universes_organisations'
+    - builder_table_update_fw_backend_relation_universes_organisations.php
+1.1.8:
+    - 'Updated table fw_backend_universes_persons'
+    - builder_table_update_fw_backend_relation_universes_persons.php

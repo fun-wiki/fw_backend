@@ -6,14 +6,18 @@ columns:
         align: center
     title:
         label: Название
-        select: title
         searchable: true
         sortable: true
+        width: 15%
+    title_ru:
+        label: Название (перевод)
+        searchable: true
+        sortable: true
+        width: 15%
     permalinked:
         label: Постоянная ссылка
         relation: content
         select: permalink
-        width: 15%
     status:
         label: Статус
         relation: content
