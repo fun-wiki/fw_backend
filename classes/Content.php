@@ -27,6 +27,17 @@ class Content
         $model->content->category_id = $category->id;
     }
 
+    public  static function isMetasetting($model)
+    {
+        if ($model->setting_type !== 'setting') {
+            if (!$model->metasettings->isEmpty()) {
+                $parent_id = $model->content->category->id;
+            } else {
+                return;
+            }
+        }
+    }
+
     public static function saveContent($model) // used
     {
         $content = $model->content;

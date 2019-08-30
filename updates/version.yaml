@@ -690,3 +690,18 @@
 1.1.8:
     - 'Updated table fw_backend_universes_persons'
     - builder_table_update_fw_backend_relation_universes_persons.php
+1.1.9:
+    - 'Created table fw_backend_relation_universes_universes'
+    - builder_table_create_fw_backend_relation_universes_universes.php
+1.1.10:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_13.php
+1.1.11:
+    - 'seed universe settings -> settings'
+    - seeder1131.php
+1.1.12:
+    - 'Updated table fw_backend_relation_universes_universes'
+    - builder_table_update_fw_backend_relation_universes_universes.php
+1.1.13:
+    - 'Updated table fw_backend_universes'
+    - builder_table_update_fw_backend_universes_14.php

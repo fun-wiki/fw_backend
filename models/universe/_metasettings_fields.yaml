@@ -3,18 +3,6 @@ secondaryTabs:
     paneCssClass:
         Информация: paddingTabs
     fields:
-        setting_type:
-            tab: Информация
-            label: Тип вселенной
-            type: dropdown
-            showSearch: false
-            options:
-                setting: Сеттинг
-                multiverse: Мультивселенная
-                metasetting: Метасеттинг
-                crossover: Кроссовер
-            span: storm
-            cssClass: col-lg-12
         title:
             tab: Информация
             label: Название вселенной
@@ -27,6 +15,19 @@ secondaryTabs:
             type: text
             span: storm
             cssClass: col-lg-6
+        setting_type:
+            type: text
+            default: setting
+            trigger:
+                action: hide
+                field: setting_type
+                condition: value[setting]
+        created_at_date:
+            tab: Информация
+            label: Год (Дата) создания
+            type: udatepicker
+            span: storm
+            cssClass: col-lg-12
         persons:
             tab: Информация
             label: Люди
@@ -43,12 +44,6 @@ secondaryTabs:
             nameFrom: title
             span: storm
             cssClass: col-lg-6
-        created_at_date:
-            tab: Информация
-            label: Год (Дата) создания
-            type: udatepicker
-            span: storm
-            cssClass: col-lg-12
         genres:
             tab: Информация
             label: Жанр
@@ -91,16 +86,4 @@ secondaryTabs:
             span: full
             size: huge
             stretch: true
-
-        metasettings:
-            tab: Вселенные
-            label: Метавселенные
-            type: partial
-            path: $/fw/backend/models/universe/partials/_metasettings.htm
-            span: storm
-            cssClass: col-lg-12
-            trigger:
-                action: show
-                field: setting_type
-                condition: value[multiverse],[crossover]
 

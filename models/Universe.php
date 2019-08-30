@@ -16,11 +16,6 @@ class Universe extends Model
 
     public $table = 'fw_backend_universes';
 
-    public $hasMany = [
-        'literature' => ['fw\Backend\Models\Literature'],
-        'bookseries' => ['fw\Backend\Models\BookSeries']
-    ];
-
     public $belongsToMany = [
         'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_relation_universes_genres', 'foreignKey' => 'genre_id'],
         'persons' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_relation_universes_persons'],
@@ -29,6 +24,12 @@ class Universe extends Model
             'table' => 'fw_backend_relation_universes_organisations',
             'key'      => 'universe_id',
             'otherKey' => 'organisation_id'
+        ],
+        'metasettings' => [
+            'fw\Backend\Models\Universe',
+            'table' => 'fw_backend_relation_universes_universes',
+            'key' => 'universe_id',
+            'otherKey' => 'metasetting_id'
         ]
     ];
 
@@ -36,10 +37,23 @@ class Universe extends Model
         'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable', 'delete' => true],
     ];
 
+    public function beforeSave()
+    {
+        if ($this->setting_type == 'setting') {
+            $this->metasettings = [];
+        }
+    }
+
     public function afterSave()
     {
-        \fw\Backend\Classes\Content::asCategory($this);
         \fw\Backend\Classes\Content::bindContent($this);
+        \fw\Backend\Classes\Content::asCategory($this);
         \fw\Backend\Classes\Content::saveContent($this);
+    }
+
+    public function scopeSettings ($query) 
+    {
+        $query  = $query->where('setting_type', 'setting');
+        return $query;
     }
 }

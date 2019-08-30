@@ -1,0 +1,11 @@
+metasettings:
+    label: Метавселенные
+    view:
+        list:  ~/plugins/fw/backend/models/universe/columns.yaml
+        toolbarButtons: create|add|remove
+    manage:
+        form:  ~/plugins/fw/backend/models/universe/_metasettings_fields.yaml
+        list:  ~/plugins/fw/backend/models/universe/_metasettings_columns.yaml
+        scope: settings
+        recordsPerPage: 10
+        showSearch: true
