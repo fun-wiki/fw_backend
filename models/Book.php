@@ -71,7 +71,7 @@ class Book extends Model
             'otherKey' => 'work_id'
         ],
         'book_edition' => [
-            'fw\Backend\Models\Bookedition',
+            'fw\Backend\Models\BookEdition',
             'table'    => 'fw_backend_relation_books_works',
             'key'      => 'work_id',
             'otherKey' => 'book_id'
