@@ -29,7 +29,7 @@ class Universe extends Model
             'fw\Backend\Models\Universe',
             'table' => 'fw_backend_relation_universes_universes',
             'key' => 'universe_id',
-            'otherKey' => 'metasetting_id'
+            'otherKey' => 'metasseting_id'
         ]
     ];
 
