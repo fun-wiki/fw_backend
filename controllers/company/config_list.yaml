@@ -1,5 +1,5 @@
 list: $/fw/backend/models/company/columns.yaml
-modelClass: fw\Backend\Models\company
+modelClass: fw\Backend\Models\Company
 title: Organisations
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
