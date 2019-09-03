@@ -17,8 +17,15 @@ class Universe extends Model
     public $table = 'fw_backend_universes';
 
     public $belongsToMany = [
-        'genres' => ['fw\Backend\Models\Genre', 'table' => 'fw_backend_relation_universes_genres', 'foreignKey' => 'genre_id'],
-        'persons' => ['fw\Backend\Models\Person', 'table' => 'fw_backend_relation_universes_persons'],
+        'genres' => [
+            'fw\Backend\Models\Genre',
+            'table' => 'fw_backend_relation_universes_genres',
+            'foreignKey' => 'genre_id'
+        ],
+        'persons' => [
+            'fw\Backend\Models\Person',
+            'table' => 'fw_backend_relation_universes_persons'
+        ],
         'company' => [
             'fw\Backend\Models\Company',
             'table' => 'fw_backend_relation_universes_organisations',
@@ -55,11 +62,5 @@ class Universe extends Model
         \fw\Backend\Classes\Content::bindContent($this);
         \fw\Backend\Classes\Content::asCategory($this);
         \fw\Backend\Classes\Content::saveContent($this);
-    }
-
-    public function scopeSettings ($query) 
-    {
-        $query  = $query->where('setting_type', 'setting');
-        return $query;
     }
 }

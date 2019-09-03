@@ -4,8 +4,7 @@ metasettings:
         list:  ~/plugins/fw/backend/models/universe/columns.yaml
         toolbarButtons: create|add|remove
     manage:
-        form:  ~/plugins/fw/backend/models/universe/_metasettings_fields.yaml
-        list:  ~/plugins/fw/backend/models/universe/_metasettings_columns.yaml
-        scope: settings
+        form:  ~/plugins/fw/backend/models/universe/fields.yaml
+        list:  ~/plugins/fw/backend/models/universe/columns.yaml
         recordsPerPage: 10
         showSearch: true
