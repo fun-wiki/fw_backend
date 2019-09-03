@@ -161,3 +161,8 @@
 .list-header {
     padding: 0;
 }
+
+/* Book Form */
+.cover_img {
+    height: 480px;
+}

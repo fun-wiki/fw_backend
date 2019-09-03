@@ -100,7 +100,6 @@ class Book extends Model
                 $work->in_anthology = true;
                 $work->save();
             }
-            // trace_log(json_decode($this->book_content));
         }
 
         $add_books = \fw\Backend\Models\Universe::find($universe_id);
