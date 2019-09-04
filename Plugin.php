@@ -12,7 +12,11 @@ use Response;
 class Plugin extends PluginBase
 {
     public function registerComponents()
-    { }
+    {
+        return [
+            'fw\backend\components\views'   => 'views',
+        ];
+    }
 
     public function registerSettings()
     { }
