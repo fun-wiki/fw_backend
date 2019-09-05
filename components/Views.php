@@ -1,10 +1,13 @@
 <?php namespace Fw\Backend\Components;
 
 use Db;
+use Cookie;
 
 class Views extends \Cms\Classes\ComponentBase
 {
     public $post;
+
+    const POST_VIEWED = 'post-viewed-';
 
     public function componentDetails()
     {
@@ -14,43 +17,38 @@ class Views extends \Cms\Classes\ComponentBase
         ];
     }
 
-    // public function defineProperties()
-    // {
-    //     // return [
-    //     //     'slug' => [
-    //     //         'title'       => 'rainlab.blog::lang.settings.post_slug',
-    //     //         'description' => 'rainlab.blog::lang.settings.post_slug_description',
-    //     //         'default'     => '{{ :slug }}',
-    //     //         'type'        => 'string'
-    //     //     ]
-    //     // ];
-    // }
-
     public function onRun()
     {
-        $this->views = $this->page['views'] = $this->getViews();
-    }
+        $post = $this->controller->vars['record'];
+        $cookName = self::POST_VIEWED . $post->id;
 
-    protected function loadPost()
-    {
-        $post = \fw\Backend\Models\Content::where('permalink', '=', $_SERVER['REQUEST_URI'])->first();
-        return $post;
-    }
+        if (!is_null($post) && Cookie::get( $cookName, 0 ) == 0) {
+            $this->setViews($post);
 
-    protected function getViews()
-    {
-        $out = 0;
-        $post = $this->loadPost();
-
-        if(!is_null($post)) {
-            $obj = Db::table('fw_backend_postview')
-                ->where('permalink', $post->permalink);
-
-            if ($obj->count() > 0) {
-                $out = $obj->first()->views;
-            }
+            Cookie::queue( $cookName, '1', 525000 );
         }
         
+        $this->views = $this->page['views'] = $this->getViews($post);
+    }
+
+    protected function getViews($post)
+    {
+        $out = 0;
+
+        if(!is_null($post->views)) {
+            $out = $post->views;
+        }
         return $out;
     }
+
+    protected function setViews($post, $views = null)
+    {
+        if ($post->views > 0) {
+            $post->views++;
+            $post->save();
+        } else {
+            $post->views = 1;
+            $post->save();
+        }
+    } 
 } 
