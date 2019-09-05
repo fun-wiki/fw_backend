@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1251" ?> 
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>F.UN - энциклопедия фантастических вселенных</title>
+        <link>{{ url('') }}</link>
+        <description>Проект посвященный фантастическим вселенным, нашедшим воплощение на страницах комиксов и книг, фильмах, сериалах, в настольных и видео играх.</description>
+        <language>ru</language>
+        <copyright>CRYDEsigN 2019, fun-wiki.ru</copyright>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <ttl>600</ttl>
+        <lastBuildDate>{{ lastBuildDate }} +0300</lastBuildDate>
+        <image>
+            <url>{{ url('') }}/themes/_fun-wiki/assets/images/logo.svg</url>
+            <title>F.UN - энциклопедия фантастических вселенных</title>
+            <link>{{ url('') }}</link>
+        </image>
+
+        {% for record in content %}
+        <item>
+            <title>{{ record.title }}</title>
+            <link>{{ record.permalink }}</link>
+            <description>{{ record.contentable.description|slice(0, 200)|striptags }}...</description>
+            <author>{{ record.author.first_name }} {{ record.author.last_name }}</author>
+            <guid>{{ record.permalink }}</guid>
+            <pubDate>{{ record.published_at }}  +0300</pubDate>
+        </item>
+        {% endfor %}
+    </channel> 
+</rss>
