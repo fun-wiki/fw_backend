@@ -8,12 +8,12 @@ columns:
         label: Название
         searchable: true
         sortable: true
-        width: 15%
+        width: 20%
     title_ru:
         label: Название (перевод)
         searchable: true
         sortable: true
-        width: 15%
+        width: 20%
     permalinked:
         label: Постоянная ссылка
         relation: content

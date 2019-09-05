@@ -3,6 +3,8 @@
 use \Fw\Backend\Models\Content;
 use Carbon\Carbon;
 
+// add Sitemap.xml
+
 Route::get(
     'sitemap.xml',
     function () {
@@ -12,6 +14,8 @@ Route::get(
         ])->header('Content-Type', 'text/xml');
     }
 );
+
+// add Rss Feed
 
 Route::get(
     'rss.xml',

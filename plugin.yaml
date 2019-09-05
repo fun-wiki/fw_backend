@@ -3,6 +3,7 @@ plugin:
     description: fun-wiki backend
     author: CRYDEsigN
     icon: oc-icon-bookmark-o
+    iconSvg: plugins/fw/backend/assets/images/plugin-logo.svg
     homepage: https://fun-wiki.ru
 navigation:
     fw-menu:
@@ -52,14 +53,6 @@ navigation:
                 label: Person Roles
                 url: fw/backend/personroles
                 icon: icon-sitemap
-            literature_type:
-                label: Вид произведения
-                url: fw/backend/literaturetype
-                icon: icon-book
-            book-series:
-                label: Книжные серии
-                url: fw/backend/bookseries
-                icon: icon-book
             platform:
                 label: Игровые платформы
                 url: fw/backend/platform
