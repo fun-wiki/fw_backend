@@ -1,4 +1,0 @@
-title: Person
-modelClass: fw\Backend\Models\Person
-toolbar:
-    buttons: reorder_toolbar

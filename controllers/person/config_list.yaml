@@ -1,6 +1,6 @@
 list: $/fw/backend/models/person/columns.yaml
 modelClass: fw\Backend\Models\Person
-title: Person
+title: Люди
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true

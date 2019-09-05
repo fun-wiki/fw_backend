@@ -1,18 +1,12 @@
-<?
+<?php
 $complete = 0;
 $num_fields = 0;
 
 
 $fields = $vars['record']->attributes;
 
-// dd($vars['record']);
-
 foreach ($fields as $key => $value) {
     if ($key === "id") {
-        continue;
-    }
-
-    if ($key === "title") {
         continue;
     }
 
@@ -32,25 +26,18 @@ foreach ($fields as $key => $value) {
         continue;
     }
 
-
     if ($key === "is_pseudo" && $value === 1) {
 
         $complete = 1;
         $num_fields = 1;
-
-        if ($vars['record']->pseudos->toArray() != []) {
-            $complete++;
-        }
-        $num_fields++;
-        if ($vars['record']->personroles != null) {
-            $complete++;
-        }
-        $num_fields++;
-
         break;
     }
 
     if ($key === "is_pseudo") {
+        continue;
+    }
+
+    if ($key === "pseudos") {
         continue;
     }
 
@@ -60,14 +47,9 @@ foreach ($fields as $key => $value) {
     $num_fields++;
 }
 
-
-
-
-$result = ceil($complete/($num_fields)*100);
+$result = ceil(($complete) / $num_fields * 100);
 
 \fw\Backend\Models\Person::where('id', $vars['record']->id)
-    ->update(['complete' => $result])
-?>
+    ->update(['complete' => $result]);
 
-<? echo $result; ?>%
-
+echo $result.'%';

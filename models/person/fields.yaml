@@ -9,20 +9,18 @@ secondaryTabs:
             label: Фото
             tab: Информация
             mode: image
-            imageWidth: 150
-            imageHeight: 300
             span: storm
-            cssClass: col-sm-2 personPhoto
+            cssClass: col-lg-2 cover_img
             type: mediafinder
             trigger:
                 action: hide
                 field: is_pseudo
                 condition: checked
         name:
-            label: 'Полное имя'
+            label: Полное имя
             tab: Информация
             span: storm
-            cssClass: col-sm-10
+            cssClass: col-lg-5
             trigger:
                 action: hide
                 field: is_pseudo
@@ -32,7 +30,7 @@ secondaryTabs:
             label: 'Полное имя (оригинал)'
             tab: Информация
             span: storm
-            cssClass: col-sm-10
+            cssClass: col-lg-5
             type: text
             trigger:
                 action: hide
@@ -41,7 +39,7 @@ secondaryTabs:
         is_pseudo:
             label: Псевдоним
             tab: Информация
-            type: switch
+            type: checkbox
             span: storm
             cssClass: col-sm-10
         birthdate:

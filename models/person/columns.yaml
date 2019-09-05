@@ -37,5 +37,17 @@ columns:
         width: 5%
         align: center
         path: ~/plugins/fw/backend/models/person/partials/_complete.htm
+    genres:
+        label: Жанры
+        relation: genres
+        select: title
+    pseudos:
+        label: Pseudo
+        relation: pseudos
+        select: title
+    persons:
+        label: Pseudo
+        relation: persons
+        select: title
 
 

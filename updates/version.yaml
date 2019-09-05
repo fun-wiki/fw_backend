@@ -711,3 +711,6 @@
 1.1.15:
     - 'Updated table fw_backend_content'
     - builder_table_update_fw_backend_content_8.php
+1.1.16:
+    - 'Updated table fw_backend_persons_genres'
+    - builder_table_update_fw_backend_relation_persons_genres.php
