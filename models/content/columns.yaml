@@ -39,4 +39,7 @@ columns:
         type: datetime
         format: d.m.Y
         width: 5%
+    views:
+        label: просмотры
+
 
