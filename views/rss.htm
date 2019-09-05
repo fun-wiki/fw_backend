@@ -8,7 +8,7 @@
         <copyright>CRYDEsigN 2019, fun-wiki.ru</copyright>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <ttl>600</ttl>
-        <lastBuildDate>{{ lastBuildDate }}</lastBuildDate>
+        <lastBuildDate>{{ lastBuildDate|date("d M Y H:i:s") }} +0300</lastBuildDate>
         <image>
             <url>{{ url('') }}/themes/_fun-wiki/assets/images/logo.svg</url>
             <title>F.UN - энциклопедия фантастических вселенных</title>
@@ -20,9 +20,9 @@
             <title>{{ record.title }}</title>
             <link>{{ url('') ~ record.permalink }}</link>
             <description>{{ record.contentable.description|slice(0, 200)|striptags }}...</description>
-            <author>{{ record.author.first_name }} {{ record.author.last_name }}</author>
+            <author>{{record.author.email }} ({{ record.author.first_name }} {{ record.author.last_name }})</author>
             <guid>{{ url('') ~ record.permalink }}</guid>
-            <pubDate>{{ record.published_at }}</pubDate>
+            <pubDate>{{ record.published_at|date("d M Y H:i:s") }} +0300</pubDate>
         </item>
         {% endfor %}
     </channel> 
