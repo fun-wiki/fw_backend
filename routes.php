@@ -20,7 +20,7 @@ Route::get(
 Route::get(
     'rss.xml',
     function () {
-        $content = Content::where(['status' => 'published'])->orderBy('published_at' , 'desc')->get();
+        $content = Content::where(['status' => 'published'])->orderBy('published_at', 'desc')->get();
         $lastBuildDate = Carbon::now();
         return Response::view('fw.backend::rss', [
             'content' => $content,

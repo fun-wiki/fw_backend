@@ -1,6 +1,7 @@
-<?php namespace Fw\Backend\Components;
+<?php
 
-use Db;
+namespace Fw\Backend\Components;
+
 use Cookie;
 
 class Views extends \Cms\Classes\ComponentBase
@@ -22,12 +23,12 @@ class Views extends \Cms\Classes\ComponentBase
         $post = $this->controller->vars['record'];
         $cookName = self::POST_VIEWED . $post->id;
 
-        if (!is_null($post) && Cookie::get( $cookName, 0 ) == 0) {
+        if (!is_null($post) && Cookie::get($cookName, 0) == 0) {
             $this->setViews($post);
 
-            Cookie::queue( $cookName, '1', 525000 );
+            Cookie::queue($cookName, '1', 525000);
         }
-        
+
         $this->views = $this->page['views'] = $this->getViews($post);
     }
 
@@ -35,7 +36,7 @@ class Views extends \Cms\Classes\ComponentBase
     {
         $out = 0;
 
-        if(!is_null($post->views)) {
+        if (!is_null($post->views)) {
             $out = $post->views;
         }
         return $out;
@@ -50,5 +51,5 @@ class Views extends \Cms\Classes\ComponentBase
             $post->views = 1;
             $post->save();
         }
-    } 
-} 
+    }
+}
