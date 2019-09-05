@@ -41,5 +41,6 @@ columns:
         width: 5%
     views:
         label: просмотры
+        width: 5%
 
 
