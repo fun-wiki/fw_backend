@@ -14,7 +14,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            'fw\backend\components\views'   => 'views',
+            '\fw\backend\components\views'   => 'views',
         ];
     }
 
