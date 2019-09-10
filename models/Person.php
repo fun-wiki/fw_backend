@@ -44,6 +44,10 @@ class Person extends Model
         'personroles' => [
             'fw\Backend\Models\PersonRole', 
             'table' => 'fw_backend_persons_persons_roles'
+        ],
+        'companys' => [
+            'fw\Backend\Models\Company', 
+            'table' => 'fw_backend_relation_persons_company'
         ]
     ];
 

@@ -3,6 +3,7 @@ secondaryTabs:
     paneCssClass:
         Информация: paddingTabs
         Псевдоним: paddingTabs
+        Компании: paddingTabs
 
     fields:
         photo:
@@ -93,6 +94,18 @@ secondaryTabs:
             cssClass: col-sm-12
             trigger:
                 action: show
+                field: is_pseudo
+                condition: checked
+            type: taglist
+            mode: relation
+
+        companys:
+            label: 'Компании'
+            tab: Компании
+            span: storm
+            cssClass: col-sm-12
+            trigger:
+                action: hide
                 field: is_pseudo
                 condition: checked
             type: taglist
