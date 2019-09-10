@@ -3,8 +3,16 @@ columns:
         label: ID
         type: number
         sortable: true
+        width: 2%
+        align: center
+
+    cover:
+        label: Обложка
+        type: partial
+        path: ~/plugins/fw/backend/models/book/columns/_cover.htm
         width: 5%
         align: center
+
     title:
         label: Название
         type: text
@@ -15,34 +23,46 @@ columns:
         type: text
         searchable: true
         sortable: true
-    work_type:
-        label: Вид произведения
-        type: partial
-        path: ~/plugins/fw/backend/models/book/_work_type_column.htm
-    book_type:
-        label: book_type
-        type: text
-    in_anthology:
-        label: Входит в антологию
-        type: text
+
     author: 
         label: Автор
         relation: author
         select: title
-        width: 15%
+        width: 10%
+
+    work_type:
+        label: Тип
+        type: partial
+        path: ~/plugins/fw/backend/models/book/columns/_work_type.htm
+        width: 8%
+        align: center
+
+    create_date: 
+        label: Дата
+        width: 3%
+        align: center
+
     universe_id:
         label: Вселенная
         relation: universe
         select: title
+        width: 10%
     series_id:
         label: Цикл
         relation: series
         select: title
+        width: 15%
     number_in_series:
-        label: Номер в серии
+        label: № в серии
         type: text
-    create_date: 
-        label: Дата создания
         width: 5%
+        align: center
+
+    views:
+        label: Прc.
+        relation: content
+        select: views
+        width: 3%
+        align: center
 
     

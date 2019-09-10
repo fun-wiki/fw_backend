@@ -2,9 +2,8 @@ list: $/fw/backend/models/book/columns.yaml
 modelClass: fw\Backend\Models\Book
 title: Произведения
 noRecordsMessage: 'backend::lang.list.no_records'
-showSetup: true
 showCheckboxes: true
-recordsPerPage: 20
+recordsPerPage: 10
 toolbar:
     buttons: list_toolbar
     search:

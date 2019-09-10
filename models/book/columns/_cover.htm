@@ -1,0 +1,10 @@
+<?php 
+    if (isset($record->cover->path)) {
+        $cover = $record->cover->getThumb(30, 30, ['mode' => 'crop']);
+    } else {
+        $cover = "";
+    };
+
+?>
+
+ <img src="<? echo $cover ?>" />

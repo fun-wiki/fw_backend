@@ -18,7 +18,8 @@ class Book extends Model
         $status = [
             'story' => "Рассказ",
             'novel' => "Роман",
-            'povest' => "Повесть"
+            'povest' => "Повесть",
+            'anthology' => "Антология"
         ];
         return $status;
     }
