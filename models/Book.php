@@ -93,7 +93,7 @@ class Book extends Model
 
         if ($this->book_type == 'anthology') {
             foreach ($this->book_content as $content) {
-                $work = Work::find($content->id);
+                $work = Book::find($content->id);
                 $work->universe_id = $universe_id;
                 $work->series_id = $this->series_id;
                 $work->number_in_series = $this->number_in_series;
