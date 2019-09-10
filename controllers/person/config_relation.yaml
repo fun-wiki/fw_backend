@@ -1,0 +1,19 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+company:
+    label: Компании
+    view:
+        list:  ~/plugins/fw/backend/models/person/company/list_companys.yaml
+        toolbarButtons: add|remove
+    manage:
+        list:  ~/plugins/fw/backend/models/person/company/add_company.yaml
+        showSearch: true
+        recordsPerPage: 10
+
+    pivot:
+        form:
+            fields:
+                pivot[date]:
+                    label: Годы работы

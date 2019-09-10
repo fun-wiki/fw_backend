@@ -1,0 +1,10 @@
+columns:
+    title:
+        label: title
+        type: text
+        relation: content
+        select: title
+
+
+
+

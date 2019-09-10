@@ -99,16 +99,11 @@ secondaryTabs:
             type: taglist
             mode: relation
 
-        companys:
-            label: 'Компании'
-            tab: Компании
+        company:
+            tab: Информация
             span: storm
-            cssClass: col-sm-12
-            trigger:
-                action: hide
-                field: is_pseudo
-                condition: checked
-            type: taglist
-            mode: relation
+            cssClass: col-lg-12
+            type: partial
+            path: $/fw/backend/models/person/partials/_company.htm
 
 

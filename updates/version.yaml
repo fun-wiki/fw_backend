@@ -720,3 +720,9 @@
 1.1.18:
     - 'Created table fw_backend_relation_persons_company'
     - builder_table_create_fw_backend_relation_persons_company.php
+1.1.19:
+    - 'Updated table fw_backend_relation_persons_company'
+    - builder_table_update_fw_backend_relation_persons_company.php
+1.1.20:
+    - 'Updated table fw_backend_relation_persons_company'
+    - builder_table_update_fw_backend_relation_persons_company_2.php
