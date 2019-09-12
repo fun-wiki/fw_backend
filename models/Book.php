@@ -3,6 +3,7 @@
 namespace fw\Backend\Models;
 
 use Model;
+use Yaml;
 
 class Book extends Model
 {
@@ -15,26 +16,12 @@ class Book extends Model
 
     public function getWorkTypeOptions($value, $formData)
     {
-        $status = [
-            'story' => "Рассказ",
-            'novel' => "Роман",
-            'povest' => "Повесть",
-            'anthology' => "Антология"
-        ];
-        return $status;
+        return Yaml::parseFile(dirname(__FILE__).'\book\options\work_type.yaml');
     }
 
     public function getBookTypeOptions()
     {
-        $status = [
-            "novel" => "Художественное произведение",
-            "anthology" => "Антология",
-            "comic" => "Комикс",
-            "artbook" => "Артбук",
-            "wiki" => "Энциклопедия",
-            "doc" => "Документальная книга"
-        ];
-        return $status;
+        return Yaml::parseFile(dirname(__FILE__).'\book\options\book_type.yaml');
     }
 
     public $belongsTo = [
@@ -71,7 +58,7 @@ class Book extends Model
             'key'      => 'parent_work_id',
             'otherKey' => 'work_id'
         ],
-        'book_edition' => [
+        'book_editions' => [
             'fw\Backend\Models\BookEdition',
             'table'    => 'fw_backend_relation_books_works',
             'key'      => 'work_id',

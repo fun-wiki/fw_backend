@@ -1,22 +1,31 @@
-<?php namespace fw\Backend\Models;
+<?php
+
+namespace fw\Backend\Models;
 
 use Model;
 use Carbon\Carbon;
+use Yaml;
 
 class Content extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\SoftDelete;
 
-    protected $dates = ['deleted_at'];
+    protected $dates = [
+        'deleted_at'
+    ];
 
     public $table = 'fw_backend_content';
 
     public $rules = [];
 
     public $belongsTo = [
-        'author'    => ['Backend\Models\User'],
-        'category'  => ['fw\Backend\Models\Category']
+        'author'    => [
+            'Backend\Models\User'
+        ],
+        'category'  => [
+            'fw\Backend\Models\Category'
+        ]
     ];
 
     public $morphTo = [
@@ -25,14 +34,7 @@ class Content extends Model
 
     public function getStatusOptions()
     {
-        $status = [
-            'draft' => 'Черновик',
-            'pending' => 'На модерации',
-            'published' => 'Опубликован',
-            'future' => 'Запланирован',
-        ];
-
-        return $status;
+        return Yaml::parseFile(dirname(__FILE__).'\content\options\status.yaml');
     }
 
     public function beforeSave()

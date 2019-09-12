@@ -1,17 +1,18 @@
-<?php namespace fw\Backend\Models;
+<?php
+
+namespace fw\Backend\Models;
 
 use Model;
 
 class News extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
     public $table = 'fw_backend_news';
 
     public $permalink = 'news/:content.title';
 
-    public $rules = [
-    ];
+    public $rules = [];
 
     public $timestamps = false;
 
@@ -32,7 +33,7 @@ class News extends Model
         'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
     ];
 
-    public function beforeSave() 
+    public function beforeSave()
     {
         \fw\Backend\Classes\Content::bindContent($this);
     }

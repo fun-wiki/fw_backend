@@ -56,6 +56,16 @@ class Person extends Model
         'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
     ];
 
+    public function beforeSave()
+    {
+        \fw\Backend\Classes\Content::bindContent($this);
+    }
+
+    public function afterSave()
+    {
+        \fw\Backend\Classes\Content::saveContent($this);
+    }
+
     public function scopeAuthors($query)
     {
         $personRole = \fw\Backend\Models\PersonRole::where('slug', '=', 'author')->get();
@@ -69,16 +79,5 @@ class Person extends Model
     public function scopeNoPseudo($query)
     {
         return $query->where('is_pseudo', '=', '0')->get();
-    }
-
-
-    public function beforeSave()
-    {
-        \fw\Backend\Classes\Content::bindContent($this);
-    }
-
-    public function afterSave()
-    {
-        \fw\Backend\Classes\Content::saveContent($this);
     }
 }

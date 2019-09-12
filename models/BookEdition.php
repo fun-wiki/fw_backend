@@ -1,6 +1,7 @@
 <?php namespace fw\Backend\Models;
 
 use Model;
+use Yaml;
 
 class BookEdition extends Model
 {
@@ -49,17 +50,7 @@ class BookEdition extends Model
 
     public function getBookTypeOptions()
     {
-        $status = [
-            "novel" => "Художественная книга",
-            "anthology" => "Антология",
-            "omnibus" => "Омнибус",
-            "comic" => "Комикс",
-            "artbook" => "Артбук",
-            "wiki" => "Энциклопедия",
-            "doc" => "Документальная книга"
-        ];
-
-        return $status;
+        return Yaml::parseFile(dirname(__FILE__).'\bookedition\options\edition_type.yaml');
     }
 
     public function beforeSave() 

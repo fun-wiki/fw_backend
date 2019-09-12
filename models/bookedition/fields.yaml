@@ -13,7 +13,7 @@ secondaryTabs:
             required: 1
         book_type:
             tab: Информация
-            label: 'Тип книги'
+            label: 'Тип издания'
             showSearch: true
             type: dropdown
             span: storm
@@ -54,7 +54,7 @@ secondaryTabs:
             cssClass: 'col-sm-1 col-lg-1'
 
         description:
-            tab: Описание
+            tab: Аннотация
             span: full
             size: huge
             type: textarea
@@ -64,4 +64,4 @@ secondaryTabs:
             span: storm
             cssClass: 'col-sm-12 col-lg-12'
             type: partial
-            path: $/fw/backend/models/bookedition/_book_content.htm
+            path: $/fw/backend/models/bookedition/fields/book_content.htm

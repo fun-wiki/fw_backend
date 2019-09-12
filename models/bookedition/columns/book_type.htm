@@ -1,0 +1,8 @@
+<?php 
+
+$book_type = $record->book_type;
+
+$status = Yaml::parseFile(dirname(__DIR__).'\options\edition_type.yaml');
+
+echo $status[$book_type];
+?>

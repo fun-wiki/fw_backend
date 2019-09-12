@@ -137,7 +137,7 @@ secondaryTabs:
             span: storm
             cssClass: col-lg-12
             type: partial
-            path: $/fw/backend/models/book/_content.htm
+            path: $/fw/backend/models/book/fields/book_content.htm
             dependsOn:
                 - universe
             trigger:
@@ -145,11 +145,10 @@ secondaryTabs:
                 field: book_type
                 condition: value[anthology]
 
-        book_edition:
+        book_editions:
             tab: Издания
             span: storm
             cssClass: col-lg-12
             type: partial
-            path: $/fw/backend/models/book/_editions.htm
-            dependsOn:
+            path: $/fw/backend/models/book/fields/book_editions.htm
 

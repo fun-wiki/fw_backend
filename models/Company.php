@@ -1,12 +1,13 @@
-<?php namespace fw\Backend\Models;
+<?php
+
+namespace fw\Backend\Models;
 
 use Model;
-use Fw\Backend\Traits\Permalink;
 
 class Company extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
 
     public $table = 'fw_backend_company';
 
@@ -14,7 +15,7 @@ class Company extends Model
 
     public $timestamps = false;
 
-    public $permalink='company/:content.title';
+    public $permalink = 'company/:content.title';
 
     protected $fillable = [
         'title',
@@ -22,7 +23,10 @@ class Company extends Model
     ];
 
     public $belongsToMany = [
-        'universe' => ['fw\Backend\Models\Universe', 'table' => 'fw_backend_universes_organisations']
+        'universe' => [
+            'fw\Backend\Models\Universe',
+            'table' => 'fw_backend_universes_organisations'
+        ]
     ];
 
     public $morphOne = [
@@ -33,7 +37,7 @@ class Company extends Model
         'videogames' => 'Fw\Backend\Models\Videogames'
     ];
 
-    public function beforeSave() 
+    public function beforeSave()
     {
         \fw\Backend\Classes\Content::bindContent($this);
     }
