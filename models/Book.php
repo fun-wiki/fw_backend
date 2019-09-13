@@ -16,12 +16,12 @@ class Book extends Model
 
     public function getWorkTypeOptions($value, $formData)
     {
-        return Yaml::parseFile(dirname(__FILE__).'\book\options\work_type.yaml');
+        return Yaml::parseFile(dirname(__FILE__).'/book/options/work_type.yaml');
     }
 
     public function getBookTypeOptions()
     {
-        return Yaml::parseFile(dirname(__FILE__).'\book\options\book_type.yaml');
+        return Yaml::parseFile(dirname(__FILE__).'/book/options/book_type.yaml');
     }
 
     public $belongsTo = [

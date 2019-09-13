@@ -50,7 +50,7 @@ class BookEdition extends Model
 
     public function getBookTypeOptions()
     {
-        return Yaml::parseFile(dirname(__FILE__).'\bookedition\options\edition_type.yaml');
+        return Yaml::parseFile(dirname(__FILE__).'/bookedition/options/edition_type.yaml');
     }
 
     public function beforeSave() 

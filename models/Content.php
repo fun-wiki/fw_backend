@@ -34,7 +34,7 @@ class Content extends Model
 
     public function getStatusOptions()
     {
-        return Yaml::parseFile(dirname(__FILE__).'\content\options\status.yaml');
+        return Yaml::parseFile(dirname(__FILE__).'/content/options/status.yaml');
     }
 
     public function beforeSave()
