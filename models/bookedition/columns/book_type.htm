@@ -2,6 +2,10 @@
 
 $book_type = $record->book_type;
 
+if ($book_type == '') {
+    $book_type = 'novel';
+}
+
 $status = Yaml::parseFile(dirname(__DIR__).'/options/edition_type.yaml');
 
 echo $status[$book_type];
