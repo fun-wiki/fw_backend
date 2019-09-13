@@ -13,7 +13,7 @@ class BookEdition extends Model
 
     public $rules = [];
 
-    public $permalink = 'editions/:content.title';
+    public $permalink = 'editions/:content.id';
 
     protected $fillable = [
         'title'
