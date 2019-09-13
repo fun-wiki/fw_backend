@@ -39,12 +39,27 @@ class Book extends Controller
 
     public function formExtendFields($form)
     {
+        $post_type = \Request::all()['type'];
+
         $config = $this->makeConfig('$/fw/backend/models/content/fields.yaml');
         foreach ($config->fields as $field => $options) {
             $form->addFields([
                 'content[' . $field . ']' => $options
             ]);
         }
+
+        if ($post_type == 'book') {
+            $config = $this->makeConfig('$/fw/backend/models/book/forms/book.yaml');
+        } else {
+            return; //Redirect to list
+        }
+
+        foreach ($config->fields as $field => $options) {
+            $form->addSecondaryTabFields([
+                $field => $options
+            ]);
+        }
+
     }
 
     public function formExtendModel($model)
