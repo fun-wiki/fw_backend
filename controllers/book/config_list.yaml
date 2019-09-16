@@ -8,4 +8,5 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'fw/backend/book/update/:id'
+recordUrl: 'fw/backend/book/update/:id?type=:post_type'
+filter: config_filter.yaml

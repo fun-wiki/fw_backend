@@ -1,12 +1,10 @@
 <?php 
     $work_type = $record->work_type;
 
-    $status = [
-        'story' => "Рассказ",
-        'novel' => "Роман",
-        'povest' => "Повесть",
-        'anthology' => "Антология"
-    ];
+    $status = Yaml::parseFile(dirname(__DIR__).'/options/work_type.yaml');
 
-    echo $status[$work_type];
+    if (isset($status[$work_type])) {
+        echo $status[$work_type];
+    }
+    
 ?>

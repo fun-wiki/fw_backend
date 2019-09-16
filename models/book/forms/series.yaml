@@ -1,0 +1,70 @@
+fields:
+    post_type:
+        type: text
+        default: series
+    cover: 
+        label: Обложка
+        tab: Информация
+        type: fileupload
+        mode: image
+        span: storm
+        cssClass: col-lg-2 cover_img
+        thumbOptions:
+            mode: crop
+            offset:
+                - 0
+                - 0
+            quality: 90
+            sharpen: 0
+            interlace: false
+            extension: auto
+    title:
+        label: Название
+        tab: Информация
+        span: storm
+        cssClass: col-lg-5
+        type: text
+    title_ru:
+        label: 'Название (Перевод)'
+        tab: Информация
+        span: storm
+        cssClass: col-lg-5
+        type: text
+    universe:
+        tab: Информация
+        label: Вселенная
+        span: storm
+        cssClass: col-lg-3
+        type: recordfinder
+        list: ~/plugins/fw/backend/models/universe/columns.yaml
+        nameFrom: title
+        required: 1
+    series_id:
+        tab: Информация
+        label: Серия
+        span: storm
+        cssClass: col-lg-3
+        type: selectize
+        options: Series
+        dependsOn:
+            - universe
+    description:
+        label: Аннотация
+        tab: Информация
+        type: textarea
+        span: storm
+        cssClass: col-lg-10
+    book_content:
+        tab: Информация
+        span: storm
+        cssClass: col-lg-12
+        type: partial
+        path: $/fw/backend/models/book/fields/book_content.htm
+        dependsOn:
+            - universe
+        trigger:
+            action: show
+            field: book_type
+            condition: value[anthology]
+
+

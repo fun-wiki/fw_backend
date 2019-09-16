@@ -1,0 +1,8 @@
+scopes:
+
+    universe:
+        label: Вселенные
+        type: group
+        modelClass: Fw\Backend\Models\Universe
+        conditions: universe_id in (:filtered)
+        nameFrom: title

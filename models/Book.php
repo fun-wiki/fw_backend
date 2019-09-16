@@ -90,12 +90,12 @@ class Book extends Model
             }
         }
 
-        $add_books = \fw\Backend\Models\Universe::find($universe_id);
-        $add_books->book = 1;
-        $add_books->save();
+        //$add_books = \fw\Backend\Models\Universe::find($universe_id);
+        //$add_books->book = 1;
+        //$add_books->save();
 
         \fw\Backend\Classes\Content::bindContent($this);
-        \fw\Backend\Classes\Content::hasSeries($this, 'books');
+        // \fw\Backend\Classes\Content::hasSeries($this, 'books');
     }
 
     public function afterSave()

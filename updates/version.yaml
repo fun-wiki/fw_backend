@@ -726,3 +726,12 @@
 1.1.20:
     - 'Updated table fw_backend_relation_persons_company'
     - builder_table_update_fw_backend_relation_persons_company_2.php
+1.1.21:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_27.php
+1.1.22:
+    - 'Updated table fw_backend_books'
+    - builder_table_update_fw_backend_books_28.php
+1.1.23:
+    - 'series from category'
+    - seeder1123.php
