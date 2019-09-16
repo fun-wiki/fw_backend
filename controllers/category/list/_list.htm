@@ -6,7 +6,7 @@
         foreach ($record->children as $children) {
             tree_node ($children);
         }
-        foreach (\fw\Backend\Models\Content::where('category_id', $record->id)->get() as $content) {
+        foreach (\fw\Backend\Models\Content::where([['category_id', $record->id]])->get() as $content) {
             echo '<ul><i class="icon-save"></i> '.$content->title."</ul>";
         }
         echo "</ul>";

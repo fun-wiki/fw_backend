@@ -23,6 +23,13 @@ class Book extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('fw.Backend', 'fw-menu', 'work');
+        $this->AddCss('/plugins/fw/backend/assets/css/style.css');
+    }
+
+    public function index()
+    {
+        $this->pageTitle = 'Книги';
+        $this->makeLists();
     }
 
     public function create()

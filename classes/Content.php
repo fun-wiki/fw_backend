@@ -111,34 +111,34 @@ class Content
     public static  function hasSeries($model, $type)
     {
         $universe_category_id = $model->universe->content->category_id;
-        $parent_series_category_id = Category::where([['parent_id', $universe_category_id], ['title', $type]])->first();
+        $parent_series_category_id = Category::where([['parent_id', $universe_category_id], ['title', $type]])->first()->id;
         $series_category = $model->series_id;
        
         if ($series_category == "-1") {
-            $current_category = $parent_series_category_id->id;
+            $parrent_category = $parent_series_category_id;
         } else {
-            $current_category = $series_category->id;
+            $parrent_category = $series_category;
         }
 
-        $check_value = Category::find($current_category);
-
-        // trace_log($check_value);
+        $check_value = Category::where([['parent_id', $parrent_category], ['title', $model->title]])->first();
 
         if ($model->post_type == 'series') {
             if (!$check_value) {
                 $category = new Category;
                 $category->title = $model->title;
-                $category->parent_id = $parent_series_category_id->id;
+                $category->parent_id = $parrent_category;
                 $category->save();
-                $current_category = $category->id;
-                $model->series_id = $category->id;
             } else {
                 $current_category = $check_value->id;
-            }
+            } 
+            $model->content->contentable_type = 'series';
+        } else {
+            $current_category = $model->series_id;
         }
 
         $model->content->category_id = $current_category;
         $content = $model->content;
+        trace_log($model);
         $model->content()->add($content);
     }
 }
