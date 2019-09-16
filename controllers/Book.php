@@ -61,7 +61,7 @@ class Book extends Controller
                 $config = $this->makeConfig('$/fw/backend/models/book/forms/series.yaml');
                 break;
             default:
-                $config = $this->makeConfig('$/fw/backend/models/book/fields.yaml');
+                $config = $this->makeConfig('$/fw/backend/models/book/forms/book.yaml');
                 break;
         }
 

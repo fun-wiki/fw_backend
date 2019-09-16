@@ -1,4 +1,11 @@
 fields:
+    post_type:
+        tab: Информация
+        type: text
+        default: book
+        type: exact
+        span: storm
+        cssClass: col-lg-12 hide
     cover: 
         label: Обложка
         tab: Информация

@@ -64,5 +64,6 @@ columns:
         select: views
         width: 3%
         align: center
-
+    post_type:
+        label: post_type
     

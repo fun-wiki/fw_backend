@@ -1,18 +1,32 @@
+<?php
+    function options($data, $selectedValues, $i = '') {
+        foreach ($data as $key => $value): ?>
+            <option 
+                value="<?php echo $value->id ?>"
+                <?php trace_log($value->parent_id); echo in_array($value->id, $selectedValues) ? 'selected="selected"' : '';  ?>>
+                <?php echo $i.' '.$value->title ?>
+            </option>
+        <?php
+            if ($value->children) {
+                $i = '-'.$i;
+                options ($value->children, $selectedValues, $i);
+            } else {
+                
+            }
+            $i = '';
+        endforeach;
+    }
+?>
+
 <select name="<?= $field->getName() ?>" id="<?= $field->getId() ?>" class="demo-default" placeholder="Без категории..." >
     <option value="-1">Без категории...</option>
-	<?php foreach($options as $key => $value): ?>
-        <option 
-            value="<?php echo $value->id ?>"
-            <?php echo in_array($value->id, $selectedValues) ? 'selected="selected"' : '';  ?>>
-            <?php echo $value->title ?>
-        </option>
-    <?php endforeach; ?>
+	<?php options($options, $selectedValues); ?>
 </select>
 
 <script>
     $(document).ready(function () {
         $('#<?php echo $field->getId(); ?>').selectize({
-		    create: true,
+		    // create: true,
 			sortField: {
 				field: 'text',
 			    direction: 'asc'

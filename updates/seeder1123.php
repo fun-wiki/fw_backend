@@ -26,6 +26,7 @@ class Seeder1123 extends Seeder
                 $series->post_type = 'series';
                 $series->title = $children->title;
                 $series->universe_id = $universe->contentable->id;
+                $series->contentable->status = 'published';
                 //dump($series);
                 $series->save();
             }
