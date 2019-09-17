@@ -17,3 +17,4 @@ treeExpanded: false
 
 # Custom view path
 customViewPath: $/fw/backend/controllers/category/list
+filter: config_filter.yaml

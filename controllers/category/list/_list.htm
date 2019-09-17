@@ -1,13 +1,41 @@
 <div class="control-list list-scrollable" data-control="listwidget">
 <?php 
 
+    function postView($content) 
+    {   
+        switch ($content->contentable_type) {
+            
+            case 'book':
+                if(isset($content->contentable->post_type)) {
+                    $post_type = $content->contentable->post_type;
+                } else {
+                    $post_type = '';
+                }
+                
+                switch ($post_type) {
+                    case 'series':
+                        # code...
+                        break;
+                    
+                    default:
+                        echo '<ul><i class="icon-book"></i> '.$content->title."</ul>";
+                        break;
+                }
+                break;
+            
+            default:
+                echo '<ul><i class="icon-save"></i> '.$content->title."</ul>";
+                break;
+        }
+    }
+
     function tree_node ($record) {
         echo '<ul><i class="icon-sitemap"></i> '.$record->title;
         foreach ($record->children as $children) {
             tree_node ($children);
         }
         foreach (\fw\Backend\Models\Content::where([['category_id', $record->id]])->get() as $content) {
-            echo '<ul><i class="icon-save"></i> '.$content->title."</ul>";
+            postView($content);
         }
         echo "</ul>";
     }

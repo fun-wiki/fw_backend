@@ -80,10 +80,11 @@ class Content
             $content = $model->content;
         }
 
-        if ($content->title) { // Определить откуда будет браться название, дать возможность разных имен
-            $model->title = $content->title;
-        } else {
+        if ($model->title) { // Определить откуда будет браться название, дать возможность разных имен
             $content->title = $model->title;
+            $content->permalink = Permalink::createPermalink($model);
+        } else {
+            $model->title = $content->title;
         }
         
         $model->content()->add($content);
@@ -128,12 +129,14 @@ class Content
                 $category->title = $model->title;
                 $category->parent_id = $parrent_category;
                 $category->save();
+                $current_category = $category->id;
             } else {
                 $current_category = $check_value->id;
-            } 
+            }
+            
             $model->content->contentable_type = 'series';
         } else {
-            $current_category = $model->series_id;
+            $current_category = $series_category;
         }
 
         $model->content->category_id = $current_category;
