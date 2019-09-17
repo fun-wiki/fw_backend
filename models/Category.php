@@ -36,6 +36,6 @@ class Category extends Model
              array_push($select, $value->content->category->id);
         }
         
-        $query->whereIn('id', $select)->with('children');
+        $query->whereIn('id', $select);
     }
 }
