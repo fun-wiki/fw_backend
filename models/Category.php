@@ -29,23 +29,13 @@ class Category extends Model
     public function scopeUniverse($query, $filter)
     {
         $select = [];
-        $category = [];
 
         $cat = \Fw\Backend\Models\Universe::find($filter);
 
         foreach ($cat as $value) {
-            foreach ($select as $cat) {
-                $series = Category::find($cat)->getAllChildren();
-                foreach ($series as $value) {
-                    array_push($category, $value->id);
-                }
-            }
+             array_push($select, $value->content->category->id);
         }
         
-        array_push($select, $category);
-        
-        $query->whereHas('content', function($group) use ($select) {
-            $group->whereIn('category_id', $select);
-        });
+        $query->whereIn('id', $select)->with('children');
     }
 }

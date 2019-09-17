@@ -31,7 +31,7 @@
 
     function tree_node ($record) {
         echo '<ul><i class="icon-sitemap"></i> '.$record->title;
-        foreach ($record->children as $children) {
+        foreach ($record->getChildren() as $children) {
             tree_node ($children);
         }
         foreach (\fw\Backend\Models\Content::where([['category_id', $record->id]])->get() as $content) {
@@ -41,7 +41,8 @@
     }
 
     foreach ($records as $record) {
-        tree_node ($record);
+        $category = \fw\Backend\Models\Category::find($record->id);
+        tree_node ($category);
     }
 ?>
 </div>
