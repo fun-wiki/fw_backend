@@ -1,0 +1,13 @@
+<?php 
+    $record = $record->series_id;
+
+    if ($record == -1 ) {
+        $series = 'Без категории';
+    } else {
+        $alias = \Fw\Backend\Models\Category::find($record)->alias;
+        $series = stristr($alias, '/books/');
+    }
+    echo $series;
+
+    
+?>

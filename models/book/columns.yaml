@@ -49,8 +49,8 @@ columns:
         width: 10%
     series_id:
         label: Цикл
-        relation: series
-        select: title
+        type: partial
+        path: ~/plugins/fw/backend/models/book/columns/series.htm
         width: 15%
     number_in_series:
         label: № в серии
