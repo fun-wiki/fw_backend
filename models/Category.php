@@ -26,6 +26,31 @@ class Category extends Model
         ]
     ];
 
+    function aliasToChildren ($category, $alias) 
+    {
+        foreach ($category as $record) {
+            $category->alias = $alias.'/'.$record->title;
+            $category->save();
+            if ($record->children) {
+                aliasToChildren ($record->children, $category->alias);
+            }
+        }
+    }
+
+    public function beforeSave()
+    {
+        if ($this->parent_id == null) {
+            $this->alias = $this->title;
+        } else {
+            $parent = Category::find($this->parent_id);
+            $this->alias = $parent->alias.'/'.$this->title;
+
+            if ($this->children) {
+                $this->aliasToChildren ($this->children, $this->alias);
+            }
+        }
+    }
+
     public function scopeUniverse($query, $filter)
     {
         $select = [];
