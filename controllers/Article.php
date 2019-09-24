@@ -4,7 +4,7 @@ use Backend\Classes\Controller;
 use Fw\Backend\Models\Content as Model;
 use BackendMenu;
 
-class Content extends Controller
+class Article extends Controller
 {
     public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController',        'Backend\Behaviors\ReorderController'    ];
     

@@ -10,7 +10,7 @@ class News extends Model
 
     public $table = 'fw_backend_news';
 
-    public $permalink = 'news/:content.title';
+    public $permalink = 'news/:article.title';
 
     public $rules = [];
 
@@ -30,7 +30,10 @@ class News extends Model
     ];
 
     public $morphOne = [
-        'content' => ['Fw\Backend\Models\Content', 'name' => 'contentable'],
+        'article' => [
+            'Fw\Backend\Models\Article', 
+            'name' => 'contentable', 
+        ],
     ];
 
     public function beforeSave()
@@ -40,6 +43,6 @@ class News extends Model
 
     public function afterSave()
     {
-        \fw\Backend\Classes\Content::saveContentWithCategory($this, 'news');
+        // \fw\Backend\Classes\Content::saveContentWithCategory($this, 'news');
     }
 }

@@ -741,3 +741,9 @@
 1.1.25:
     - 'alias for category'
     - seeder1125.php
+1.1.26:
+    - 'Updated table fw_backend_category'
+    - builder_table_update_fw_backend_category_6.php
+1.1.27:
+    - 'Rename table_backend_content'
+    - migration1127.php

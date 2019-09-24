@@ -2,7 +2,7 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
-use fw\Backend\Models\Content;
+use fw\Backend\Models\Article;
 
 class News extends Controller
 {
@@ -40,19 +40,19 @@ class News extends Controller
 
     public function formExtendFields($form)
     {
-        $config = $this->makeConfig('$/fw/backend/models/content/fields.yaml');
+        $config = $this->makeConfig('$/fw/backend/models/article/fields.yaml');
 
         foreach ($config->fields as $field => $options) {
             $form->addFields([
-                'content['.$field.']' => $options
+                'article['.$field.']' => $options
             ]);
         }
     }
 
     public function formExtendModel($model)
     {
-        if (!$model->content) {
-            $model->content = new Content;
+        if (!$model->article) {
+            $model->article = new Article;
         }
         return $model;
     }

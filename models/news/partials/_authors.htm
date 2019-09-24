@@ -1,7 +1,7 @@
 <?
 
 $id = $vars['record']->attributes['id'];
-$collection = Backend\Models\User::find($vars['record']->content->author_id);
+$collection = Backend\Models\User::find($vars['record']->article->author_id);
 
 echo $collection->login;
     

@@ -6,7 +6,7 @@ columns:
         align: center
     title:
         label: Заголовок
-        relation: content
+        relation: article
         select: title
     news_type:
         label: Тип новости
@@ -21,13 +21,13 @@ columns:
         align: center
     status:
         label: Статус
-        relation: content
+        relation: article
         select: status
         width: 5%
         align: center
     created_at:
         label: created_at
-        relation: content
+        relation: article
         select: created_at
         type: datetime
         format: d.m.Y
@@ -35,7 +35,7 @@ columns:
         align: center
     published_at:
         label: published_at
-        relation: content
+        relation: article
         select: published_at
         type: datetime
         format: d.m.Y

@@ -6,7 +6,7 @@ use Model;
 use Carbon\Carbon;
 use Yaml;
 
-class Content extends Model
+class Article extends Model
 {
     use \October\Rain\Database\Traits\Validation;
     use \October\Rain\Database\Traits\SoftDelete;
@@ -15,7 +15,7 @@ class Content extends Model
         'deleted_at'
     ];
 
-    public $table = 'fw_backend_content';
+    public $table = 'fw_backend_articles';
 
     public $rules = [];
 
@@ -29,12 +29,12 @@ class Content extends Model
     ];
 
     public $morphTo = [
-        'contentable' => []
+        'content' => []
     ];
 
     public function getStatusOptions()
     {
-        return Yaml::parseFile(dirname(__FILE__).'/content/options/status.yaml');
+        return Yaml::parseFile(dirname(__FILE__).'/article/options/status.yaml');
     }
 
     public function beforeSave()

@@ -4,7 +4,7 @@ namespace Fw\Backend\Classes;
 
 use Fw\Backend\Traits\Permalink;
 use fw\Backend\Models\Category as Category;
-use fw\Backend\Models\Content as ContentModel;
+use fw\Backend\Models\Article;
 
 class Content
 {
@@ -72,22 +72,22 @@ class Content
         $model->content()->add($content);
     }
 
-    public static function bindContent($model) // used
+    public static function bindContent($model) // used RENAME!!!
     {
-        if (!$model->content) {
-            $content = new ContentModel;
+        if (!$model->article) {
+            $article = new Article;
         } else {
-            $content = $model->content;
+            $article = $model->article;
         }
 
         if ($model->title) { // Определить откуда будет браться название, дать возможность разных имен
-            $content->title = $model->title;
-            $content->permalink = Permalink::createPermalink($model);
+            $article->title = $model->title;
+            $article->permalink = Permalink::createPermalink($model);
         } else {
-            $model->title = $content->title;
+            $model->title = $article->title;
         }
         
-        $model->content()->add($content);
+        $model->article()->add($article);
     }
 
     public static function bindCategory($model, $type) // used

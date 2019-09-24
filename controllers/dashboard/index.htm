@@ -16,7 +16,7 @@
                 </div>
                 <div class="scoreboard-item title-value">
                     <h4>Всего:</h4>
-                    <p><?= \fw\Backend\Models\Content::where('contentable_type', 'news')->count() ?></p>
+                    <p><?= \fw\Backend\Models\Article::where('contentable_type', 'news')->count() ?></p>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="scoreboard-item title-value">
                     <h4>Всего:</h4>
-                    <p><?= \fw\Backend\Models\Content::where('contentable_type', 'universe')->count() ?></p>
+                    <p><?= \fw\Backend\Models\Article::where('contentable_type', 'universe')->count() ?></p>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 </div>
                 <div class="scoreboard-item title-value">
                     <h4>Всего:</h4>
-                    <p><?= \fw\Backend\Models\Content::where('contentable_type', 'person')->count() ?></p>
+                    <p><?= \fw\Backend\Models\Article::where('contentable_type', 'person')->count() ?></p>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="scoreboard-item title-value">
                     <h4>Всего:</h4>
-                    <p><?= \fw\Backend\Models\Content::where('contentable_type', 'company')->count() ?></p>
+                    <p><?= \fw\Backend\Models\Article::where('contentable_type', 'company')->count() ?></p>
                 </div>
             </div>
         </div>
