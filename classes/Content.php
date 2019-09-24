@@ -72,7 +72,7 @@ class Content
         $model->content()->add($content);
     }
 
-    public static function bindContent($model) // used RENAME!!!
+    public static function bindArticle($model) // used 
     {
         if (!$model->article) {
             $article = new Article;

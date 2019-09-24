@@ -3,6 +3,7 @@
 namespace fw\Backend\Models;
 
 use Model;
+use \fw\Backend\Classes\Content as Content;
 
 class News extends Model
 {
@@ -36,13 +37,9 @@ class News extends Model
         ],
     ];
 
-    public function beforeSave()
-    {
-        \fw\Backend\Classes\Content::bindContent($this);
-    }
-
     public function afterSave()
     {
+        Content::bindArticle($this);
         // \fw\Backend\Classes\Content::saveContentWithCategory($this, 'news');
     }
 }

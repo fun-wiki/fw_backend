@@ -1,7 +1,7 @@
 <?php namespace fw\Backend\Controllers;
 
 use Backend\Classes\Controller;
-use Fw\Backend\Models\Content as Model;
+use Fw\Backend\Models\Article as Model;
 use BackendMenu;
 
 class Article extends Controller

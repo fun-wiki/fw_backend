@@ -63,7 +63,7 @@ navigation:
                 icon: icon-gamepad
     content:
         label: Контент
-        url: fw/backend/content
+        url: fw/backend/article
         icon: icon-archive
         sideMenu:
             test:

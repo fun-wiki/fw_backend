@@ -1,6 +1,6 @@
 title: Контент
-list: $/fw/backend/models/content/columns.yaml
-modelClass: fw\Backend\Models\Content
+list: $/fw/backend/models/article/columns.yaml
+modelClass: fw\Backend\Models\Article
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true
