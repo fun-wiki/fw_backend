@@ -12,14 +12,13 @@ secondaryTabs:
             options:
                 news: Новость
                 trailer: Трейлер
-        universe:
+        universe_id:
             tab: Информация
             label: Вселенная
             span: storm
             cssClass: col-sm-4
-            type: recordfinder
-            list: ~/plugins/fw/backend/models/universe/columns.yaml
-            nameFrom: title
+            type: dropdown
+            emptyOption: ----
         
         link:
             label: Ссылка на видео

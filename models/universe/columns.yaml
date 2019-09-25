@@ -16,7 +16,7 @@ columns:
         width: 20%
     permalinked:
         label: Постоянная ссылка
-        relation: content
+        relation: article
         select: permalink
     setting_type:
         label: Тип сеттинга
@@ -25,7 +25,7 @@ columns:
         path: ~/plugins/fw/backend/models/universe/partials/_setting_type.htm
     status:
         label: Статус
-        relation: content
+        relation: article
         select: status
         width: 10%
         align: center

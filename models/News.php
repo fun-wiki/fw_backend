@@ -22,9 +22,9 @@ class News extends Model
         'description'
     ];
 
-    public $belongsTo = [
-        'universe' => ['fw\Backend\Models\Universe'],
-    ];
+    // public $belongsTo = [
+    //     'universe' => ['fw\Backend\Models\Universe'],
+    // ];
 
     public $attachOne = [
         'cover' => 'System\Models\File'
@@ -40,6 +40,18 @@ class News extends Model
     public function afterSave()
     {
         Content::bindArticle($this);
-        // \fw\Backend\Classes\Content::saveContentWithCategory($this, 'news');
+        Content::bindCategory($this);
+    }
+
+    public function getUniverseIdOptions() 
+    {
+        $options = \Fw\Backend\Models\Article::where([['status', 'published'], ['contentable_type', 'universe']])
+            ->get()
+            ->pluck('title', 'category_id');
+        return $options;
+    }
+
+    public function getUniverseAttribute() {
+        return \Fw\Backend\Models\Article::where([['contentable_type', 'universe'], ['category_id', $this->universe_id]])->first();
     }
 }

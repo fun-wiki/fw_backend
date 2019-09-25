@@ -90,27 +90,52 @@ class Content
         $model->article()->add($article);
     }
 
-    public static function bindCategory($model, $type) // used
-    {
-        if (!$model->universe_id) {
-            $parent_id = null;
-        } else {
-            $parent_id = $model->universe->content->category_id;
-        }
-        $check_category = Category::where([['parent_id', $parent_id], ['title', $type]])->get();
-        if ($check_category->isEmpty()) {
-            $category = new Category;
-            $category->title = $type;
-            $category->parent_id = $parent_id;
-            $category->save();
-            $model->content->category_id = $category->id;
-        }
-        $content = $model->content;
-        $model->content()->add($content);
-    }
+    // public static function bindCategory($model, $type) // used
+    // {
+    //     if (!$model->universe_id) {
+    //         $parent_id = null;
+    //     } else {
+    //         $parent_id = $model->universe->content->category_id;
+    //     }
+    //     $check_category = Category::where([['parent_id', $parent_id], ['title', $type]])->get();
+    //     if ($check_category->isEmpty()) {
+    //         $category = new Category;
+    //         $category->title = $type;
+    //         $category->parent_id = $parent_id;
+    //         $category->save();
+    //         $model->content->category_id = $category->id;
+    //     }
+    //     $content = $model->content;
+    //     $model->content()->add($content);
+    // }
 
-    public static  function hasSeries($model, $type)
+    public static  function bindCategory($model)
     {
+        $type = $model->article->contentable_type;
+
+        switch ($type) {
+            case 'news':
+                $parent_category = 'news';
+                break;
+            
+            default:
+                return;
+                break;
+        }
+
+        if ($model->universe_id) {
+            $root_category = $model->universe_id;
+        } else {
+            $root_category = null;
+        }
+
+        
+        trace_log ($root_category);
+
+
+        return;
+        
+
         $universe_category_id = $model->universe->content->category_id;
         $parent_series_category_id = Category::where([['parent_id', $universe_category_id], ['title', $type]])->first()->id;
         $series_category = $model->series_id;
@@ -141,7 +166,7 @@ class Content
 
         $model->content->category_id = $current_category;
         $content = $model->content;
-        trace_log($model);
+        // trace_log($model);
         $model->content()->add($content);
     }
 }
