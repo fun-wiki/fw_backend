@@ -747,3 +747,9 @@
 1.1.27:
     - 'Rename table_backend_content'
     - migration1127.php
+1.1.28:
+    - 'Updated table fw_backend_articles'
+    - builder_table_update_fw_backend_articles.php
+1.1.29:
+    - 'news universe update'
+    - seeder1129.php

@@ -29,7 +29,7 @@ class Article extends Model
     ];
 
     public $morphTo = [
-        'content' => []
+        'contentable' => []
     ];
 
     public function getStatusOptions()
