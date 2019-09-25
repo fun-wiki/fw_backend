@@ -13,7 +13,7 @@ navigation:
         iconSvg: plugins/fw/backend/assets/images/plugin-logo.svg
         sideMenu:
             logo:
-                label: 
+                label: fun
                 url: fw/backend/dashboard
                 iconSvg: plugins/fw/backend/assets/images/plugin-logo.svg
             news:
